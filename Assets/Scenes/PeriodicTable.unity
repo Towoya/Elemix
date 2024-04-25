@@ -3811,6 +3811,7 @@ GameObject:
   - component: {fileID: 333014624}
   - component: {fileID: 333014623}
   - component: {fileID: 333014622}
+  - component: {fileID: 333014625}
   m_Layer: 5
   m_Name: Sr
   m_TagString: Untagged
@@ -3919,6 +3920,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333014620}
   m_CullTransparentMesh: 1
+--- !u!114 &333014625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333014620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5336b9aca55dc48aecef1bc2250024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPanel: {fileID: 704198315}
+  hoverPanel: {fileID: 1567947192}
 --- !u!1001 &348641008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7072,6 +7087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sr
       objectReference: {fileID: 0}
+    - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7080,6 +7099,11 @@ PrefabInstance:
 --- !u!224 &704198314 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 704198313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &704198315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
   m_PrefabInstance: {fileID: 704198313}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &704463137
