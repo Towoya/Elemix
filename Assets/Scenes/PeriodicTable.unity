@@ -4595,6 +4595,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+--- !u!1 &398080466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398080467}
+  m_Layer: 5
+  m_Name: Lathanides
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &398080467
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398080466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1780940029}
+  m_Father: {fileID: 1567947193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &411762385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -8658,6 +8694,7 @@ GameObject:
   - component: {fileID: 828345571}
   - component: {fileID: 828345570}
   - component: {fileID: 828345569}
+  - component: {fileID: 828345572}
   m_Layer: 5
   m_Name: Nd
   m_TagString: Untagged
@@ -8766,6 +8803,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828345567}
   m_CullTransparentMesh: 1
+--- !u!114 &828345572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828345567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5336b9aca55dc48aecef1bc2250024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPanel: {fileID: 1780940030}
+  hoverPanel: {fileID: 1567947192}
 --- !u!1001 &853824880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16457,6 +16508,7 @@ RectTransform:
   - {fileID: 1005068335}
   - {fileID: 1101699513}
   - {fileID: 40325452}
+  - {fileID: 398080467}
   m_Father: {fileID: 929488340}
   m_LocalEulerAnglesHint: {x: 0, y: 0.406, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -20252,6 +20304,162 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+--- !u!1001 &1780940028
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 398080467}
+    m_Modifications:
+    - target: {fileID: 1047480037048650468, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5bb73c1c2a98c847b3e82e26bf8b8e3, type: 3}
+    - target: {fileID: 1352609991411014207, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: Neodynium
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352609991411014207, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_margin.z
+      value: -109.23794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414834942830755988, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736870873367574698, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: Lathanides
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615009942832811368, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: " Melting point:\n 2477.0\xB0C = 4490.6\xB0F = 2750.15K\r\nBoiling point:
+        \n4744.0\xB0C = 8571.2\xB0F = 5017.15K\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294860140203768594, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583834729821710674, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: a chemical element with symbol Nb (formerly Cb) and atomic number 41.
+        It is a soft, grey, ductile transition metal, which is often found in the
+        pyrochlore mineral, the main commercial source for niobium, and columbite.
+        The name comes from Greek mythodology Niobe, daughter of Tantalus since it
+        is so similar to tantalum.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Name
+      value: Nd
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+--- !u!224 &1780940029 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 1780940028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1780940030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 1780940028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1786709966
 GameObject:
   m_ObjectHideFlags: 0
