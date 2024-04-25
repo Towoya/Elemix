@@ -571,6 +571,8 @@ RectTransform:
   - {fileID: 818348999}
   - {fileID: 90815381}
   - {fileID: 1655591692}
+  - {fileID: 326200245}
+  - {fileID: 348641009}
   m_Father: {fileID: 1567947193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3522,6 +3524,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 7662376139954455303}
   hoverPanel: {fileID: 1567947192}
+--- !u!1 &326200244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 1702855625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &326200245 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 1702855625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &326644386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3919,157 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333014620}
   m_CullTransparentMesh: 1
+--- !u!1001 &348641008
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 40325452}
+    m_Modifications:
+    - target: {fileID: 1047480037048650468, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 68fd2f0a80760b0409be44027162f626, type: 3}
+    - target: {fileID: 1352609991411014207, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: Zirconium
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352609991411014207, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_margin.z
+      value: -98.14181
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414834942830755988, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736870873367574698, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: Transition Metals
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736870873367574698, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_margin.x
+      value: -73.0546
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615009942832811368, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: " Melting point:\n1855.0\xB0C = 3371.0\xB0F = 2128.15K\nBoiling point:
+        \n4377.0\xB0C = 7910.6\xB0F = 4650.15K\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 899
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583834729821710674, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: "a chemical element with the symbol Zr and atomic number 40. The name
+        of zirconium is taken from the name of the mineral zircon, the most important
+        source of zirconium. The word zircon comes from the Persian word zargun meaning
+        \u201Cgold-colored\u201D."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Name
+      value: Zr
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+--- !u!224 &348641009 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 348641008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &348641010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+  m_PrefabInstance: {fileID: 348641008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &349288206
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,6 +4873,7 @@ GameObject:
   - component: {fileID: 486854273}
   - component: {fileID: 486854272}
   - component: {fileID: 486854271}
+  - component: {fileID: 486854274}
   m_Layer: 5
   m_Name: Zr
   m_TagString: Untagged
@@ -4818,6 +4982,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486854269}
   m_CullTransparentMesh: 1
+--- !u!114 &486854274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486854269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5336b9aca55dc48aecef1bc2250024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPanel: {fileID: 348641010}
+  hoverPanel: {fileID: 1567947192}
 --- !u!1 &498167534
 GameObject:
   m_ObjectHideFlags: 0
@@ -16087,7 +16265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1567947193
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18624,6 +18802,152 @@ PrefabInstance:
     - target: {fileID: 7967982695329163908, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -235
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+--- !u!1001 &1702855625
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 40325452}
+    m_Modifications:
+    - target: {fileID: 1047480037048650468, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 056bfd66c97380f4ba981891ae18c665, type: 3}
+    - target: {fileID: 1352609991411014207, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: Yttrium
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414834942830755988, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736870873367574698, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: Transition Metals
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736870873367574698, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_margin.x
+      value: -85.45597
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615009942832811368, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: " Melting point:\n1526.0\xB0C = 2778.8\xB0F = 1799.15K\r\nBoiling point:
+        \n2930.0\xB0C = 5306.0\xB0F = 3203.15K"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294860140203768594, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 911
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583834729821710674, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_text
+      value: "a chemical element with symbol Y and atomic number 39. It is silvery-metallic
+        transition metal chemically similar to lanthanides and it has often been
+        classified as a \u201Crare earth element\u201D. Yttrium is almost always
+        found combined with the lanthanides in rare earth minerals and is never found
+        in nature as a free element."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_Name
+      value: Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24521,6 +24845,7 @@ GameObject:
   - component: {fileID: 2133573810}
   - component: {fileID: 2133573809}
   - component: {fileID: 2133573808}
+  - component: {fileID: 2133573811}
   m_Layer: 5
   m_Name: Y
   m_TagString: Untagged
@@ -24629,6 +24954,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133573806}
   m_CullTransparentMesh: 1
+--- !u!114 &2133573811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133573806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5336b9aca55dc48aecef1bc2250024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPanel: {fileID: 326200244}
+  hoverPanel: {fileID: 1567947192}
 --- !u!1 &2143745268
 GameObject:
   m_ObjectHideFlags: 0
