@@ -1,6 +1,8 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -79,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
             isOnGround = true;
         }
     }
-
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
@@ -89,3 +90,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+*/
