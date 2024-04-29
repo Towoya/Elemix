@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 5;
     public Vector3 input;
     private Animator animator;
+    public Inventory inventory;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -76,6 +77,15 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+        }
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
         }
     }
 }
