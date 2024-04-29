@@ -19,3 +19,4 @@ public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
         hoverPanel.SetActive(false);
     }
 }
+
