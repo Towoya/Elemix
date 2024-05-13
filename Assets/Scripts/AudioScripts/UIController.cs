@@ -12,11 +12,21 @@ public class UIController : MonoBehaviour
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume", 1);
-            Load();
+            Loadmusic();
         }
         else
         {
-            Load();
+            Loadmusic();
+        }
+
+        if (!PlayerPrefs.HasKey("sfxVolume"))
+        {
+            PlayerPrefs.SetFloat("sfxVolume", 1);
+            Loadsfx();
+        }
+        else
+        {
+            Loadsfx();
         }
     }
 
@@ -33,23 +43,31 @@ public class UIController : MonoBehaviour
    public void MusicVolume()
    {
         AudioManager.Instance.MusicVolume(_musicSlider.value);
+        Savemusic();
    }
    public void SFXVolume()
    {
         AudioManager.Instance.SFXVolume(_sfxSlider.value);
+        Savesfx();
    }
 
 
-    private void Load()
+    private void Loadmusic()
     {
         _musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        _sfxSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
-    private void Save()
+    private void Loadsfx()
     {
-        PlayerPrefs.SetFloat("musicVolume", _musicSlider.value);
-        PlayerPrefs.SetFloat("musicVolume", _sfxSlider.value);
+        _sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
     }
 
+    private void Savemusic()
+    {
+        PlayerPrefs.SetFloat("musicVolume", _musicSlider.value);
+    }
+    private void Savesfx()
+    {
+        PlayerPrefs.SetFloat("sfxVolume", _sfxSlider.value);
+    }
 
 }
