@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandler
+public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandler //, IPointerEnterHandler
 {
     public GameObject textPanel;
     public GameObject hoverPanel;
@@ -18,5 +18,9 @@ public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
         textPanel.SetActive(false);
         hoverPanel.SetActive(false);
     }
+
+    /*public void OnPointerEnter(PointerEventData eventData){
+
+    }*/
 }
 

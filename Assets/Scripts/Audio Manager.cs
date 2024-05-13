@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class AudioManager : MonoBehaviour
+/*public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource MusicSource;
     public AudioClip background;
@@ -18,4 +18,4 @@ public class AudioManager : MonoBehaviour
         MusicSource.clip = background;
         MusicSource.Play();
     }
-}
+}*/
