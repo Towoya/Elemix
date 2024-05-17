@@ -18,11 +18,13 @@ public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
     {
         textPanel.SetActive(false);
         hoverPanel.SetActive(false);
+        transform.localScale = new Vector2(1f, 1f);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         AudioManager.Instance.PlaySFX("ButtonHover");
+        transform.localScale = new Vector2(1.2f, 1.2f);
     }
 }
 
