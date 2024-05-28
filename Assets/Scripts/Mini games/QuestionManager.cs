@@ -39,6 +39,7 @@ public class QuestionManager : MonoBehaviour
     IEnumerator PanelDeactivate()
     {
         yield return new WaitForSeconds(PanelDelay);
-        deactPanel.SetActive(false);
+        //deactPanel.SetActive(false);
+        Destroy(deactPanel);
     }
 }
