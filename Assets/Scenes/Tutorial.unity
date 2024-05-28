@@ -6991,7 +6991,7 @@ GameObject:
   - component: {fileID: 1271582695}
   - component: {fileID: 1271582694}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuestionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7791,6 +7791,7 @@ GameObject:
   - component: {fileID: 1379398264}
   - component: {fileID: 1379398266}
   - component: {fileID: 1379398265}
+  - component: {fileID: 1379398267}
   m_Layer: 5
   m_Name: Quiz
   m_TagString: Untagged
@@ -7856,6 +7857,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379398263}
   m_CullTransparentMesh: 1
+--- !u!114 &1379398267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379398263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fab30bac54571949b1baf764da188a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceButtons:
+  - {fileID: 1885286287}
+  - {fileID: 2049025181}
+  - {fileID: 1953853876}
+  - {fileID: 1704678723}
+  correctAnswerIndex: 0
+  deactPanel: {fileID: 1379398263}
+  correctColor: {r: 0, g: 1, b: 0, a: 1}
+  incorrectColor: {r: 1, g: 0, b: 0, a: 1}
+  PanelDelay: 2
 --- !u!1 &1395663253
 GameObject:
   m_ObjectHideFlags: 0
