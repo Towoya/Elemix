@@ -7,6 +7,7 @@ public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
 {
     public GameObject textPanel;
     public GameObject hoverPanel;
+
     
     private static GameObject currentActiveTextPanel = null;
     private static GameObject currentActiveHoverPanel = null;
