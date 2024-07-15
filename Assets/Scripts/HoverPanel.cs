@@ -7,6 +7,7 @@ public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
 {
     public GameObject textPanel;
     public GameObject hoverPanel;
+    public GameObject blockerPanel;
 
     
     private static GameObject currentActiveTextPanel = null;
@@ -34,6 +35,8 @@ public class HoverPanel : MonoBehaviour, IPointerClickHandler, IPointerExitHandl
         currentActiveHoverPanel = hoverPanel;
 
         AudioManager.Instance.PlaySFX("ButtonClick");
+
+        blockerPanel.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
