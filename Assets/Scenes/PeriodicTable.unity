@@ -20966,7 +20966,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1980575149}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WhenClickedCategory, Assembly-CSharp
         m_MethodName: disablecategorybtn
         m_Mode: 2
@@ -24128,6 +24128,7 @@ GameObject:
   - component: {fileID: 1278687860}
   - component: {fileID: 1278687859}
   - component: {fileID: 1278687858}
+  - component: {fileID: 1278687861}
   m_Layer: 5
   m_Name: Lanthanides button
   m_TagString: Untagged
@@ -24198,13 +24199,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1980575147}
+      - m_Target: {fileID: 1278687861}
         m_TargetAssemblyTypeName: WhenClickedCategory, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 2
+        m_MethodName: disablecategorybtn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24248,6 +24249,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278687856}
   m_CullTransparentMesh: 1
+--- !u!114 &1278687861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278687856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2167e902708796a47b2f7789ffd7f82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Category: {fileID: 729507200}
+  Category2: {fileID: 1070219796}
+  Category3: {fileID: 530789910}
+  Category4: {fileID: 630048089}
+  Category5: {fileID: 1116390888}
+  Category6: {fileID: 1546182322}
+  Category7: {fileID: 779263199}
+  Category8: {fileID: 822972192}
+  Category9: {fileID: 1725075276}
 --- !u!1001 &1302763759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26981,7 +27003,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1980575149}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WhenClickedCategory, Assembly-CSharp
         m_MethodName: disablecategorybtn
         m_Mode: 2
@@ -36218,7 +36240,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1980575148}
-  - component: {fileID: 1980575149}
   m_Layer: 5
   m_Name: Category
   m_TagString: Untagged
@@ -36255,28 +36276,6 @@ RectTransform:
   m_AnchoredPosition: {x: -16, y: 13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1980575149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980575147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2167e902708796a47b2f7789ffd7f82d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Category: {fileID: 1278687856}
-  Category2: {fileID: 1389657837}
-  Category3: {fileID: 1610423172}
-  Category4: {fileID: 1983849696}
-  Category5: {fileID: 569289255}
-  Category6: {fileID: 413208771}
-  Category7: {fileID: 1246530552}
-  Category8: {fileID: 153706540}
-  Category9: {fileID: 1160472115}
-  Category10: {fileID: 1537895740}
 --- !u!1 &1983849696
 GameObject:
   m_ObjectHideFlags: 0
