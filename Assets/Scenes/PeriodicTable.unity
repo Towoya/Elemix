@@ -270,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1255138250}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &18816808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1091268434}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &28662780
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1217875340}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &28662786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 395259282}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &51237383
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +978,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 51237386}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1633309906}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &51237386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2028674132}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 1469160983}
 --- !u!114 &51237389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,6 +1311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 90815380}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &74670584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2469,6 +2487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 299844435}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &133912614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2761,6 +2780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1661600489}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &152867747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3215,6 +3235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1581162010}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &159450911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3887,6 +3908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1897539730}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &205468379 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -4191,6 +4213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 208458193}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &216636819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4820,7 +4843,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269887962}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4828,7 +4851,7 @@ RectTransform:
   - {fileID: 55183194}
   - {fileID: 1996072191}
   - {fileID: 176372108}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5185,6 +5208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1143472878}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &297622292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5478,6 +5502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 7662376139954455303}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &322808195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5932,6 +5957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 31438112}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &331243410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6214,6 +6240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 704198315}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &333014626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6571,6 +6598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 626542009}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &356994086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -6726,6 +6754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1512126845}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &369293190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6861,6 +6890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1302763761}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &376229641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -7615,6 +7645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 667593834}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &486854269
 GameObject:
   m_ObjectHideFlags: 0
@@ -7750,6 +7781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 348641010}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &496772075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8040,6 +8072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1807687089}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &517802043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8381,7 +8414,7 @@ RectTransform:
   - {fileID: 684004438}
   - {fileID: 1763086686}
   - {fileID: 1786709967}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8535,6 +8568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1786036085}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &551535285
 GameObject:
   m_ObjectHideFlags: 0
@@ -8670,6 +8704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1946537951}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &565703096
 GameObject:
   m_ObjectHideFlags: 0
@@ -9164,6 +9199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1135152027}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &589209404
 GameObject:
   m_ObjectHideFlags: 0
@@ -9299,6 +9335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 864894509}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &591958634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9881,6 +9918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 323447522}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &629074873
 GameObject:
   m_ObjectHideFlags: 0
@@ -10016,6 +10054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1632051384}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &630048089
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,7 +10078,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630048089}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10051,7 +10090,7 @@ RectTransform:
   - {fileID: 128799566}
   - {fileID: 1954890475}
   - {fileID: 752287690}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10466,6 +10505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2013080135}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &679165021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10758,6 +10798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 691340185}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &687843190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11190,6 +11231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1412647628}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &704198313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11478,6 +11520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 156326344}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &704463143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11670,6 +11713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1214826055}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &722003521
 GameObject:
   m_ObjectHideFlags: 0
@@ -11805,6 +11849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1192933242}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &726139856
 GameObject:
   m_ObjectHideFlags: 0
@@ -11940,6 +11985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 591958636}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &729507200
 GameObject:
   m_ObjectHideFlags: 0
@@ -11963,7 +12009,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729507200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11974,7 +12020,7 @@ RectTransform:
   - {fileID: 333014621}
   - {fileID: 1591778104}
   - {fileID: 1746728746}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12804,6 +12850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 216927127}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &752643977
 GameObject:
   m_ObjectHideFlags: 0
@@ -12939,6 +12986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 39192372}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &757735807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13173,7 +13221,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 761957034}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1633309906}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &761957034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13226,6 +13286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 983015933}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 1469160983}
 --- !u!114 &761957037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13464,7 +13525,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779263199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13475,7 +13536,7 @@ RectTransform:
   - {fileID: 629074874}
   - {fileID: 498167535}
   - {fileID: 1271883078}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13619,6 +13680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1679386202}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &788818913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13813,6 +13875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 973227497}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &795523123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14005,6 +14068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2030423775}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &812542365
 GameObject:
   m_ObjectHideFlags: 0
@@ -14089,7 +14153,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 812542368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1633309906}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &812542368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14142,6 +14218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 927034709}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 1469160983}
 --- !u!114 &812542371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14232,7 +14309,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822972192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14245,7 +14322,7 @@ RectTransform:
   - {fileID: 1303381467}
   - {fileID: 883280803}
   - {fileID: 1319113074}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14387,6 +14464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1780940030}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &831400866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15657,6 +15735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 733754311}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &883796881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16041,7 +16120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 921308976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1633309906}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &921308976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16094,6 +16185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 205468379}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 1469160983}
 --- !u!114 &921308979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16395,19 +16487,10 @@ RectTransform:
   m_Children:
   - {fileID: 1356802933}
   - {fileID: 111368407}
-  - {fileID: 269887963}
-  - {fileID: 729507201}
-  - {fileID: 1070219797}
-  - {fileID: 530789911}
-  - {fileID: 630048090}
-  - {fileID: 1116390889}
-  - {fileID: 1546182323}
-  - {fileID: 779263200}
-  - {fileID: 822972193}
-  - {fileID: 1192961252}
-  - {fileID: 1725075277}
-  - {fileID: 1980575148}
+  - {fileID: 1746621523}
+  - {fileID: 1469160986}
   - {fileID: 1567947193}
+  - {fileID: 1633309907}
   - {fileID: 905643328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17026,6 +17109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1565635972}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &973227497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -17171,6 +17255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1503978094}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &978957239
 GameObject:
   m_ObjectHideFlags: 0
@@ -17496,6 +17581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 267524933}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &997059022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -17643,6 +17729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 411762385}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1001312653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17919,6 +18006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 865935301}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1009336240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18111,6 +18199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1461161404}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1013149789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18526,6 +18615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1108127063}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1044010794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19001,7 +19091,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070219796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19012,7 +19102,7 @@ RectTransform:
   - {fileID: 28662781}
   - {fileID: 788818908}
   - {fileID: 1009336235}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19154,6 +19244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 360446669}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1091197247
 GameObject:
   m_ObjectHideFlags: 0
@@ -19289,6 +19380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2132809946}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1091268432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19585,6 +19677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1568038595}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1101699512
 GameObject:
   m_ObjectHideFlags: 0
@@ -19822,7 +19915,7 @@ RectTransform:
   - {fileID: 2081259515}
   - {fileID: 1001312648}
   - {fileID: 1635754894}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19964,6 +20057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1228169790}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1135152025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20855,6 +20949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 818348998}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1160472115
 GameObject:
   m_ObjectHideFlags: 0
@@ -21292,6 +21387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 452308100}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1177285360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -21519,7 +21615,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192961251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21539,7 +21635,7 @@ RectTransform:
   - {fileID: 1659217645}
   - {fileID: 366835936}
   - {fileID: 1011012670}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22138,6 +22234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1468485980}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1214826055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -22283,6 +22380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 280369055}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1216935185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23197,6 +23295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2055704351}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1246883149
 GameObject:
   m_ObjectHideFlags: 0
@@ -23334,6 +23433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 376229641}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1246883155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23840,6 +23940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1697582331}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1273518821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24124,6 +24225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 77374992}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1278687856
 GameObject:
   m_ObjectHideFlags: 0
@@ -24557,6 +24659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1953260353}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1319113073
 GameObject:
   m_ObjectHideFlags: 0
@@ -24692,6 +24795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 496772077}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1331600145 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -24837,6 +24941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1177285360}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1353707547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24999,7 +25104,7 @@ GameObject:
   - component: {fileID: 1356802935}
   - component: {fileID: 1356802934}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25197,6 +25302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1655591691}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1359651930
 GameObject:
   m_ObjectHideFlags: 0
@@ -25332,6 +25438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1824908406}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1360912836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25945,6 +26052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1827384895}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1412647626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26234,6 +26342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1570048970}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1424454240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26680,6 +26789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 345155993}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1468485980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -26690,6 +26800,81 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
   m_PrefabInstance: {fileID: 1151080026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1469160983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469160986}
+  - component: {fileID: 1469160985}
+  - component: {fileID: 1469160984}
+  m_Layer: 5
+  m_Name: Blocker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1469160984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469160983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1469160985
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469160983}
+  m_CullTransparentMesh: 1
+--- !u!224 &1469160986
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469160983}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 929488340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030518, y: -0.002182}
+  m_SizeDelta: {x: 1920, y: 921.16}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1474149603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -27045,7 +27230,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546182322}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27060,7 +27245,7 @@ RectTransform:
   - {fileID: 21444002}
   - {fileID: 1419949512}
   - {fileID: 1215814983}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27230,7 +27415,7 @@ GameObject:
   - component: {fileID: 1567947195}
   - component: {fileID: 1567947194}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ElementPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27262,7 +27447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0.406, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14, y: 7.6319885}
+  m_AnchoredPosition: {x: 14, y: 7.631958}
   m_SizeDelta: {x: 1312.272, y: 52.627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1567947194
@@ -27664,6 +27849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 28759733}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1573476658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27868,6 +28054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1368525513}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1591778109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28226,6 +28413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 286996983}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1610423172
 GameObject:
   m_ObjectHideFlags: 0
@@ -28517,6 +28705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 451305910}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1610800441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28709,6 +28898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1988464492}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1625969775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -28854,6 +29044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 997059022}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1632051384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -28864,6 +29055,162 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
   m_PrefabInstance: {fileID: 100857467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1633309906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633309907}
+  - component: {fileID: 1633309910}
+  - component: {fileID: 1633309909}
+  - component: {fileID: 1633309908}
+  m_Layer: 5
+  m_Name: ClosePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1633309907
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633309906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 929488340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 481.2, y: 294.6}
+  m_SizeDelta: {x: 117.36, y: 105.578}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1633309908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633309906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: 35cf487db843828458921e8269219481, type: 3}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1633309909}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1567947192}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1469160983}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1633309906}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1633309909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633309906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 171e9c843374e1a4c846639374df35bc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1633309910
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633309906}
+  m_CullTransparentMesh: 1
 --- !u!1 &1635754893
 GameObject:
   m_ObjectHideFlags: 0
@@ -29001,6 +29348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1594430043}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1635754899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29489,6 +29837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2030116768}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1652806525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29772,6 +30121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 735615976}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1655591691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -29917,6 +30267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 103942694}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1659786805
 GameObject:
   m_ObjectHideFlags: 0
@@ -30052,6 +30403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1880314609}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1661600489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -30352,6 +30704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 735045431}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1679386202 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -31200,6 +31553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1331600145}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1725075276
 GameObject:
   m_ObjectHideFlags: 0
@@ -31223,7 +31577,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725075276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31262,7 +31616,7 @@ RectTransform:
   - {fileID: 486854270}
   - {fileID: 2098344690}
   - {fileID: 2058209715}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31404,6 +31758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 356994086}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1739704721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31684,6 +32039,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 650553298}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
+--- !u!1 &1746621522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746621523}
+  m_Layer: 5
+  m_Name: UIElements
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1746621523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746621522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 729507201}
+  - {fileID: 1070219797}
+  - {fileID: 530789911}
+  - {fileID: 630048090}
+  - {fileID: 1116390889}
+  - {fileID: 1546182323}
+  - {fileID: 779263200}
+  - {fileID: 822972193}
+  - {fileID: 1192961252}
+  - {fileID: 1725075277}
+  - {fileID: 269887963}
+  - {fileID: 1980575148}
+  m_Father: {fileID: 929488340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1746728745
 GameObject:
   m_ObjectHideFlags: 0
@@ -31821,6 +32224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1053470493}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1746728751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32013,6 +32417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 860836211}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1763086685
 GameObject:
   m_ObjectHideFlags: 0
@@ -32148,6 +32553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1638283905}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1776048317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32606,6 +33012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 937287346}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1789218414
 GameObject:
   m_ObjectHideFlags: 0
@@ -32741,6 +33148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 660970836}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1805666249
 GameObject:
   m_ObjectHideFlags: 0
@@ -32878,6 +33286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1715795698}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1805666255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33232,6 +33641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1216935187}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1824410691
 GameObject:
   m_ObjectHideFlags: 0
@@ -33367,6 +33777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 74670586}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1824908406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -33522,6 +33933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2145268617}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1845038689
 GameObject:
   m_ObjectHideFlags: 0
@@ -33657,6 +34069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 687843192}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1848359263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33944,6 +34357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 774194449}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1851947530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34136,6 +34550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1193139154}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1874887113
 GameObject:
   m_ObjectHideFlags: 0
@@ -34523,6 +34938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 256384387}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1897539728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34811,6 +35227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1595945504}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1911724971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35003,6 +35420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1044010796}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &1942661426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35716,6 +36134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1231943158}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1968762945
 GameObject:
   m_ObjectHideFlags: 0
@@ -35851,6 +36270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 571295302}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1975498035
 GameObject:
   m_ObjectHideFlags: 0
@@ -35986,6 +36406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 661071724}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1980575147
 GameObject:
   m_ObjectHideFlags: 0
@@ -36009,7 +36430,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980575147}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36024,7 +36445,7 @@ RectTransform:
   - {fileID: 153706541}
   - {fileID: 1160472116}
   - {fileID: 1537895741}
-  m_Father: {fileID: 929488340}
+  m_Father: {fileID: 1746621523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36466,6 +36887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 169285144}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1992354305
 GameObject:
   m_ObjectHideFlags: 0
@@ -36603,6 +37025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 8867561}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &1992354311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36795,6 +37218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 735871667}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &1996072190
 GameObject:
   m_ObjectHideFlags: 0
@@ -36966,6 +37390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1625969775}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2013080135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -37567,6 +37992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1395416965}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2055704351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -37712,6 +38138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 2100053832}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &2059850229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38130,6 +38557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1195875253}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2081259514
 GameObject:
   m_ObjectHideFlags: 0
@@ -38267,6 +38695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 1474149603}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!114 &2081259520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38464,6 +38893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 858247076}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &2100053830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38760,6 +39190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 940926060}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2110526009
 GameObject:
   m_ObjectHideFlags: 0
@@ -38895,6 +39326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 133912616}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2132644642
 GameObject:
   m_ObjectHideFlags: 0
@@ -39030,6 +39462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 605488145}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1001 &2132809944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39320,6 +39753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 326200244}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2143745268
 GameObject:
   m_ObjectHideFlags: 0
@@ -39455,6 +39889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPanel: {fileID: 939851061}
   hoverPanel: {fileID: 1567947192}
+  blockerPanel: {fileID: 0}
 --- !u!1 &2145268617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}

@@ -9,7 +9,11 @@ public class QuizManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             panel.SetActive(true);
+             Time.timeScale = 0;
+
         }
+
+        
     }
 }
 

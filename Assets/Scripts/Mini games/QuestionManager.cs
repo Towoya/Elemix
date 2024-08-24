@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class QuestionManager : MonoBehaviour
     public GameObject deactPanel;
     public Color correctColor = Color.green;
     public Color incorrectColor = Color.red;
-    public float PanelDelay = 3f;
+    public float PanelDelay = 50f;
 
     void Start()
     {
@@ -27,19 +28,20 @@ public class QuestionManager : MonoBehaviour
             Debug.Log("Correct Answer!");
             selectedButton.image.color = correctColor;
             // Perform any action for correct answer
+            Time.timeScale = 1;
         }
         else
         {
             Debug.Log("Wrong Answer!");
             selectedButton.image.color = incorrectColor;
             // Perform any action for wrong answer
+            Time.timeScale = 1;
         }
         StartCoroutine(PanelDeactivate());
+        Destroy(deactPanel);
     }
     IEnumerator PanelDeactivate()
     {
         yield return new WaitForSeconds(PanelDelay);
-        //deactPanel.SetActive(false);
-        Destroy(deactPanel);
     }
 }

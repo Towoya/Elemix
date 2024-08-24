@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //public CharacterController controller;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float speed = 5.0f;
+    [SerializeField] static public float speed = 5.0f;
     [SerializeField] private float rotationSpeed = 360;
     public bool isOnGround = true;
     public float jumpForce = 5;
