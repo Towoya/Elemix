@@ -21,12 +21,6 @@ public class WhenClickedCategory : MonoBehaviour
         
     }
 
-    /**public void OnPointerClick()
-    {
-        Category.SetActive(false);
-        Category2.SetActive(false);
-    }**/
-
     public void disablecategorybtn()
     {
         GameObject[] categories = { Category, Category2, Category3, Category4, Category5, Category6, Category7, Category8, Category9 };
@@ -42,32 +36,15 @@ public class WhenClickedCategory : MonoBehaviour
             if (canvasGroup.alpha == opaqueAlpha)
             {
                 canvasGroup.alpha = transparentAlpha;
+                canvasGroup.interactable = false; // Make the button non-interactable
+                canvasGroup.blocksRaycasts = false; // Prevent the button from receiving click events
             }
             else
             {
                 canvasGroup.alpha = opaqueAlpha;
+                canvasGroup.interactable = true; // Make the button interactable again
+                canvasGroup.blocksRaycasts = true; // Allow the button to receive click events
             }
         }
-
-
-        /**if (Category.activeInHierarchy == true)
-            Category.SetActive(false);
-         
-        else
-            Category.SetActive(true);
-           
-        if (Category2.activeInHierarchy == true)
-            Category2.SetActive(false);
-
-        else Category2.SetActive(true);
-        
-        if (Category3.activeInHierarchy == true)
-            Category3.SetActive(false);
-
-        else Category3.SetActive(true);**/
-
-        /**Category.SetActive(true);
-        Category2.SetActive(false);
-        Category3.SetActive(false);**/
     }
 }
