@@ -36,10 +36,14 @@ public class WhenClickedCategory : MonoBehaviour
             if (canvasGroup.alpha == opaqueAlpha)
             {
                 canvasGroup.alpha = transparentAlpha;
+                canvasGroup.interactable = false; // Make the button non-interactable
+                canvasGroup.blocksRaycasts = false; // Prevent the button from receiving click events
             }
             else
             {
                 canvasGroup.alpha = opaqueAlpha;
+                canvasGroup.interactable = true; // Make the button interactable again
+                canvasGroup.blocksRaycasts = true; // Allow the button to receive click events
             }
         }
     }
