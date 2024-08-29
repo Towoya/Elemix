@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WhenClickedCategory : MonoBehaviour
 {
-
     public GameObject Category, Category2, Category3, Category4, Category5, Category6, Category7, Category8, Category9;
+
+    public float transparentAlpha = 0.2f; // Set this to the desired transparency level
+    public float opaqueAlpha = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +33,19 @@ public class WhenClickedCategory : MonoBehaviour
 
         foreach (GameObject category in categories)
         {
-            if (category.activeInHierarchy)
+            CanvasGroup canvasGroup = category.GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
             {
-                category.SetActive(false);
+                canvasGroup = category.AddComponent<CanvasGroup>();
+            }
+
+            if (canvasGroup.alpha == opaqueAlpha)
+            {
+                canvasGroup.alpha = transparentAlpha;
             }
             else
             {
-                category.SetActive(true);
+                canvasGroup.alpha = opaqueAlpha;
             }
         }
 
