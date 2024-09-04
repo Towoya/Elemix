@@ -7,6 +7,7 @@ public class FactManager : MonoBehaviour
     public TextMeshProUGUI factText; // Assign this in the Inspector
     private string[] facts;
     private int currentFactIndex = 0;
+    private Coroutine factCoroutine;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class FactManager : MonoBehaviour
         };
 
         // Start the coroutine to change facts
-        StartCoroutine(ChangeFact());
+        factCoroutine = StartCoroutine(ChangeFact());
     }
 
     private IEnumerator ChangeFact()
@@ -29,8 +30,8 @@ public class FactManager : MonoBehaviour
             // Set the current fact
             factText.text = facts[currentFactIndex];
 
-            // Wait for 15 seconds
-            yield return new WaitForSeconds(15f);
+            // Wait for 5 seconds
+            yield return new WaitForSeconds(5f);
 
             // Update the fact index, looping back to the start if necessary
             currentFactIndex = (currentFactIndex + 1) % facts.Length;
@@ -73,5 +74,12 @@ public class FactManager : MonoBehaviour
                 break;
         }
         currentFactIndex = 0; // Reset fact index for new element
+
+        // Stop the current coroutine and start it again to use the new facts
+        if (factCoroutine != null)
+        {
+            StopCoroutine(factCoroutine);
+        }
+        factCoroutine = StartCoroutine(ChangeFact());
     }
 }
