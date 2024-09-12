@@ -6553,6 +6553,81 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
   m_PrefabInstance: {fileID: 323447520}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &325571650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325571651}
+  - component: {fileID: 325571653}
+  - component: {fileID: 325571652}
+  m_Layer: 5
+  m_Name: H2O
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &325571651
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325571650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 927034710}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 37.624, y: 219.091}
+  m_SizeDelta: {x: 2932.437, y: 420.918}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &325571652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325571650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cae2d95d8a53c544483c3c3f5f5636c8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &325571653
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325571650}
+  m_CullTransparentMesh: 1
 --- !u!1 &326200244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -17608,6 +17683,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 342696010}
+    - targetCorrespondingSourceObject: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325571651}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
 --- !u!1 &905643327
@@ -21288,8 +21366,16 @@ PrefabInstance:
       value: -30.575127
       objectReference: {fileID: 0}
     - target: {fileID: 1414834942830755988, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414834942830755988, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1037
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414834942830755988, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 2010376035731788065, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_Pivot.x
@@ -21371,6 +21457,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618031526057536905, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618031526057536905, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1052
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618031526057536905, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 273
+      objectReference: {fileID: 0}
     - target: {fileID: 2736870873367574698, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_text
       value: Reactive nonmetals
@@ -21384,13 +21482,33 @@ PrefabInstance:
       value: " Melting point:\n -210.0\xB0C = -346.0\xB0F = 63.15K\nBoiling point:
         \n-195.795\xB0C = -320.43\xB0F = 77.35K\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 3865710531953087987, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3865710531953087987, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3865710531953087987, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 254
+      objectReference: {fileID: 0}
     - target: {fileID: 4294860140203768594, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1087
       objectReference: {fileID: 0}
     - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 829
+      value: 767
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942897605611630429, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 379
       objectReference: {fileID: 0}
     - target: {fileID: 6045438153546864808, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_text
@@ -21403,6 +21521,14 @@ PrefabInstance:
         gas. Nitrogen is a common element in the universe, estimated at about seventh
         in total abundance in the Milky Way and the Solar System.
       objectReference: {fileID: 0}
+    - target: {fileID: 6583834729821710674, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_margin.x
+      value: 0.07141109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583834729821710674, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+      propertyPath: m_margin.z
+      value: -1946.0122
+      objectReference: {fileID: 0}
     - target: {fileID: 7767496092554413859, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
       propertyPath: m_Name
       value: N
@@ -21412,7 +21538,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3581798397559167736, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
+    - {fileID: 3303809230200037410, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d3df01fb33cc84a8a420434ce0bd0e, type: 3}
@@ -31423,6 +31551,7 @@ GameObject:
   - component: {fileID: 1588942022}
   - component: {fileID: 1588942021}
   - component: {fileID: 1588942020}
+  - component: {fileID: 1588942023}
   m_Layer: 5
   m_Name: H2O
   m_TagString: Untagged
@@ -31532,6 +31661,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588942018}
   m_CullTransparentMesh: 1
+--- !u!114 &1588942023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588942018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d99b89130c5144988d169872428015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 325571650}
 --- !u!1 &1591778103
 GameObject:
   m_ObjectHideFlags: 0
