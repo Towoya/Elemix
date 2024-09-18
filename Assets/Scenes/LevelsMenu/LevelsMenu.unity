@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2898,6 +2898,7 @@ GameObject:
   - component: {fileID: 1131742554}
   - component: {fileID: 1131742555}
   - component: {fileID: 1131742556}
+  - component: {fileID: 1131742557}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2981,6 +2982,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89901da0c54aff34eb893f062def4a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1131742557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131742552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1e0958ce6f49b408e31af63e5cf798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 1531458355}
+  - {fileID: 1196253936}
+  - {fileID: 433867713}
+  - {fileID: 707031445}
+  - {fileID: 1972878504}
 --- !u!1 &1133478568
 GameObject:
   m_ObjectHideFlags: 0
