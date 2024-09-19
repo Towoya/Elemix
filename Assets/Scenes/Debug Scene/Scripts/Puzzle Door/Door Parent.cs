@@ -15,11 +15,11 @@ public class DoorParent : MonoBehaviour
 
     private void Update() {
         if (doorOpened){
-            float newYScale = transform.localScale.y - doorOpeningSpeed * Time.deltaTime;
-            openingAnimation(newYScale);
+            float newYPosition = transform.position.y - doorOpeningSpeed * Time.deltaTime;
+            openingAnimation(newYPosition);
         }
 
-        if (transform.localScale.y <= 0.05f)
+        if (transform.position.y <= -0.995f)
             Destroy(gameObject);
     }
 
@@ -28,7 +28,7 @@ public class DoorParent : MonoBehaviour
         doorOpened = true;
     }
 
-    void openingAnimation(float newYScale){
-        transform.localScale = new Vector3(transform.localScale.x, newYScale, transform.localScale.z);
+    void openingAnimation(float newYPosition){
+        transform.position = new Vector3(transform.position.x, newYPosition, transform.position.z);
     }
 }
