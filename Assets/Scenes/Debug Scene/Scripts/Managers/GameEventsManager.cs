@@ -11,7 +11,7 @@ public class GameEventsManager : MonoBehaviour
     private void Awake() {
         if (instance != null){
             Debug.LogError("More than one instance of " + this.name + " exists in the current scene");
-            Destroy(this);
+            Destroy(gameObject);
         }
         instance = this;
 

@@ -6,11 +6,11 @@ public class DoorParent : MonoBehaviour
     [SerializeField] bool doorOpened = false;
 
     private void OnEnable() {
-        GameEventsManager.instance.puzzleEvents.onSolvedFormula += openDoor;
+        GameEventsManager.instance.puzzleEvents.onSolvedFormula += formulaSolved;
     }
 
     private void OnDisable() {
-        GameEventsManager.instance.puzzleEvents.onSolvedFormula -= openDoor;
+        GameEventsManager.instance.puzzleEvents.onSolvedFormula -= formulaSolved;
     }
 
     private void Update() {
@@ -24,7 +24,7 @@ public class DoorParent : MonoBehaviour
     }
 
     // Door Opening
-    public void openDoor(){
+    void formulaSolved(){
         doorOpened = true;
     }
 
