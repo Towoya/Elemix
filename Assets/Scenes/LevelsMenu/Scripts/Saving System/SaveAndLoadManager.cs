@@ -12,9 +12,11 @@ public class SaveAndLoadManager : MonoBehaviour
     private void Awake() {
         if (instance != null){
             Debug.LogError("More than one instance of " + this.name + " exists in the current scene");
-            Destroy(this);
+            Destroy(gameObject);
+        } else {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        instance = this;
     }
 
     private void Start() {
