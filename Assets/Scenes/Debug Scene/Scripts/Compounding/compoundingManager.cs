@@ -26,9 +26,9 @@ public class compoundingManager : MonoBehaviour
             {
                 if (hit.transform.GetComponent<compoundingSlots>() == null) return;
                 if (!Input.GetMouseButtonDown(0)) return;
-                
-                // TODO: Get elementBlock object from player and pass it as parameter in insertElement()
-                // hit.transform.GetComponent<compoundingSlots>().insertElement();
+
+                hit.transform.GetComponent<compoundingSlots>().insertElement(PlayerManager.instance.playerHeldElement);
             }
     }
+    
 }
