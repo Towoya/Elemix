@@ -42,4 +42,8 @@ public class PlayerManager : MonoBehaviour
         elementBlock.localPosition = new Vector3(0, playerHeight + 0.5f, 0);
         playerHeldElement = elementBlock.gameObject;
     }
+
+    public void letGoOfBlock(){
+        playerHeldElement = null;
+    }
 }

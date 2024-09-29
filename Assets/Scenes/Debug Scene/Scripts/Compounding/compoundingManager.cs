@@ -28,6 +28,7 @@ public class compoundingManager : MonoBehaviour
                 if (!Input.GetMouseButtonDown(0)) return;
 
                 hit.transform.GetComponent<compoundingSlots>().insertElement(PlayerManager.instance.playerHeldElement);
+                PlayerManager.instance.letGoOfBlock();
             }
     }
     
