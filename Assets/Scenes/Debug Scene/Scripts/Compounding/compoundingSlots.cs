@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class compoundingSlots : MonoBehaviour
 {
-    [SerializeField] char elementLetter = ' ';
+    public char elementLetter { get; private set; } = ' ';
     [SerializeField] bool interactable;
 
     private void Update() {

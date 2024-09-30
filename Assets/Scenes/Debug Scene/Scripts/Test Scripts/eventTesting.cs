@@ -9,7 +9,7 @@ public class eventTesting : MonoBehaviour
     private void Update() {
         if (activateTest) {
             activateTest = false;
-            GameEventsManager.instance.puzzleEvents.solvedFomula();
+            GameEventsManager.instance.compoundingEvents.TestedFormula();
         }
     }
 }
