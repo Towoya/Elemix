@@ -6,24 +6,17 @@ public class compoundingSlots : MonoBehaviour
     [SerializeField] bool interactable;
 
     private void Update() {
-        if (gameObject.transform.childCount == 0) clearElementLetter();
+        if (gameObject.transform.childCount < 1) {
+            clearElementLetter();
+            return;
+        }
+
+        GameObject elementBlock = gameObject.transform.GetChild(0).gameObject;
+        setElementLetter(elementBlock);
     }
 
-    public void insertElement(GameObject elementBlock){
-        if (!interactable) return;
-        if (!elementLetter.Equals(' ')) return;
-        if (elementBlock == null) return;
-
-        
-        char elementBlockLetter = elementBlock.GetComponent<elementBlock>().elementLetter;
-
-        setElementLetter(elementBlockLetter);
-        elementBlock.transform.SetParent(this.gameObject.transform);
-        elementBlock.transform.localPosition = new Vector3(0, elementBlock.transform.localScale.y/2, 0);
-    }
-
-    private void setElementLetter(char letter){
-        this.elementLetter = letter;
+    public void setElementLetter(GameObject elementBlock){
+        elementLetter = elementBlock.GetComponent<elementBlock>().elementLetter;
     }
 
     private void clearElementLetter(){
