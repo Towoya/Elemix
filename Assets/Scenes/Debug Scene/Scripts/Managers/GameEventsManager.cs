@@ -7,6 +7,7 @@ public class GameEventsManager : MonoBehaviour
     public static GameEventsManager instance {get; private set;}
 
     public CompoundingEvents compoundingEvents;
+    public QuizEvents quizEvents;
 
     private void Awake() {
         if (instance != null){
@@ -16,5 +17,6 @@ public class GameEventsManager : MonoBehaviour
         instance = this;
 
         compoundingEvents = new CompoundingEvents();
+        quizEvents = new QuizEvents();
     }
 }
