@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 5;
     public Vector3 input;
     private Animator animator;
-    public Inventory inventory;
+    public InventoryObject inventory;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -80,12 +80,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnControllerColliderHit(ControllerColliderHit hit)
+    public void OnTriggerEnter(Collider other)
     {
-        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
-        if (item != null)
+        var item = other.GetComponent<Item>();
+        if (item)
         {
-            inventory.AddItem(item);
+            inventory.AddItem(item.item, 1);
+            Destroy(other.gameObject);
         }
     }
 }
