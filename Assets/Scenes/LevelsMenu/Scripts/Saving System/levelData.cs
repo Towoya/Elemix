@@ -15,8 +15,5 @@ public class levelData
         this.levelStars = new int[10];
 
         this.levelAvailability[0] = true;
-
-        // Note: Test
-        this.levelStars[0] = 3;
     }
 }
