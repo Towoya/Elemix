@@ -38,10 +38,9 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
-                    Debug.Log(hit.transform.name);
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
-                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable && playerHeldElement == null) {
+                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
                     pickUpBlock(hit.transform);
                     return;
                 }
@@ -66,11 +65,13 @@ public class MainCompoundingManager : MonoBehaviour
     public void pickUpBlock(Transform elementBlock){
         if (!Input.GetMouseButtonDown(0)) return;
 
-            
         if (elementBlock.parent != null && elementBlock.parent.GetComponent<compoundingSlots>() == null) {
             letGoOfBlock(elementBlock);
             return;
         }
+
+        if (playerHeldElement != null) return;
+
         elementBlock.SetParent(playerTransform);
         elementBlock.localPosition = new Vector3(0, playerHeight + 0.5f, 0);
         playerHeldElement = elementBlock.gameObject;
@@ -78,7 +79,7 @@ public class MainCompoundingManager : MonoBehaviour
 
     void letGoOfBlock(Transform elementBlock){
         elementBlock.SetParent(null);
-        elementBlock.position = new Vector3(elementBlock.position.x, elementBlock.localScale.y / 2, elementBlock.position.z);
+        elementBlock.position = new Vector3(elementBlock.position.x, 0, elementBlock.position.z);
         playerHeldElement = null;
     }
 
