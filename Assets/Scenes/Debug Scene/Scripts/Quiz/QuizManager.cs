@@ -35,10 +35,22 @@ public class QuizManager : MonoBehaviour
             choices = new string[4];
         }
 
-        testQuiz();
+        quizCanvas.SetActive(false);
     }
 
-    void testQuiz(){
+    private void Update() {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100)){
+                if (hit.transform.gameObject != GameObject.Find("Element Container")) return;
+
+                if (!Input.GetMouseButtonDown(0)) return;
+
+                startQuiz();
+            }
+    }
+
+    public void startQuiz(){
         quizCanvas.SetActive(true);
         initializeQuizValues();
     }
