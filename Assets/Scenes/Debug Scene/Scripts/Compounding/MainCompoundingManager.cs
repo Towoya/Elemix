@@ -92,6 +92,7 @@ public class MainCompoundingManager : MonoBehaviour
         }
 
         if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
+            Debug.Log("Test");
             GameEventsManager.instance.compoundingEvents.FormulaCorrect();
         }
     }
