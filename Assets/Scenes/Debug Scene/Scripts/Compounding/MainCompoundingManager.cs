@@ -38,9 +38,10 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
+                    Debug.Log(hit.transform.name);
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
-                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
+                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable && playerHeldElement == null) {
                     pickUpBlock(hit.transform);
                     return;
                 }
@@ -65,6 +66,7 @@ public class MainCompoundingManager : MonoBehaviour
     public void pickUpBlock(Transform elementBlock){
         if (!Input.GetMouseButtonDown(0)) return;
 
+            
         if (elementBlock.parent != null && elementBlock.parent.GetComponent<compoundingSlots>() == null) {
             letGoOfBlock(elementBlock);
             return;
@@ -91,8 +93,8 @@ public class MainCompoundingManager : MonoBehaviour
             compoundElement += slotElementLetter;
         }
 
+            Debug.Log(compoundElement);
         if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
-            Debug.Log("Test");
             GameEventsManager.instance.compoundingEvents.FormulaCorrect();
         }
     }
