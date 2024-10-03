@@ -48,7 +48,12 @@ public class SaveAndLoadManager : MonoBehaviour
 
         for (int i = 0; i < levelData.levelAvailability.Length; i++)
         {
-            PlayerPrefs.SetInt("" + i, levelData.levelAvailability[i] ? 1 : 0);
+            PlayerPrefs.SetInt("levelAvailability" + i, levelData.levelAvailability[i] ? 1 : 0);
+        }
+
+        for (int i = 0; i < levelData.levelStars.Length; i++)
+        {
+            PlayerPrefs.SetInt("levelStars" + i, levelData.levelStars[i]);
         }
     }
 
