@@ -19,9 +19,10 @@ public class QuizManager : MonoBehaviour
     }
 
     [Header("Quiz Variables")]
-    [SerializeField] string question;
-    [SerializeField] string[] choices = new string[4];
-    [SerializeField] string correctAnswer;
+    string question;
+    string[] choices = new string[4];
+    string correctAnswer;
+    public GameObject elementContainer;
     bool incorrectAnswerChosen = false;
     
     [Header("PanelVariables")]
@@ -38,29 +39,32 @@ public class QuizManager : MonoBehaviour
         quizCanvas.SetActive(false);
     }
 
-    private void Update() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100)){
-                if (hit.transform.gameObject != GameObject.Find("Element Container")) return;
-
-                if (!Input.GetMouseButtonDown(0)) return;
-
-                startQuiz();
-            }
-    }
-
-    public void startQuiz(){
+    void startQuiz(GameObject container){
+        elementContainer = container;
         quizCanvas.SetActive(true);
         initializeQuizValues();
     }
 
-    void initializeQuizValues(){
+    public void setQuizValues(string question, string correctAnswer, string[] choices, GameObject container){
+        this.question = question;
+        this.correctAnswer = correctAnswer;
+        this.choices = choices;
+
+        startQuiz(container);
+    }
+
+    public void initializeQuizValues(){
         questionText.text = question;
 
         for (int i = 0; i < 4; i++){
             TextMeshProUGUI choiceText = choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             choiceText.text = choices[i];
+        }
+    }
+
+    void reactivateChoices(){
+        foreach (Button choice in choiceButtons){
+            choice.interactable = true;
         }
     }
 
@@ -74,7 +78,9 @@ public class QuizManager : MonoBehaviour
             return;
         }
 
+        reactivateChoices();
+        GameEventsManager.instance.quizEvents.quizCompleted(elementContainer);
+        elementContainer = null;
         quizCanvas.SetActive(false);
-        GameEventsManager.instance.quizEvents.quizCompleted();
     }
 }

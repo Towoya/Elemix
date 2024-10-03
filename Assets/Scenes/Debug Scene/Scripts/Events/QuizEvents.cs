@@ -1,12 +1,13 @@
 using System;
+using UnityEngine;
 
 public class QuizEvents
 {
-    public event Action onQuizComplete;
+    public event Action<GameObject> onQuizComplete;
 
-    public void quizCompleted(){
+    public void quizCompleted(GameObject container){
         if (onQuizComplete != null)
-            onQuizComplete();
+            onQuizComplete(container);
     }
 
     public event Action onQuizIncorrect;

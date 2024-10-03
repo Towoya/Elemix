@@ -8,6 +8,12 @@ public class elementContainer : MonoBehaviour
     [SerializeField] float containerHeight;
     [SerializeField] float unlockSpeed = 5;
     [SerializeField] bool isContainerOpen;
+
+    [Header("Quiz Variables")]
+    [SerializeField] string question;
+    [SerializeField] string[] choices = new string[4];
+    [SerializeField] string correctAnswer;
+
     private void OnEnable() {
         GameEventsManager.instance.quizEvents.onQuizComplete += unlockContainer;
     }
@@ -17,6 +23,8 @@ public class elementContainer : MonoBehaviour
     }
 
     private void Update() {
+        startQuiz();
+
         if (!isContainerOpen) {
             deactivateElementBlock();
             return;
@@ -31,6 +39,21 @@ public class elementContainer : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y - unlockSpeed * Time.deltaTime, transform.position.z);
     }
 
+    void startQuiz(){
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100)){
+                GameObject selectedGameObject = hit.transform.gameObject;
+                if (selectedGameObject != gameObject) return;
+
+                if (!Input.GetMouseButtonDown(0)) return;
+
+                if (QuizManager.instance.quizCanvas.activeSelf) return;
+
+                QuizManager.instance.setQuizValues(question, correctAnswer, choices, selectedGameObject);
+            }
+    }
+
     void removeChildFromContainer(){
         if (transform.childCount == 0) return;
 
@@ -39,7 +62,8 @@ public class elementContainer : MonoBehaviour
         elementBlock.SetParent(null);
     }
 
-    void unlockContainer(){
+    void unlockContainer(GameObject container){
+        if (gameObject != container) return;
         isContainerOpen = true;
     }
 
