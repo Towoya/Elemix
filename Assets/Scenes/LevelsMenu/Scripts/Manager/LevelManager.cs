@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour, ISaveAndLoad
@@ -25,6 +27,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
     }
 
     private void Update() {
+        if (SceneManager.GetActiveScene().buildIndex != 2) return;
         for (int i = 0; i < levelButtons.Length; i++)
         {
             Image levelImage = levelButtons[i].GetComponent<Image>();
@@ -86,10 +89,12 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     public void saveData(ref levelData data)
     {
-        for (int i = 0; i < levelButtons.Length; i++)
-        {
-            Button levelButton = levelButtons[i].GetComponent<Button>();
-            this.levelAvailability[i] = levelButton.interactable;
+        if (SceneManager.GetActiveScene().buildIndex == 2) {
+            for (int i = 0; i < levelButtons.Length; i++)
+            {
+                Button levelButton = levelButtons[i].GetComponent<Button>();
+                this.levelAvailability[i] = levelButton.interactable;
+            }
         }
 
         data.levelAvailability = this.levelAvailability;
