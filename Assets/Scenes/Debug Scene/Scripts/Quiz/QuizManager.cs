@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] string question;
     [SerializeField] string[] choices = new string[4];
     [SerializeField] string correctAnswer;
+    bool incorrectAnswerChosen = false;
     
     [Header("PanelVariables")]
     public GameObject quizCanvas;
@@ -53,7 +54,10 @@ public class QuizManager : MonoBehaviour
 
     public void isChoiceCorrect(int buttonIndex){
         if (!choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text.Equals(correctAnswer)){
-            // TODO: Reduce Stars and Set Button as Inactive
+            if (!incorrectAnswerChosen){
+                incorrectAnswerChosen = true;
+                GameEventsManager.instance.quizEvents.quizIncorrect();
+            }
             choiceButtons[buttonIndex].interactable = false;
             return;
         }

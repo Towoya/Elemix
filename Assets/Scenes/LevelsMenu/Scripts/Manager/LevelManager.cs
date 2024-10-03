@@ -33,6 +33,10 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         }
     }
 
+    public void setLevelStars(int levelIndex, int numberOfStars){
+        levelStars[levelIndex] = numberOfStars;
+    }
+
     void instantiateLevelButtons(){
         for (int i = 0; i < levelButtons.Length; i++)
         {

@@ -8,4 +8,11 @@ public class QuizEvents
         if (onQuizComplete != null)
             onQuizComplete();
     }
+
+    public event Action onQuizIncorrect;
+
+    public void quizIncorrect(){
+        if (onQuizIncorrect != null)
+            onQuizIncorrect();
+    }
 }
