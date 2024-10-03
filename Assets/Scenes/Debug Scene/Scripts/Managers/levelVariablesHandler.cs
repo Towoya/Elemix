@@ -30,4 +30,8 @@ public class levelVariablesHandler : MonoBehaviour
     void reduceLevelStar(){
         temporaryStarCount--;
     }
+
+    public void updateLevelStats(){
+        LevelManager.instance.setLevelStars(levelIndex, temporaryStarCount);
+    }
 }

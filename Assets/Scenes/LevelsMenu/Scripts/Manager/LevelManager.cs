@@ -38,6 +38,19 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     public void setLevelStars(int levelIndex, int numberOfStars){
         levelStars[levelIndex] = numberOfStars;
+
+        unlockNextLevel(levelIndex);
+    }
+
+    void unlockNextLevel(int currentLevelIndex){
+        int nextLevelIndex = currentLevelIndex + 1;
+
+        if (nextLevelIndex > levelAvailability.Length) {
+            Debug.Log("This is the last level of the game");
+            return;
+        }
+
+        levelAvailability[nextLevelIndex] = true; 
     }
 
     void instantiateLevelButtons(){
