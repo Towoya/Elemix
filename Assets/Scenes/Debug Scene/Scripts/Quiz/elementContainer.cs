@@ -51,6 +51,8 @@ public class elementContainer : MonoBehaviour
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
                 QuizManager.instance.setQuizValues(question, correctAnswer, choices, selectedGameObject);
+
+                Time.timeScale = 0f;
             }
     }
 

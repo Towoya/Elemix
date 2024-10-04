@@ -78,6 +78,8 @@ public class QuizManager : MonoBehaviour
             return;
         }
 
+         Time.timeScale = 1f;
+
         reactivateChoices();
         GameEventsManager.instance.quizEvents.quizCompleted(elementContainer);
         elementContainer = null;
