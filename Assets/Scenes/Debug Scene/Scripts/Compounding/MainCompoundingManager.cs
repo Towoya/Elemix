@@ -22,8 +22,8 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    // [SerializeField] GameObject[] slots;
     [SerializeField] String TargetFormula;
+    [SerializeField] float interactDistance = 5;
 
     private void OnEnable() {
         GameEventsManager.instance.compoundingEvents.onTestFormula += testFormula;
@@ -38,6 +38,8 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
+                if (Vector3.Distance(playerTransform.position, hit.transform.position) > interactDistance) return;
+
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
                 if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
