@@ -22,8 +22,8 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    [SerializeField] GameObject[] slots;
     [SerializeField] String TargetFormula;
+    [SerializeField] float interactDistance = 5;
 
     private void OnEnable() {
         GameEventsManager.instance.compoundingEvents.onTestFormula += testFormula;
@@ -38,6 +38,8 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
+                if (Vector3.Distance(playerTransform.position, hit.transform.position) > interactDistance) return;
+
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
                 if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
@@ -83,20 +85,37 @@ public class MainCompoundingManager : MonoBehaviour
         playerHeldElement = null;
     }
 
-    private void testFormula(){
+    GameObject[] getCompoundingPanelSlots(GameObject compoundingPanel){
+        int slotCount = compoundingPanel.transform.childCount;
+        GameObject[] result = new GameObject[slotCount];
+
+        Debug.Log(compoundingPanel.name);
+        for (int i = 0; i < slotCount; i++){
+            Debug.Log(compoundingPanel.transform.GetChild(i).name);
+            result[i] = compoundingPanel.transform.GetChild(i).gameObject;
+        }
+
+        return result;
+    }
+
+    private void testFormula(GameObject door, GameObject button, GameObject compoundingPanel){
         String compoundElement = "";
+
+        GameObject[] slots = getCompoundingPanelSlots(compoundingPanel);
+
         foreach (GameObject slot in slots)
         {
-            char slotElementLetter = slot.GetComponent<compoundingSlots>().elementLetter;
+            string slotElementLetter = slot.GetComponent<compoundingSlots>().elementLetter;
 
-            if (slotElementLetter == ' ') return; // TODO: Notify player to fill up all slots
+            if (slotElementLetter.Equals(" ")) return; // TODO: Notify player to fill up all slots
 
             compoundElement += slotElementLetter;
         }
 
-            Debug.Log(compoundElement);
+        Debug.Log(compoundElement);
         if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
-            GameEventsManager.instance.compoundingEvents.FormulaCorrect();
+            GameEventsManager.instance.compoundingEvents.buttonClosed(button);
+            GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
         }
     }
 }
