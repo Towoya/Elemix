@@ -22,7 +22,7 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    [SerializeField] GameObject[] slots;
+    // [SerializeField] GameObject[] slots;
     [SerializeField] String TargetFormula;
 
     private void OnEnable() {
@@ -83,8 +83,24 @@ public class MainCompoundingManager : MonoBehaviour
         playerHeldElement = null;
     }
 
-    private void testFormula(){
+    GameObject[] getCompoundingPanelSlots(GameObject compoundingPanel){
+        int slotCount = compoundingPanel.transform.childCount;
+        GameObject[] result = new GameObject[slotCount];
+
+        Debug.Log(compoundingPanel.name);
+        for (int i = 0; i < slotCount; i++){
+            Debug.Log(compoundingPanel.transform.GetChild(i).name);
+            result[i] = compoundingPanel.transform.GetChild(i).gameObject;
+        }
+
+        return result;
+    }
+
+    private void testFormula(GameObject door, GameObject button, GameObject compoundingPanel){
         String compoundElement = "";
+
+        GameObject[] slots = getCompoundingPanelSlots(compoundingPanel);
+
         foreach (GameObject slot in slots)
         {
             char slotElementLetter = slot.GetComponent<compoundingSlots>().elementLetter;
@@ -94,9 +110,10 @@ public class MainCompoundingManager : MonoBehaviour
             compoundElement += slotElementLetter;
         }
 
-            Debug.Log(compoundElement);
+        Debug.Log(compoundElement);
         if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
-            GameEventsManager.instance.compoundingEvents.FormulaCorrect();
+            GameEventsManager.instance.compoundingEvents.buttonClosed(button);
+            GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
         }
     }
 }
