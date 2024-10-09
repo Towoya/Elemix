@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour, ISaveAndLoad
 {
+    int numberOfLevels = 50;
     bool[] levelAvailability;
     int[] levelStars;
+    int[] levelScore;
     [SerializeField] GameObject[] levelButtons;
     [SerializeField] GameObject[] levelStarContainers;
     [SerializeField] Sprite[] flaskSprites = new Sprite[2]; // 0 - no star
@@ -24,6 +26,10 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
             instance = this;
             DontDestroyOnLoad(instance);
         }
+
+        levelAvailability = new bool[numberOfLevels];
+        levelScore = new int[numberOfLevels];
+        levelStars = new int[numberOfLevels];
     }
 
     private void Update() {
@@ -37,9 +43,15 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
     }
 
     public void setLevelStars(int levelIndex, int numberOfStars){
-        levelStars[levelIndex] = numberOfStars;
+        if (levelStars[levelIndex] < numberOfStars)
+            levelStars[levelIndex] = numberOfStars;
 
         unlockNextLevel(levelIndex);
+    }
+
+    public void setLevelScore(int levelIndex, int score){
+        if (levelScore[levelIndex] < score)
+            levelScore[levelIndex] = score;
     }
 
     void unlockNextLevel(int currentLevelIndex){
@@ -79,12 +91,15 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         }
     }
 
+    void instantiateLevelScore(){
+        // TODO: Set level score output
+    }
+
     public void loadData(levelData data)
     {
         this.levelAvailability = data.levelAvailability;
 
-        for (int i = 0; i < levelButtons.Length; i++)
-        {
+        for (int i = 0; i < levelButtons.Length; i++){
             if (!PlayerPrefs.HasKey("levelAvailability" + i)) break;
             this.levelAvailability[i] = PlayerPrefs.GetInt("levelAvailability" + i) == 1 ? true : false;
         }
@@ -96,8 +111,18 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
             this.levelStars[i] = PlayerPrefs.GetInt("levelStars" + i);
         }
 
+        this.levelScore = data.levelScore;
+
+        for (int i = 0; i < levelScore.Length; i++){
+            if (!PlayerPrefs.HasKey("levelScore" + i)) break;
+            this.levelScore[i] = PlayerPrefs.GetInt("levelScore" + i);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex != 2) return;
+
         instantiateLevelButtons();
         instantiateLevelStars();
+        instantiateLevelScore();
     }
 
     public void saveData(ref levelData data)
@@ -113,5 +138,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         data.levelAvailability = this.levelAvailability;
 
         data.levelStars = this.levelStars;
+
+        data.levelScore = this.levelScore;
     }
 }

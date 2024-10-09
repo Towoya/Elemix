@@ -42,19 +42,16 @@ public class SaveAndLoadManager : MonoBehaviour
 
     public void saveGame(){
         foreach (ISaveAndLoad saveAndLoadObject in saveAndLoadObjects)
-        {
             saveAndLoadObject.saveData(ref levelData);
-        }
 
         for (int i = 0; i < levelData.levelAvailability.Length; i++)
-        {
             PlayerPrefs.SetInt("levelAvailability" + i, levelData.levelAvailability[i] ? 1 : 0);
-        }
 
         for (int i = 0; i < levelData.levelStars.Length; i++)
-        {
             PlayerPrefs.SetInt("levelStars" + i, levelData.levelStars[i]);
-        }
+
+        for (int i = 0; i < levelData.levelScore.Length; i++)
+            PlayerPrefs.SetInt("levelScore" + i, levelData.levelScore[i]);
     }
 
     private void OnApplicationQuit() {
