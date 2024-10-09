@@ -80,6 +80,8 @@ public class QuizManager : MonoBehaviour
             choiceButtons[buttonIndex].interactable = false;
             return;
         }
+        
+        Time.timeScale = 1f;
 
         if (!hasCurrentQuizFailed) GameEventsManager.instance.quizEvents.quizCorrect();
 
