@@ -105,6 +105,8 @@ public class MainCompoundingManager : MonoBehaviour
 
         foreach (GameObject slot in slots)
         {
+            if (slot.GetComponent<compoundingSlots>() == null) continue;
+            
             string slotElementLetter = slot.GetComponent<compoundingSlots>().elementLetter;
 
             if (slotElementLetter.Equals(" ")) return; // TODO: Notify player to fill up all slots
