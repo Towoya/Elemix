@@ -23,7 +23,8 @@ public class QuizManager : MonoBehaviour
     string[] choices = new string[4];
     string correctAnswer;
     public GameObject elementContainer;
-    bool incorrectAnswerChosen = false;
+    bool hasAnyOfTheQuizzesFailed = false;
+    bool hasCurrentQuizFailed = false;
     
     [Header("PanelVariables")]
     public GameObject quizCanvas;
@@ -63,6 +64,7 @@ public class QuizManager : MonoBehaviour
     }
 
     void reactivateChoices(){
+        hasCurrentQuizFailed = false;
         foreach (Button choice in choiceButtons){
             choice.interactable = true;
         }
@@ -70,13 +72,16 @@ public class QuizManager : MonoBehaviour
 
     public void isChoiceCorrect(int buttonIndex){
         if (!choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text.Equals(correctAnswer)){
-            if (!incorrectAnswerChosen){
-                incorrectAnswerChosen = true;
+            if (!hasAnyOfTheQuizzesFailed){
+                hasAnyOfTheQuizzesFailed = true;
+                hasCurrentQuizFailed = true;
                 GameEventsManager.instance.quizEvents.quizIncorrect();
             }
             choiceButtons[buttonIndex].interactable = false;
             return;
         }
+
+        if (!hasCurrentQuizFailed) GameEventsManager.instance.quizEvents.quizCorrect();
 
         reactivateChoices();
         GameEventsManager.instance.quizEvents.quizCompleted(elementContainer);
