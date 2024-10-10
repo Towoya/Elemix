@@ -22,8 +22,9 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    [SerializeField] String TargetFormula;
+    [SerializeField] string TargetFormula;
     [SerializeField] float interactDistance = 5;
+    bool firstTryFormula = true;
 
     private void OnEnable() {
         GameEventsManager.instance.compoundingEvents.onTestFormula += testFormula;
@@ -125,9 +126,16 @@ public class MainCompoundingManager : MonoBehaviour
         }
 
         Debug.Log(compoundElement);
-        if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
-            GameEventsManager.instance.compoundingEvents.buttonClosed(button);
-            GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
+
+        bool formulaIsEqualToTarget = TargetFormula.ToUpper().Equals(compoundElement.ToUpper());
+
+        if (!formulaIsEqualToTarget){
+            if (!firstTryFormula) return;
+            firstTryFormula = false;
+            GameEventsManager.instance.compoundingEvents.formulaIncorrect();
+            return;
         }
+        GameEventsManager.instance.compoundingEvents.buttonClosed(button);
+        GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
     }
 }
