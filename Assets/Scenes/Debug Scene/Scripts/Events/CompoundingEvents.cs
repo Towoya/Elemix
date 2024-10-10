@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class CompoundingEvents
 {
-    public event Action<GameObject, GameObject, GameObject> onTestFormula;
+    public event Action<GameObject, GameObject, GameObject, string> onTestFormula;
 
-    public void TestedFormula(GameObject door, GameObject button, GameObject compoundingPanel){
+    public void TestedFormula(GameObject door, GameObject button, GameObject compoundingPanel, string targetFormula){
         if (onTestFormula != null)
-            onTestFormula(door, button, compoundingPanel);
+            onTestFormula(door, button, compoundingPanel, targetFormula);
     }
 
     public event Action<GameObject> onFormulaCorrect;
