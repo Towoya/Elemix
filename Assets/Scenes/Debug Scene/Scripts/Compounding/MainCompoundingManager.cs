@@ -22,7 +22,6 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    [SerializeField] string TargetFormula;
     [SerializeField] float interactDistance = 5;
     bool firstTryFormula = true;
 
@@ -109,7 +108,7 @@ public class MainCompoundingManager : MonoBehaviour
         return result;
     }
 
-    private void testFormula(GameObject door, GameObject button, GameObject compoundingPanel){
+    private void testFormula(GameObject door, GameObject button, GameObject compoundingPanel, string TargetFormula){
         String compoundElement = "";
 
         GameObject[] slots = getCompoundingPanelSlots(compoundingPanel);

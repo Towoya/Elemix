@@ -5,6 +5,7 @@ public class submitFormula : MonoBehaviour
 {
     [SerializeField] GameObject doorTarget;
     [SerializeField] GameObject compoundingPanelTarget;
+    [SerializeField] string TargetFormula;
 
     bool interactable = true;
 
@@ -20,7 +21,7 @@ public class submitFormula : MonoBehaviour
         if (!interactable) return;
         setDoorToClosest();
         setCompoundingPanelToClosest();
-        GameEventsManager.instance.compoundingEvents.TestedFormula(doorTarget, gameObject, compoundingPanelTarget);
+        GameEventsManager.instance.compoundingEvents.TestedFormula(doorTarget, gameObject, compoundingPanelTarget, TargetFormula);
     }
 
     void closeButton(GameObject button){
