@@ -6,12 +6,15 @@ public class compoundingSlots : MonoBehaviour
     [SerializeField] bool interactable;
 
     private void Update() {
-        if (gameObject.transform.childCount < 1) {
+        bool thisSlotHasChild = gameObject.transform.childCount < 1;
+
+        if (thisSlotHasChild) {
             clearElementLetter();
             return;
         }
 
         GameObject elementBlock = gameObject.transform.GetChild(0).gameObject;
+
         setElementLetter(elementBlock);
     }
 

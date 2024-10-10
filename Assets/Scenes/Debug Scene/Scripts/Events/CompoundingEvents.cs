@@ -17,6 +17,13 @@ public class CompoundingEvents
             onFormulaCorrect(door);
     }
 
+    public event Action onFormulaIncorrect;
+
+    public void formulaIncorrect(){
+        if (onFormulaIncorrect != null)
+            onFormulaIncorrect();
+    }
+
     public event Action<GameObject> onCloseButton;
 
     public void buttonClosed(GameObject button){

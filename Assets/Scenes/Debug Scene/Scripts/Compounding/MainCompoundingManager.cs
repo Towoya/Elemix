@@ -22,8 +22,9 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    [SerializeField] String TargetFormula;
+    [SerializeField] string TargetFormula;
     [SerializeField] float interactDistance = 5;
+    bool firstTryFormula = true;
 
     private void OnEnable() {
         GameEventsManager.instance.compoundingEvents.onTestFormula += testFormula;
@@ -38,25 +39,36 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
-                if (Vector3.Distance(playerTransform.position, hit.transform.position) > interactDistance) return;
+                if (!Input.GetMouseButtonDown(0)) return;
 
-                if (QuizManager.instance.quizCanvas.activeSelf) return;
+                Transform objectClicked = hit.transform;
 
-                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
-                    pickUpBlock(hit.transform);
+                float distanceBetweenObjectClickedAndPlayer = Vector3.Distance(playerTransform.position, objectClicked.position);
+                if (distanceBetweenObjectClickedAndPlayer > interactDistance) return;
+
+                bool isQuizPanelActive = QuizManager.instance.quizCanvas.activeSelf;
+                if (isQuizPanelActive) return;
+
+                bool doesObjectHaveElementBlockScript = objectClicked.GetComponent<elementBlock>() != null;
+                bool isObjectInteractable = false;
+
+                if (doesObjectHaveElementBlockScript) isObjectInteractable = objectClicked.GetComponent<elementBlock>().interactable;
+
+                if (doesObjectHaveElementBlockScript && isObjectInteractable) {
+                    pickUpBlock(objectClicked);
                     return;
                 }
 
-                if (hit.transform.GetComponent<compoundingSlots>() != null && playerHeldElement != null){
-                    insertBlockToSlot(hit.transform);
+                bool doesObjectHaveCompoundingSlotScript = objectClicked.GetComponent<compoundingSlots>() != null;
+                bool isPlayerHoldingAnElement = playerHeldElement != null;
+
+                if (doesObjectHaveCompoundingSlotScript && isPlayerHoldingAnElement){
+                    insertBlockToSlot(objectClicked);
                 }
             }
     }
 
-    private void insertBlockToSlot(Transform slot)
-    {
-        if (!Input.GetMouseButtonDown(0)) return;
-
+    private void insertBlockToSlot(Transform slot){
         Transform ElementTransform = playerHeldElement.transform;
         ElementTransform.SetParent(slot.transform);
         ElementTransform.localPosition = new Vector3(0, 0.5f, 0);
@@ -65,7 +77,6 @@ public class MainCompoundingManager : MonoBehaviour
     }
 
     public void pickUpBlock(Transform elementBlock){
-        if (!Input.GetMouseButtonDown(0)) return;
 
         if (elementBlock.parent != null && elementBlock.parent.GetComponent<compoundingSlots>() == null) {
             letGoOfBlock(elementBlock);
@@ -115,9 +126,16 @@ public class MainCompoundingManager : MonoBehaviour
         }
 
         Debug.Log(compoundElement);
-        if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
-            GameEventsManager.instance.compoundingEvents.buttonClosed(button);
-            GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
+
+        bool formulaIsEqualToTarget = TargetFormula.ToUpper().Equals(compoundElement.ToUpper());
+
+        if (!formulaIsEqualToTarget){
+            if (!firstTryFormula) return;
+            firstTryFormula = false;
+            GameEventsManager.instance.compoundingEvents.formulaIncorrect();
+            return;
         }
+        GameEventsManager.instance.compoundingEvents.buttonClosed(button);
+        GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
     }
 }

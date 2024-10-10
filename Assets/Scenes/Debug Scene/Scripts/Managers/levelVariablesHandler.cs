@@ -20,11 +20,13 @@ public class levelVariablesHandler : MonoBehaviour
 
     private void OnEnable() {
         GameEventsManager.instance.quizEvents.onQuizIncorrect += reduceLevelStar;
+        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect += reduceLevelStar;
         GameEventsManager.instance.quizEvents.onQuizCorrect += incrementLevelScore;
     }
     
     private void OnDisable() {
         GameEventsManager.instance.quizEvents.onQuizIncorrect -= reduceLevelStar;
+        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect -= reduceLevelStar;
         GameEventsManager.instance.quizEvents.onQuizCorrect -= incrementLevelScore;
     }
 
