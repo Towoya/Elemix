@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class submitFormula : MonoBehaviour
@@ -32,40 +33,35 @@ public class submitFormula : MonoBehaviour
 
         GameObject[] compoundingPanels = GameObject.FindGameObjectsWithTag("CompoundingPanel");
 
-        GameObject closestCompoundingPanel = null;
-
-        foreach (GameObject compoundingPanel in compoundingPanels){
-            if (closestCompoundingPanel == null){
-                closestCompoundingPanel = compoundingPanel;
-                continue;
-            }
-
-            if (Vector3.Distance(transform.position, compoundingPanel.transform.position) > Vector3.Distance(transform.position, closestCompoundingPanel.transform.position)) continue;
-
-            closestCompoundingPanel = compoundingPanel;
-        }
-
-        this.compoundingPanelTarget = closestCompoundingPanel;
+        this.compoundingPanelTarget = findClosestToButton(compoundingPanels);
     }
 
     void setDoorToClosest(){
         if (this.doorTarget != null) return;
 
-        DoorParent[] doors = Object.FindObjectsOfType<DoorParent>();
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
 
-        GameObject closestDoorObject = null;
+        this.doorTarget = findClosestToButton(doors);
+    }
 
-        foreach (DoorParent door in doors){
-            if (closestDoorObject == null) {
-                closestDoorObject = door.gameObject;
+    GameObject findClosestToButton(GameObject[] objectsToPickFrom){
+        GameObject result = null;
+        
+        foreach (GameObject item in objectsToPickFrom){
+            if (result == null) {
+                result = item;
                 continue;
             }
 
-            if (Vector3.Distance(transform.position, door.transform.position) > Vector3.Distance(transform.position, closestDoorObject.transform.position)) continue;
+            Transform objectTransform = item.transform;
+            float distanceBetweenButtonAndObject =  Vector3.Distance(transform.position, objectTransform.position); 
+            float distanceBetweenButtonAndCurrentClosestObject = Vector3.Distance(transform.position, result.transform.position);
 
-            closestDoorObject = door.gameObject;
+            if (distanceBetweenButtonAndObject > distanceBetweenButtonAndCurrentClosestObject) continue;
+
+            result = item;
         }
 
-        this.doorTarget = closestDoorObject;
+        return result;
     }
 }

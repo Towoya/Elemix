@@ -38,25 +38,36 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
-                if (Vector3.Distance(playerTransform.position, hit.transform.position) > interactDistance) return;
+                if (!Input.GetMouseButtonDown(0)) return;
 
-                if (QuizManager.instance.quizCanvas.activeSelf) return;
+                Transform objectClicked = hit.transform;
 
-                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
-                    pickUpBlock(hit.transform);
+                float distanceBetweenObjectClickedAndPlayer = Vector3.Distance(playerTransform.position, objectClicked.position);
+                if (distanceBetweenObjectClickedAndPlayer > interactDistance) return;
+
+                bool isQuizPanelActive = QuizManager.instance.quizCanvas.activeSelf;
+                if (isQuizPanelActive) return;
+
+                bool doesObjectHaveElementBlockScript = objectClicked.GetComponent<elementBlock>() != null;
+                bool isObjectInteractable = false;
+
+                if (doesObjectHaveElementBlockScript) isObjectInteractable = objectClicked.GetComponent<elementBlock>().interactable;
+
+                if (doesObjectHaveElementBlockScript && isObjectInteractable) {
+                    pickUpBlock(objectClicked);
                     return;
                 }
 
-                if (hit.transform.GetComponent<compoundingSlots>() != null && playerHeldElement != null){
-                    insertBlockToSlot(hit.transform);
+                bool doesObjectHaveCompoundingSlotScript = objectClicked.GetComponent<compoundingSlots>() != null;
+                bool isPlayerHoldingAnElement = playerHeldElement != null;
+
+                if (doesObjectHaveCompoundingSlotScript && isPlayerHoldingAnElement){
+                    insertBlockToSlot(objectClicked);
                 }
             }
     }
 
-    private void insertBlockToSlot(Transform slot)
-    {
-        if (!Input.GetMouseButtonDown(0)) return;
-
+    private void insertBlockToSlot(Transform slot){
         Transform ElementTransform = playerHeldElement.transform;
         ElementTransform.SetParent(slot.transform);
         ElementTransform.localPosition = new Vector3(0, 0.5f, 0);
@@ -65,7 +76,6 @@ public class MainCompoundingManager : MonoBehaviour
     }
 
     public void pickUpBlock(Transform elementBlock){
-        if (!Input.GetMouseButtonDown(0)) return;
 
         if (elementBlock.parent != null && elementBlock.parent.GetComponent<compoundingSlots>() == null) {
             letGoOfBlock(elementBlock);
