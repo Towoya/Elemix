@@ -22,11 +22,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("isMoving", input != Vector3.zero);
-        animator.SetBool("isGrounded", isOnGround);
         GatherInput();
         Look();
-        Jump();
+        animator.SetBool("isMoving", input != Vector3.zero);
+        animator.SetBool("isGrounded", isOnGround);
     }
 
     void FixedUpdate()
@@ -56,20 +55,6 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         rb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
-    }
-
-    void Jump()
-    {
-        if (!Input.GetKeyDown(KeyCode.Space)) {
-            animator.SetBool("is_in_air", false);
-            return;
-        }
-
-        if (!isOnGround) return;
-
-        animator.SetBool("is_in_air", true);
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        isOnGround = false;
     }
 
     private void OnCollisionEnter(Collision collision)
