@@ -19,7 +19,7 @@ public class DoorParent : MonoBehaviour
             openingAnimation(newYPosition);
         }
 
-        if (transform.position.y <= -4f)
+        if (transform.position.y <= -0.995f)
             Destroy(gameObject);
     }
 
