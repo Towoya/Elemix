@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,8 +14,17 @@ public class Grid : MonoBehaviour
 
     float nodeDiameter;
     int gridSizeX, gridSizeY;
+    internal List<Node> path;
 
     void Start()
+    {
+        //nodeDiameter = nodeRadius * 2;
+        //gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
+        //gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+        //CreateGrid();
+    }
+
+    void Awake()
     {
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
@@ -33,7 +43,7 @@ public class Grid : MonoBehaviour
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-                grid[x, y] = new Node(walkable, worldPoint);
+                grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
         }
     }
@@ -41,7 +51,7 @@ public class Grid : MonoBehaviour
     public Node NodeFromWorldPoint(Vector3 worldPosition)
     {
         float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-        float percentY = (worldPosition.y + gridWorldSize.y / 2) / gridWorldSize.y;
+        float percentY = (worldPosition.z + gridWorldSize.y / 2) / gridWorldSize.y;
 
         percentX = Mathf.Clamp01(percentX);
         percentY = Mathf.Clamp01(percentY);
@@ -69,4 +79,9 @@ public class Grid : MonoBehaviour
             }
         }
     }
+    internal IEnumerable<Node> GetNeighbours(Node node)
+    {
+        throw new NotImplementedException();
+    }
+
 }
