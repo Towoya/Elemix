@@ -5,59 +5,53 @@ using UnityEngine.EventSystems;
 
 public class Selectable : MonoBehaviour
 {
-    public Material highlightMaterial;
-    public Material selectionMaterial;
+    [Header("Materials")]
+    public Material highlightMaterial;  // Assign the highlight material in the Inspector
+    public Material selectionMaterial;  // Assign the selection material in the Inspector
 
-    private Material originalMaterial;
-    private Transform highlight;
-    private Transform selection;
-    private RaycastHit raycastHit;
-    
-    void Update()
+    private Material originalMaterial;  // To store the original material of the object
+    private MeshRenderer meshRenderer;  // Cache the MeshRenderer component
+    private bool isSelected = false;    // Flag to track if the object is selected
+
+    void Start()
     {
-        if (highlight !=null)
-        {
-            highlight.GetComponent<MeshRenderer>().material = originalMaterial;
-            highlight = null;
-        }
+        // Cache the MeshRenderer and store the original material
+        meshRenderer = GetComponent<MeshRenderer>();
+        originalMaterial = meshRenderer.material;
+    }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
+    void OnMouseEnter()
+    {
+        if (!isSelected)
         {
-            highlight = raycastHit.transform;
-            if (highlight.CompareTag("Selectable") && highlight !=selection)
-            {
-                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterial)
-                {
-                    originalMaterial = highlight.GetComponent<MeshRenderer>().material;
-                    highlight.GetComponent<MeshRenderer>().material = highlightMaterial;
-                }
-            }
-            else
-            {
-                highlight = null;
-            }
+            // Change the material to the highlight material when mouse hovers over
+            meshRenderer.material = highlightMaterial;
         }
+    }
 
-        if (Input.GetKey(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
+    void OnMouseExit()
+    {
+        if (!isSelected)
         {
-            if (selection != null)
-            {
-                selection.GetComponent<MeshRenderer>().material = originalMaterial;
-                selection = null;
-            }
-            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
-            {
-                selection = raycastHit.transform;
-                if (selection.CompareTag("Selectable"))
-                {
-                    selection.GetComponent<MeshRenderer>().material = selectionMaterial;
-                }
-                else
-                {
-                    selection = null;
-                }
-            }
+            // Revert back to the original material when the mouse leaves
+            meshRenderer.material = originalMaterial;
+        }
+    }
+
+    void OnMouseDown()
+    {
+        // When the object is clicked, set the selection material
+        if (!isSelected)
+        {
+            meshRenderer.material = selectionMaterial;
+            isSelected = true;
+        }
+        else
+        {
+            // If already selected, revert to original material and deselect
+            meshRenderer.material = originalMaterial;
+            isSelected = false;
         }
     }
 }
+
