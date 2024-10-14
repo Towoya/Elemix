@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 input;
     private Animator animator;
     public InventoryObject inventory;
+    public bool canMove = true;
+   
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) return;
+        
         GatherInput();
         Look();
         animator.SetBool("isMoving", input != Vector3.zero);
