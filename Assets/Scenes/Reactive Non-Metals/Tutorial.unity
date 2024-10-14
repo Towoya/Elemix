@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 250219041}
   m_Layer: 0
   m_Name: Submit
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -682,9 +682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb978b11cb1db3841bf60d3bac5677cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorTarget: {fileID: 2094217047}
-  compoundingPanelTarget: {fileID: 2123919447}
-  TargetFormula: HHO
+  doorTarget: {fileID: 0}
+  compoundingPanelTarget: {fileID: 0}
+  TargetFormula: HOH
 --- !u!1 &255276329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,6 +1595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Element Container
       objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
       value: What is the Symbol of Hydrogen?
@@ -1625,7 +1629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823556882264193128, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 8823556882264193128, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2139,8 +2143,8 @@ Transform:
   m_GameObject: {fileID: 679815641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.8621, y: 0, z: 35.9}
-  m_LocalScale: {x: 2.3729756, y: 1, z: 2.7146902}
+  m_LocalPosition: {x: 11.8365, y: 0, z: 35.9}
+  m_LocalScale: {x: 2.3781962, y: 1, z: 2.7146902}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2013117877}
@@ -4067,7 +4071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.97
+      value: 15.41
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4075,7 +4079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4802,6 +4806,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.006991936, y: 0.13586716, z: 0.04090513}
   m_Center: {x: 0.046505775, y: -0.0012344276, z: 0.039160628}
+--- !u!1 &2086221471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086221473}
+  - component: {fileID: 2086221472}
+  m_Layer: 0
+  m_Name: Selection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2086221472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086221471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4985be9b43969b48bc461eb3aa1cbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: 9c9bfa3ddd9678541808058ff9be55cc, type: 2}
+  selectionMaterial: {fileID: 2100000, guid: 5639e1322c36cf54da0508fad76a5a40, type: 2}
+--- !u!4 &2086221473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086221471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.432379, y: 3.5452414, z: -29.407553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088427544
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,11 +4928,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088427544}
   m_CullTransparentMesh: 1
---- !u!1 &2094217047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
-  m_PrefabInstance: {fileID: 1781685460}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104991259
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,3 +5160,4 @@ SceneRoots:
   - {fileID: 1852039453}
   - {fileID: 482375931}
   - {fileID: 915723470}
+  - {fileID: 2086221473}
