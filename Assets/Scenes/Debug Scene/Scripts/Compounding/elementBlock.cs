@@ -5,5 +5,5 @@ using UnityEngine;
 public class elementBlock : MonoBehaviour
 {
     public bool interactable = true;
-    public char elementLetter;
+    public string elementLetter;
 }

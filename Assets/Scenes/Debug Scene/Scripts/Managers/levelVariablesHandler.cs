@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class levelVariablesHandler : MonoBehaviour
@@ -8,6 +6,7 @@ public class levelVariablesHandler : MonoBehaviour
                                         // example: current level is 3. levelIndex should be 2.
 
     int temporaryStarCount = 3;
+    int temporaryLevelScore = 0;
 
     public static levelVariablesHandler instance { get; private set; }
 
@@ -21,17 +20,34 @@ public class levelVariablesHandler : MonoBehaviour
 
     private void OnEnable() {
         GameEventsManager.instance.quizEvents.onQuizIncorrect += reduceLevelStar;
+        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect += reduceLevelStar;
+        GameEventsManager.instance.quizEvents.onQuizCorrect += incrementLevelScore;
     }
     
     private void OnDisable() {
-        GameEventsManager.instance.quizEvents.onQuizIncorrect += reduceLevelStar;
+        GameEventsManager.instance.quizEvents.onQuizIncorrect -= reduceLevelStar;
+        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect -= reduceLevelStar;
+        GameEventsManager.instance.quizEvents.onQuizCorrect -= incrementLevelScore;
+    }
+
+    private void Update() {
+        if (temporaryLevelScore > 10){
+            Debug.LogError("Score has exceeded the maximum amount per level");
+            temporaryLevelScore = 10;
+        }
     }
 
     void reduceLevelStar(){
         temporaryStarCount--;
     }
 
+    void incrementLevelScore(){
+        Debug.Log("Score Incremented");
+        temporaryLevelScore++;
+    }
+
     public void updateLevelStats(){
+        LevelManager.instance.setLevelScore(levelIndex, temporaryLevelScore);
         LevelManager.instance.setLevelStars(levelIndex, temporaryStarCount);
     }
 }

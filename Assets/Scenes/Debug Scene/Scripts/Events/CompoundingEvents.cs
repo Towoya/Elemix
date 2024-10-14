@@ -1,18 +1,33 @@
 using System;
+using UnityEngine;
 
 public class CompoundingEvents
 {
-    public event Action onTestFormula;
+    public event Action<GameObject, GameObject, GameObject, string> onTestFormula;
 
-    public void TestedFormula(){
+    public void TestedFormula(GameObject door, GameObject button, GameObject compoundingPanel, string targetFormula){
         if (onTestFormula != null)
-            onTestFormula();
+            onTestFormula(door, button, compoundingPanel, targetFormula);
     }
 
-    public event Action onFormulaCorrect;
+    public event Action<GameObject> onFormulaCorrect;
 
-    public void FormulaCorrect(){
+    public void FormulaCorrect(GameObject door){
         if (onFormulaCorrect != null)
-            onFormulaCorrect();
+            onFormulaCorrect(door);
+    }
+
+    public event Action onFormulaIncorrect;
+
+    public void formulaIncorrect(){
+        if (onFormulaIncorrect != null)
+            onFormulaIncorrect();
+    }
+
+    public event Action<GameObject> onCloseButton;
+
+    public void buttonClosed(GameObject button){
+        if (onCloseButton != null)
+            onCloseButton(button);
     }
 }

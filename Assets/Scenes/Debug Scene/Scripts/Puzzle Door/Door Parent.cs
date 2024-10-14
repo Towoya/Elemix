@@ -24,7 +24,8 @@ public class DoorParent : MonoBehaviour
     }
 
     // Door Opening
-    void formulaSolved(){
+    void formulaSolved(GameObject door){
+        if (gameObject != door) return;
         doorOpened = true;
     }
 

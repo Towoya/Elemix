@@ -22,8 +22,8 @@ public class MainCompoundingManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     [Header("Compounding Variables")]
-    [SerializeField] GameObject[] slots;
-    [SerializeField] String TargetFormula;
+    [SerializeField] float interactDistance = 5;
+    bool firstTryFormula = true;
 
     private void OnEnable() {
         GameEventsManager.instance.compoundingEvents.onTestFormula += testFormula;
@@ -38,23 +38,36 @@ public class MainCompoundingManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
-                if (QuizManager.instance.quizCanvas.activeSelf) return;
+                if (!Input.GetMouseButtonDown(0)) return;
 
-                if (hit.transform.GetComponent<elementBlock>() != null && hit.transform.GetComponent<elementBlock>().interactable) {
-                    pickUpBlock(hit.transform);
+                Transform objectClicked = hit.transform;
+
+                float distanceBetweenObjectClickedAndPlayer = Vector3.Distance(playerTransform.position, objectClicked.position);
+                if (distanceBetweenObjectClickedAndPlayer > interactDistance) return;
+
+                bool isQuizPanelActive = QuizManager.instance.quizCanvas.activeSelf;
+                if (isQuizPanelActive) return;
+
+                bool doesObjectHaveElementBlockScript = objectClicked.GetComponent<elementBlock>() != null;
+                bool isObjectInteractable = false;
+
+                if (doesObjectHaveElementBlockScript) isObjectInteractable = objectClicked.GetComponent<elementBlock>().interactable;
+
+                if (doesObjectHaveElementBlockScript && isObjectInteractable) {
+                    pickUpBlock(objectClicked);
                     return;
                 }
 
-                if (hit.transform.GetComponent<compoundingSlots>() != null && playerHeldElement != null){
-                    insertBlockToSlot(hit.transform);
+                bool doesObjectHaveCompoundingSlotScript = objectClicked.GetComponent<compoundingSlots>() != null;
+                bool isPlayerHoldingAnElement = playerHeldElement != null;
+
+                if (doesObjectHaveCompoundingSlotScript && isPlayerHoldingAnElement){
+                    insertBlockToSlot(objectClicked);
                 }
             }
     }
 
-    private void insertBlockToSlot(Transform slot)
-    {
-        if (!Input.GetMouseButtonDown(0)) return;
-
+    private void insertBlockToSlot(Transform slot){
         Transform ElementTransform = playerHeldElement.transform;
         ElementTransform.SetParent(slot.transform);
         ElementTransform.localPosition = new Vector3(0, 0.5f, 0);
@@ -63,12 +76,14 @@ public class MainCompoundingManager : MonoBehaviour
     }
 
     public void pickUpBlock(Transform elementBlock){
-        if (!Input.GetMouseButtonDown(0)) return;
 
         if (elementBlock.parent != null && elementBlock.parent.GetComponent<compoundingSlots>() == null) {
             letGoOfBlock(elementBlock);
             return;
         }
+
+        if (playerHeldElement != null) return;
+
         elementBlock.SetParent(playerTransform);
         elementBlock.localPosition = new Vector3(0, playerHeight + 0.5f, 0);
         playerHeldElement = elementBlock.gameObject;
@@ -76,23 +91,50 @@ public class MainCompoundingManager : MonoBehaviour
 
     void letGoOfBlock(Transform elementBlock){
         elementBlock.SetParent(null);
-        elementBlock.position = new Vector3(elementBlock.position.x, elementBlock.localScale.y / 2, elementBlock.position.z);
+        elementBlock.position = new Vector3(elementBlock.position.x, 0, elementBlock.position.z);
         playerHeldElement = null;
     }
 
-    private void testFormula(){
+    GameObject[] getCompoundingPanelSlots(GameObject compoundingPanel){
+        int slotCount = compoundingPanel.transform.childCount;
+        GameObject[] result = new GameObject[slotCount];
+
+        Debug.Log(compoundingPanel.name);
+        for (int i = 0; i < slotCount; i++){
+            Debug.Log(compoundingPanel.transform.GetChild(i).name);
+            result[i] = compoundingPanel.transform.GetChild(i).gameObject;
+        }
+
+        return result;
+    }
+
+    private void testFormula(GameObject door, GameObject button, GameObject compoundingPanel, string TargetFormula){
         String compoundElement = "";
+
+        GameObject[] slots = getCompoundingPanelSlots(compoundingPanel);
+
         foreach (GameObject slot in slots)
         {
-            char slotElementLetter = slot.GetComponent<compoundingSlots>().elementLetter;
+            if (slot.GetComponent<compoundingSlots>() == null) continue;
+            
+            string slotElementLetter = slot.GetComponent<compoundingSlots>().elementLetter;
 
-            if (slotElementLetter == ' ') return; // TODO: Notify player to fill up all slots
+            if (slotElementLetter.Equals(" ")) return; // TODO: Notify player to fill up all slots
 
             compoundElement += slotElementLetter;
         }
 
-        if (TargetFormula.ToUpper().Equals(compoundElement.ToUpper())){
-            GameEventsManager.instance.compoundingEvents.FormulaCorrect();
+        Debug.Log(compoundElement);
+
+        bool formulaIsEqualToTarget = TargetFormula.ToUpper().Equals(compoundElement.ToUpper());
+
+        if (!formulaIsEqualToTarget){
+            if (!firstTryFormula) return;
+            firstTryFormula = false;
+            GameEventsManager.instance.compoundingEvents.formulaIncorrect();
+            return;
         }
+        GameEventsManager.instance.compoundingEvents.buttonClosed(button);
+        GameEventsManager.instance.compoundingEvents.FormulaCorrect(door);
     }
 }

@@ -8,6 +8,6 @@ public class PlayLevel : MonoBehaviour
     // Start is called before the first frame update
     public void Play()
     {
-        SceneManager.LoadScene(6); // 6 is Debug Level
+        SceneManager.LoadScene(7); // 6 is Debug Level
     }
 }
