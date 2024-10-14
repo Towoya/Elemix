@@ -31,6 +31,26 @@ public class elementContainer : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y - unlockSpeed * Time.deltaTime, transform.position.z);
     }
 
+<<<<<<< HEAD
+=======
+    void startQuiz(){
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100)){
+                GameObject selectedGameObject = hit.transform.gameObject;
+                if (selectedGameObject != gameObject) return;
+
+                if (!Input.GetMouseButtonDown(0)) return;
+
+                if (QuizManager.instance.quizCanvas.activeSelf) return;
+
+                QuizManager.instance.setQuizValues(question, correctAnswer, choices, selectedGameObject);
+
+                Time.timeScale = 0f;
+            }
+    }
+
+>>>>>>> main
     void removeChildFromContainer(){
         if (transform.childCount == 0) return;
 
