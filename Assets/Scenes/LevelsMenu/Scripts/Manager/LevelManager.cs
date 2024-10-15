@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,6 +45,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         levelAvailability = new bool[numberOfLevels];
         levelScore = new int[numberOfLevels];
         levelStars = new int[numberOfLevels];
+        levelButtons = new GameObject[5];
         stageScore = new int[numberOfLevels / 5];
     }
 
@@ -51,11 +53,43 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
     {
         if (SceneManager.GetActiveScene().buildIndex != 2)
             return;
+
+        if (levelButtons[0] == null)
+            GetButtons();
+
         for (int i = 0; i < levelButtons.Length; i++)
         {
             Image levelImage = levelButtons[i].GetComponent<Image>();
             Button levelButton = levelButtons[i].GetComponent<Button>();
             levelImage.raycastTarget = levelButton.interactable;
+        }
+    }
+
+    void GetButtons()
+    {
+        Button[] buttons = new Button[5];
+
+        Button[] tempArray = FindObjectsOfType<Button>();
+        int count = 0;
+        foreach (Button tempButton in tempArray)
+        {
+            if (tempButton.name == "Back")
+                continue;
+
+            buttons[count] = tempButton;
+            count++;
+        }
+
+        buttons = buttons.OrderBy(obj => obj.name, new AlphanumComparatorFast()).ToArray();
+
+        foreach (Button item in buttons)
+        {
+            Debug.Log(item.name);
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            levelButtons[i] = buttons[i].gameObject;
         }
     }
 
@@ -99,6 +133,9 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     void instantiateLevelButtons()
     {
+        if (levelButtons[0] == null)
+            GetButtons();
+
         for (int i = 0; i < levelButtons.Length; i++)
         {
             Button levelButton = levelButtons[i].GetComponent<Button>();
