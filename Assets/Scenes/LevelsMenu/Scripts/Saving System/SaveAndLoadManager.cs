@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveAndLoadManager : MonoBehaviour
 {
@@ -21,12 +22,17 @@ public class SaveAndLoadManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(instance);
         }
+
+        SceneManager.sceneLoaded += onSceneLoaded;
     }
 
-    private void Start()
+    void onSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.buildIndex != 2)
+            return;
+
         this.saveAndLoadObjects = findAllSaveAndLoadObjects();
         loadGame();
     }
