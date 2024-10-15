@@ -56,23 +56,19 @@ public class TutorialManager : MonoBehaviour
 
     // Function to display the next dialogue
     private void NextDialogue()
+{
+    if (currentDialogueIndex < dialogues.Length - 1)
     {
-        if (currentDialogueIndex < dialogues.Length - 1)
-        {
-            currentDialogueIndex++;
-            StartCoroutine(TypeDialogue()); // Type the next dialogue
-        }
-        else
-        {
-            dialogueBox.SetActive(false); // Hide the dialogue box once all dialogues are done
-
-            // Enable player movement only after all dialogues are done
-            EnablePlayerMovement();
-
-            // Mark that the dialogue has ended for the first time
-            dialogueEndedOnce = true;
-        }
+        currentDialogueIndex++;
+        StartCoroutine(TypeDialogue());
     }
+    else
+    {
+        dialogueBox.SetActive(false);
+        EnablePlayerMovement(); // Call EnableMovement instead of EnablePlayerMovement();
+        dialogueEndedOnce = true;
+    }
+}
 
     // Coroutine to type out dialogue and stop for player input after each line
     private IEnumerator TypeDialogue()
@@ -100,6 +96,12 @@ public class TutorialManager : MonoBehaviour
 
         // Disable player movement whenever the dialogue box is active
         DisablePlayerMovement();
+    }
+
+    public void SetDialogues(string[] newDialogues)
+    {
+        dialogues = newDialogues; // Set new dialogues
+        currentDialogueIndex = 0; // Reset dialogue index to start from the beginning
     }
 
     // Function to activate arrows on the floor
@@ -141,7 +143,7 @@ public class TutorialManager : MonoBehaviour
     }
 
     // Disable player movement
-    private void DisablePlayerMovement()
+    public void DisablePlayerMovement()
     {
         if (playerController != null)
         {

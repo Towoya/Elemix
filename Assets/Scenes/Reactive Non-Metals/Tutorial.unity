@@ -3671,6 +3671,7 @@ GameObject:
   - component: {fileID: 1085813956}
   - component: {fileID: 1085813955}
   - component: {fileID: 1085813954}
+  - component: {fileID: 1085813958}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -3765,6 +3766,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085813958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085813953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb201558cdb85d4281fa3ac1b084d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialManager: {fileID: 133117489}
+  specificDialogues:
+  - This is a New Dialogue
+  - This is a Newer Dialogue
 --- !u!1 &1096345884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,7 +5550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.59
+      value: 15.81
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5541,7 +5558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.35
+      value: -9.39
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalRotation.w

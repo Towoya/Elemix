@@ -5,30 +5,23 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public TutorialManager tutorialManager; // Reference to the TutorialManager
-    public bool arrowsAfterDialogue = false; // Optional: Set if arrows should appear after dialogue
+    [TextArea(3, 10)]
+    public string[] specificDialogues; // Array of specific dialogues for this trigger
 
-        private void OnTriggerEnter(Collider other)
+    private bool hasTriggered = false; // To prevent the dialogue from playing multiple times
+
+    // When the player enters the trigger
+    private void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player") && !hasTriggered)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (tutorialManager != null)
-            {
-                tutorialManager.DisplayDialogue(); // Show the next dialogue
-            }
-            else
-            {
-                Debug.LogError("TutorialManager reference not set in DialogueTrigger!");
-            }
-        }
+        hasTriggered = true;
+        tutorialManager.SetDialogues(specificDialogues);
+        
+        // Disable player movement immediately when entering the trigger
+        tutorialManager.DisablePlayerMovement(); // Use this to disable movement in the manager
+        
+        tutorialManager.DisplayDialogue();
     }
-
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Optional: Handle what happens when the player leaves the trigger
-            Debug.Log("Player exited the dialogue trigger zone.");
-        }
-    }
+}
 }
