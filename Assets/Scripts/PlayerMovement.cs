@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+         rb = GetComponent<Rigidbody>(); // Assuming you are using a Rigidbody for movement
     }
 
     // Update is called once per frame
@@ -78,4 +79,15 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+     /**public void StopMovement()
+    {
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero; // Reset velocity to stop movement immediately
+        }
+
+        // If you're using a CharacterController, you could reset its movement vector here
+    }**/
 }
+

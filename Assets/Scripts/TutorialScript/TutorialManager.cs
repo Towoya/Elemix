@@ -14,7 +14,6 @@ public class TutorialManager : MonoBehaviour
     public PlayerMovement playerController; // Reference to the PlayerController script for movement control
 
     private int currentDialogueIndex = 0;
-    private bool playerHasLearnedToMove = false; // Track if the player has completed the movement tutorial
     private bool isTyping = false; // To check if dialogue is currently typing
     private bool dialogueEndedOnce = false; // To track if the dialogue has ended for the first time
     private bool inTrigger = false; // To track if the player is in the trigger zone
@@ -42,8 +41,8 @@ public class TutorialManager : MonoBehaviour
             NextDialogue();
         }
 
-        // If the player has learned to move, activate arrows
-        if (playerHasLearnedToMove && !arrows[0].activeSelf && dialogueEndedOnce)
+        // If dialogue has ended for the first time, activate arrows
+        if (!arrows[0].activeSelf && dialogueEndedOnce)
         {
             ActivateArrows();
         }
@@ -66,7 +65,6 @@ public class TutorialManager : MonoBehaviour
         else
         {
             dialogueBox.SetActive(false); // Hide the dialogue box once all dialogues are done
-            PlayerLearnedToMove(); // This simulates the player learning to move after dialogues
 
             // Enable player movement only after all dialogues are done
             EnablePlayerMovement();
@@ -102,12 +100,6 @@ public class TutorialManager : MonoBehaviour
 
         // Disable player movement whenever the dialogue box is active
         DisablePlayerMovement();
-    }
-
-    // Trigger for when the player learns to move
-    public void PlayerLearnedToMove()
-    {
-        playerHasLearnedToMove = true; // This will allow the arrows to activate after the first dialogue
     }
 
     // Function to activate arrows on the floor
