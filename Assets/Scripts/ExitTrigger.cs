@@ -8,7 +8,7 @@ public class ExitTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
             panel.SetActive(true);
             Time.timeScale = 0f;
