@@ -17,6 +17,7 @@ public class TutorialManager : MonoBehaviour
     private bool playerHasLearnedToMove = false; // Track if the player has completed the movement tutorial
     private bool isTyping = false; // To check if dialogue is currently typing
     private bool dialogueEndedOnce = false; // To track if the dialogue has ended for the first time
+    private bool inTrigger = false; // To track if the player is in the trigger zone
 
     private void Start()
     {
@@ -30,14 +31,7 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(TypeDialogue());
 
         // Disable player movement at the start
-        if (playerController != null)
-        {
-            playerController.canMove = false;
-        }
-        else
-        {
-            Debug.LogError("PlayerController is not assigned in the inspector!");
-        }
+        DisablePlayerMovement();
     }
 
     private void Update()
@@ -52,6 +46,12 @@ public class TutorialManager : MonoBehaviour
         if (playerHasLearnedToMove && !arrows[0].activeSelf && dialogueEndedOnce)
         {
             ActivateArrows();
+        }
+
+        // If the player is inside a trigger zone and the dialogue box is hidden, show the next dialogue
+        if (inTrigger && Input.GetMouseButtonDown(0) && !dialogueBox.activeSelf)
+        {
+            ContinueDialogue();
         }
     }
 
@@ -68,28 +68,40 @@ public class TutorialManager : MonoBehaviour
             dialogueBox.SetActive(false); // Hide the dialogue box once all dialogues are done
             PlayerLearnedToMove(); // This simulates the player learning to move after dialogues
 
-            // Enable player movement now that the dialogue is done
-            if (playerController != null)
-            {
-                playerController.canMove = true;
-            }
+            // Enable player movement only after all dialogues are done
+            EnablePlayerMovement();
 
             // Mark that the dialogue has ended for the first time
             dialogueEndedOnce = true;
         }
     }
 
-    // Coroutine to type out dialogue
+    // Coroutine to type out dialogue and stop for player input after each line
     private IEnumerator TypeDialogue()
     {
         isTyping = true;
         dialogueText.text = ""; // Clear the dialogue text
+
         foreach (char letter in dialogues[currentDialogueIndex].ToCharArray())
         {
             dialogueText.text += letter; // Add each letter one by one
             yield return new WaitForSeconds(typingSpeed); // Wait between each letter
         }
-        isTyping = false; // Mark typing as finished
+
+        isTyping = false; // Mark typing as finished, allowing the player to continue to the next line
+    }
+
+    // Display dialogue from where it left off, and stop player movement
+    public void DisplayDialogue()
+    {
+        if (!dialogueBox.activeSelf)
+        {
+            dialogueBox.SetActive(true);
+            StartCoroutine(TypeDialogue());
+        }
+
+        // Disable player movement whenever the dialogue box is active
+        DisablePlayerMovement();
     }
 
     // Trigger for when the player learns to move
@@ -99,14 +111,58 @@ public class TutorialManager : MonoBehaviour
     }
 
     // Function to activate arrows on the floor
-    private void ActivateArrows()
+    public void ActivateArrows()
     {
         foreach (GameObject arrow in arrows)
         {
             arrow.SetActive(true); // Activate each arrow
         }
     }
+
+    // Handle when the player enters a trigger zone
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inTrigger = true; // Mark that the player is in the trigger zone
+            DisplayDialogue(); // Show the dialogue box and continue from where it left off
+        }
+    }
+
+    // Handle when the player exits a trigger zone
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inTrigger = false; // Player left the trigger zone
+        }
+    }
+
+    // Continue dialogue when the player is in the trigger zone
+    public void ContinueDialogue()
+    {
+        dialogueBox.SetActive(true); // Reactivate the dialogue box
+        StartCoroutine(TypeDialogue()); // Continue typing dialogue from the next line
+
+        // Disable player movement when continuing dialogue
+        DisablePlayerMovement();
+    }
+
+    // Disable player movement
+    private void DisablePlayerMovement()
+    {
+        if (playerController != null)
+        {
+            playerController.canMove = false; // Set movement to false
+        }
+    }
+
+    // Enable player movement
+    private void EnablePlayerMovement()
+    {
+        if (playerController != null)
+        {
+            playerController.canMove = true; // Allow movement
+        }
+    }
 }
-
-
-
