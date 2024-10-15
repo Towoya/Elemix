@@ -7,29 +7,39 @@ public class SaveAndLoadManager : MonoBehaviour
 {
     levelData levelData;
     List<ISaveAndLoad> saveAndLoadObjects;
-    public static SaveAndLoadManager instance {get; private set;}
+    public static SaveAndLoadManager instance { get; private set; }
 
-    private void Awake() {
-        if (instance != null){
-            Debug.LogError("More than one instance of " + this.name + " exists in the current scene");
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError(
+                "More than one instance of " + this.name + " exists in the current scene"
+            );
             Destroy(gameObject);
-        } else {
+        }
+        else
+        {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
 
-    private void Start() {
+    private void Start()
+    {
         this.saveAndLoadObjects = findAllSaveAndLoadObjects();
         loadGame();
     }
 
-    public void newGame(){
+    public void newGame()
+    {
         this.levelData = new levelData();
     }
 
-    public void loadGame(){
-        if (this.levelData == null){
+    public void loadGame()
+    {
+        if (this.levelData == null)
+        {
             Debug.Log("No existing data found. Creating new data");
             newGame();
         }
@@ -40,7 +50,8 @@ public class SaveAndLoadManager : MonoBehaviour
         }
     }
 
-    public void saveGame(){
+    public void saveGame()
+    {
         foreach (ISaveAndLoad saveAndLoadObject in saveAndLoadObjects)
             saveAndLoadObject.saveData(ref levelData);
 
@@ -52,14 +63,20 @@ public class SaveAndLoadManager : MonoBehaviour
 
         for (int i = 0; i < levelData.levelScore.Length; i++)
             PlayerPrefs.SetInt("levelScore" + i, levelData.levelScore[i]);
+
+        for (int i = 0; i < levelData.stageScores.Length; i++)
+            PlayerPrefs.SetInt("stageScore" + i, levelData.stageScores[i]);
     }
 
-    private void OnApplicationQuit() {
+    private void OnApplicationQuit()
+    {
         saveGame();
     }
 
-    List<ISaveAndLoad> findAllSaveAndLoadObjects(){
-        IEnumerable<ISaveAndLoad> saveAndLoadObjects = FindObjectsOfType<MonoBehaviour>().OfType<ISaveAndLoad>();
+    List<ISaveAndLoad> findAllSaveAndLoadObjects()
+    {
+        IEnumerable<ISaveAndLoad> saveAndLoadObjects = FindObjectsOfType<MonoBehaviour>()
+            .OfType<ISaveAndLoad>();
 
         return new List<ISaveAndLoad>(saveAndLoadObjects);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExitTrigger : MonoBehaviour
 {
-     public GameObject panel; // Assign your panel object in the Unity Editor
+    public GameObject panel; // Assign your panel object in the Unity Editor
 
     private void OnTriggerEnter(Collider other)
     {
