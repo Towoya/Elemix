@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void PlayGame()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Check if the player has completed the tutorial
+        if (PlayerPrefs.GetInt("TutorialCompleted", 0) == 1)
+        {
+            // Load the next scene if the tutorial was completed
+            UnityEngine.SceneManagement.SceneManager.LoadScene("NextScene");
+        }
+        else
+        {
+            // Load the tutorial scene if it hasn't been completed
+            UnityEngine.SceneManagement.SceneManager.LoadScene("TutorialScene");
+        }
     }
 }

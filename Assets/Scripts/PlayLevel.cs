@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void Play()
+    // Method that takes the scene name or index as an argument
+    public void Play(string levelName)
     {
-        SceneManager.LoadScene(7); // 6 is Debug Level
+        // Load the scene using the scene name or index
+        SceneManager.LoadScene(levelName);
     }
 }
