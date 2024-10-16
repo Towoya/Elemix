@@ -13,6 +13,7 @@ public class elementContainer : MonoBehaviour
     [SerializeField] string question;
     [SerializeField] string[] choices = new string[4];
     [SerializeField] string correctAnswer;
+    [SerializeField] string[] resultMessages = new string[4]; // Add this field for customizable result messages
 
     private void OnEnable() {
         GameEventsManager.instance.quizEvents.onQuizComplete += unlockContainer;
@@ -50,7 +51,7 @@ public class elementContainer : MonoBehaviour
 
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
-                QuizManager.instance.setQuizValues(question, correctAnswer, choices, selectedGameObject);
+                QuizManager.instance.setQuizValues(question, correctAnswer, choices, selectedGameObject, resultMessages); // Pass resultMessages
 
                 Time.timeScale = 0f;
             }

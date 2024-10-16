@@ -25,6 +25,8 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button closeButton;
 
+    private string[] resultMessages;
+
     private bool isCorrectAnswer;
 
     private void Awake()
@@ -55,14 +57,17 @@ public class QuizManager : MonoBehaviour
         initializeQuizValues();
     }
 
-    public void setQuizValues(string question, string correctAnswer, string[] choices, GameObject container)
-    {
-        this.question = question;
-        this.correctAnswer = correctAnswer;
-        this.choices = choices;
+    public void setQuizValues(string question, string correctAnswer, string[] choices, GameObject container, string[] resultMessages) // Add resultMessages parameter
+{
+    this.question = question;
+    this.correctAnswer = correctAnswer;
+    this.choices = choices;
 
-        startQuiz(container);
-    }
+    startQuiz(container);
+
+    // Store result messages for use in choice checks
+    this.resultMessages = resultMessages; 
+}
 
     public void initializeQuizValues()
     {
@@ -76,25 +81,28 @@ public class QuizManager : MonoBehaviour
     }
 
     public void isChoiceCorrect(int buttonIndex)
+{
+    string selectedAnswer = choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text;
+
+    if (selectedAnswer.Equals(correctAnswer))
     {
-        string selectedAnswer = choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text;
-
-        if (selectedAnswer.Equals(correctAnswer))
-        {
-            isCorrectAnswer = true;
-            ShowResult("Correct! Well done.");
-            GameEventsManager.instance.quizEvents.quizCorrect();
-        }
-        else
-        {
-            isCorrectAnswer = false;
-            ShowResult("Incorrect. Try again.");
-            GameEventsManager.instance.quizEvents.quizIncorrect();
-        }
-
-        // Don't close the quizCanvas yet
-        quizCanvas.SetActive(false);
+        isCorrectAnswer = true;
+        ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for correct answer
+        GameEventsManager.instance.quizEvents.quizCorrect();
     }
+    else
+    {
+        isCorrectAnswer = false;
+        ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for incorrect answer
+        GameEventsManager.instance.quizEvents.quizIncorrect();
+    }
+
+    // Don't close the quizCanvas yet
+    quizCanvas.SetActive(false);
+}
+
+// Note: You will also need to declare a field to hold the result messages in QuizManager
+// Add this field
 
         void ShowResult(string message)
     {
