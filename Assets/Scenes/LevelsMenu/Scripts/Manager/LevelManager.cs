@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +16,6 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
     [SerializeField]
     GameObject[] levelButtons;
 
-    [SerializeField]
     GameObject[] levelStarContainers;
 
     [SerializeField]
@@ -47,6 +45,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         levelStars = new int[numberOfLevels];
         levelButtons = new GameObject[5];
         stageScore = new int[numberOfLevels / 5];
+        levelStarContainers = new GameObject[5];
     }
 
     private void Update()
@@ -90,6 +89,30 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         for (int i = 0; i < 5; i++)
         {
             levelButtons[i] = buttons[i].gameObject;
+        }
+    }
+
+    void GetLevelStarContainers()
+    {
+        GameObject[] levelStats = GameObject.FindGameObjectsWithTag("perLevelStats");
+
+        levelStats = levelStats.OrderBy(obj => obj.name, new AlphanumComparatorFast()).ToArray();
+
+        GameObject[] tempLevelStarContainer = new GameObject[5];
+        for (int i = 0; i < tempLevelStarContainer.Length; i++)
+        {
+            for (int j = 0; j < levelStats[i].transform.childCount; j++)
+            {
+                HorizontalLayoutGroup container = levelStats[i]
+                    .transform.GetChild(j)
+                    .GetComponent<HorizontalLayoutGroup>();
+
+                if (container == null)
+                    continue;
+
+                tempLevelStarContainer[i] = container.gameObject;
+                break;
+            }
         }
     }
 
@@ -145,6 +168,9 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     void instantiateLevelStars()
     {
+        if (levelStarContainers[0] == null)
+            GetLevelStarContainers();
+
         for (int i = 0; i < levelStarContainers.Length; i++)
         {
             Image[] starOutputs = levelStarContainers[i].GetComponentsInChildren<Image>();
