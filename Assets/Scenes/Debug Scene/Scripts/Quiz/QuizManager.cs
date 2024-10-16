@@ -116,13 +116,14 @@ public class QuizManager : MonoBehaviour
 {
     resultPanel.SetActive(false);  // Hide the result panel
     closeButton.gameObject.SetActive(false);  // Ensure the close button is hidden too
-    Time.timeScale = 1f;
+    Time.timeScale = 0f;
 
     if (isCorrectAnswer)
     {
         // Correct answer: Unlock container and allow progress
         GameEventsManager.instance.quizEvents.quizCompleted(elementContainer);
         quizCanvas.SetActive(false);
+        Time.timeScale = 1f;
     }
     else
     {

@@ -6,8 +6,6 @@ public class submitFormula : MonoBehaviour
     [SerializeField] GameObject doorTarget;
     [SerializeField] GameObject compoundingPanelTarget;
     [SerializeField] string TargetFormula;
-    [SerializeField] GameObject dialogueBox; // Reference to the dialogue box UI
-    [SerializeField] TMPro.TextMeshProUGUI dialogueText; // Reference to the UI text for the dialogue
 
     bool interactable = true;
      
@@ -22,8 +20,6 @@ public class submitFormula : MonoBehaviour
 
     private void OnMouseDown() {
         if (!interactable) return;
-
-        ShowDialogue("There are no elements placed in the structure.");
 
         setDoorToClosest();
         setCompoundingPanelToClosest();
@@ -72,8 +68,4 @@ public class submitFormula : MonoBehaviour
         return result;
     }
 
-    void ShowDialogue(string message) {
-        dialogueBox.SetActive(true); // Show the dialogue box
-        dialogueText.text = message; // Set the dialogue text
-    }
 }
