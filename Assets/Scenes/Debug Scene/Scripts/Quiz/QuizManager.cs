@@ -9,44 +9,54 @@ public class QuizManager : MonoBehaviour
 {
     static public QuizManager instance { get; private set; }
 
-    private void Awake() {
-        if (instance != null) {
-            Debug.LogError("More than one instance of \"Quiz Manager\" exists in the current scene");
-            Destroy(this);
-        } else {
-            instance = this;
-        }
-    }
-
     [Header("Quiz Variables")]
     string question;
     string[] choices = new string[4];
     string correctAnswer;
     public GameObject elementContainer;
-    bool hasAnyOfTheQuizzesFailed = false;
-    bool hasCurrentQuizFailed = false;
-    
-    [Header("PanelVariables")]
+
+    [Header("Panel Variables")]
     public GameObject quizCanvas;
     [SerializeField] Button[] choiceButtons;
     [SerializeField] TextMeshProUGUI questionText;
 
-    private void Start() {
-        if (choices.Length != 4) {
-            Debug.LogError("The number of choices are not equal to 4");
-            choices = new string[4];
-        }
+    [Header("Result Panel Variables")]
+    public GameObject resultPanel;
+    public TextMeshProUGUI resultText;
+    public Button closeButton;
 
-        quizCanvas.SetActive(false);
+    private bool isCorrectAnswer;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("More than one instance of \"Quiz Manager\" exists in the current scene");
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
-    void startQuiz(GameObject container){
+    private void Start()
+    {
+        quizCanvas.SetActive(false);
+        resultPanel.SetActive(false);
+
+        closeButton.onClick.AddListener(() => CloseResultPanel());
+    }
+
+    void startQuiz(GameObject container)
+    {
         elementContainer = container;
         quizCanvas.SetActive(true);
         initializeQuizValues();
     }
 
-    public void setQuizValues(string question, string correctAnswer, string[] choices, GameObject container){
+    public void setQuizValues(string question, string correctAnswer, string[] choices, GameObject container)
+    {
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.choices = choices;
@@ -54,40 +64,70 @@ public class QuizManager : MonoBehaviour
         startQuiz(container);
     }
 
-    public void initializeQuizValues(){
+    public void initializeQuizValues()
+    {
         questionText.text = question;
 
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++)
+        {
             TextMeshProUGUI choiceText = choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             choiceText.text = choices[i];
         }
     }
 
-    void reactivateChoices(){
-        hasCurrentQuizFailed = false;
-        foreach (Button choice in choiceButtons){
-            choice.interactable = true;
+    public void isChoiceCorrect(int buttonIndex)
+    {
+        string selectedAnswer = choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text;
+
+        if (selectedAnswer.Equals(correctAnswer))
+        {
+            isCorrectAnswer = true;
+            ShowResult("Correct! Well done.");
+            GameEventsManager.instance.quizEvents.quizCorrect();
         }
+        else
+        {
+            isCorrectAnswer = false;
+            ShowResult("Incorrect. Try again.");
+            GameEventsManager.instance.quizEvents.quizIncorrect();
+        }
+
+        // Don't close the quizCanvas yet
+        quizCanvas.SetActive(false);
     }
 
-    public void isChoiceCorrect(int buttonIndex){
-        if (!choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text.Equals(correctAnswer)){
-            if (!hasAnyOfTheQuizzesFailed){
-                hasAnyOfTheQuizzesFailed = true;
-                hasCurrentQuizFailed = true;
-                GameEventsManager.instance.quizEvents.quizIncorrect();
-            }
-            choiceButtons[buttonIndex].interactable = false;
-            return;
-        }
-        
-        Time.timeScale = 1f;
+        void ShowResult(string message)
+    {
+        resultText.text = message;  // Update the result text
+        resultPanel.SetActive(true); // Show the result panel
+        closeButton.gameObject.SetActive(true);  // Ensure the close button is active
+        Time.timeScale = 0f;  // Pause the game (optional, depending on your design)
+    }
 
-        if (!hasCurrentQuizFailed) GameEventsManager.instance.quizEvents.quizCorrect();
+    void CloseResultPanel()
+{
+    resultPanel.SetActive(false);  // Hide the result panel
+    closeButton.gameObject.SetActive(false);  // Ensure the close button is hidden too
+    Time.timeScale = 1f;
 
-        reactivateChoices();
+    if (isCorrectAnswer)
+    {
+        // Correct answer: Unlock container and allow progress
         GameEventsManager.instance.quizEvents.quizCompleted(elementContainer);
-        elementContainer = null;
         quizCanvas.SetActive(false);
+    }
+    else
+    {
+        // Incorrect answer: Reopen quiz for another attempt
+        quizCanvas.SetActive(true);
+    }
+}
+
+    void reactivateChoices()
+    {
+        foreach (Button choice in choiceButtons)
+        {
+            choice.interactable = true;
+        }
     }
 }
