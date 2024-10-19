@@ -1,21 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
 
 public class Pathfinding : MonoBehaviour {
 
 	public Transform seeker, target;
-	Grid grid;
+	GridLayout grid;
 
 	void Awake() {
-		grid = GetComponent<Grid> ();
+		grid = GetComponent<GridLayout> ();
 	}
 
 	void Update() {
 		FindPath (seeker.position, target.position);
 	}
 
-	void FindPath(Vector3 startPos, Vector3 targetPos) {
+	public void FindPath(Vector3 startPos, Vector3 targetPos) {
 		Node startNode = grid.NodeFromWorldPoint(startPos);
 		Node targetNode = grid.NodeFromWorldPoint(targetPos);
 
@@ -77,7 +76,7 @@ public class Pathfinding : MonoBehaviour {
 		int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
 
 		if (dstX > dstY)
-			return 14 * dstY + 10 * (dstX - dstY);
-		return 14 * dstX + 10 * (dstY - dstX);
+			return 14*dstY + 10* (dstX-dstY);
+		return 14*dstX + 10 * (dstY-dstX);
 	}
 }
