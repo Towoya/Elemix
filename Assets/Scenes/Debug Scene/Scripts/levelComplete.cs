@@ -39,6 +39,8 @@ public class levelComplete : MonoBehaviour
 
     void CalculateStageScore()
     {
+        if (!isLastLevelOfStage) return;
+
         float result = 0;
 
         float sumOfPreviousFiveLevels = 0;
