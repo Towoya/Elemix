@@ -30,7 +30,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
     void onSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex != 2)
+        if (scene.buildIndex != 2 && scene.buildIndex != 5)
             return;
 
         this.saveAndLoadObjects = findAllSaveAndLoadObjects();
