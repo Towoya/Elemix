@@ -81,11 +81,6 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
         buttons = buttons.OrderBy(obj => obj.name, new AlphanumComparatorFast()).ToArray();
 
-        foreach (Button item in buttons)
-        {
-            Debug.Log(item.name);
-        }
-
         for (int i = 0; i < 5; i++)
         {
             levelButtons[i] = buttons[i].gameObject;
@@ -94,9 +89,25 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     void GetLevelStarContainers()
     {
-        GameObject[] levelStats = GameObject.FindGameObjectsWithTag("perLevelStats");
+        RectTransform[] objects = Resources.FindObjectsOfTypeAll<RectTransform>();
+
+        GameObject[] levelStats = new GameObject[5];
+
+        int levelStatsIndex = 0;
+        for (int i = 0; i < objects.Length; i++)
+        {
+            if (!objects[i].tag.Equals("perLevelStats"))
+                continue;
+            levelStats[levelStatsIndex] = objects[i].gameObject;
+            levelStatsIndex++;
+        }
 
         levelStats = levelStats.OrderBy(obj => obj.name, new AlphanumComparatorFast()).ToArray();
+
+        foreach (GameObject test in levelStats)
+        {
+            Debug.Log(test.name);
+        }
 
         GameObject[] tempLevelStarContainer = new GameObject[5];
         for (int i = 0; i < tempLevelStarContainer.Length; i++)
@@ -114,6 +125,8 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
                 break;
             }
         }
+
+        levelStarContainers = tempLevelStarContainer;
     }
 
     public void setStageScore(int levelIndex, int stageScore)
@@ -143,6 +156,9 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     void unlockNextLevel(int currentLevelIndex)
     {
+        if (currentLevelIndex == 0)
+            return;
+
         int nextLevelIndex = currentLevelIndex + 1;
 
         if (nextLevelIndex > levelAvailability.Length)
@@ -196,7 +212,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
     {
         this.levelAvailability = data.levelAvailability;
 
-        for (int i = 0; i < levelButtons.Length; i++)
+        for (int i = 1; i < levelButtons.Length; i++)
         {
             if (!PlayerPrefs.HasKey("levelAvailability" + i))
                 break;
