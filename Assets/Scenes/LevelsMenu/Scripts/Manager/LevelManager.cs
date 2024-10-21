@@ -131,8 +131,8 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     public void setStageScore(int levelIndex, int stageScore)
     {
-        if (this.stageScore[levelIndex] < stageScore)
-            this.stageScore[levelIndex] = stageScore;
+        if (this.stageScore[levelIndex - 4] < stageScore)
+            this.stageScore[levelIndex - 4] = stageScore;
     }
 
     public void setLevelStars(int levelIndex, int numberOfStars)
@@ -156,7 +156,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     void unlockNextLevel(int currentLevelIndex)
     {
-        if (currentLevelIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 5)
             return;
 
         int nextLevelIndex = currentLevelIndex + 1;
@@ -237,6 +237,8 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
                 break;
             this.levelScore[i] = PlayerPrefs.GetInt("levelScore" + i);
         }
+
+        this.stageScore = data.stageScores;
 
         for (int i = 0; i < stageScore.Length; i++)
         {
