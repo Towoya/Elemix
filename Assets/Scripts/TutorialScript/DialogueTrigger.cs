@@ -22,6 +22,13 @@ public class DialogueTrigger : MonoBehaviour
         tutorialManager.DisablePlayerMovement(); // Use this to disable movement in the manager
         
         tutorialManager.DisplayDialogue();
+    
     }
 }
+
+    public void DestroyTrigger()
+    {
+        Destroy(gameObject); // Destroy this trigger object
+    }
 }
+
