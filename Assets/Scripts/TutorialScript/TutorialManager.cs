@@ -17,6 +17,7 @@ public class TutorialManager : MonoBehaviour
     private bool isTyping = false; // To check if dialogue is currently typing
     private bool dialogueEndedOnce = false; // To track if the dialogue has ended for the first time
     private bool inTrigger = false; // To track if the player is in the trigger zone
+    private DialogueTrigger currentTrigger; // Reference to the current trigger object
 
     private void Start()
     {
@@ -64,6 +65,7 @@ public class TutorialManager : MonoBehaviour
     }
     else
     {
+        EndDialogue();
         dialogueBox.SetActive(false);
         EnablePlayerMovement(); // Call EnableMovement instead of EnablePlayerMovement();
         dialogueEndedOnce = true;
@@ -157,6 +159,17 @@ public class TutorialManager : MonoBehaviour
         if (playerController != null)
         {
             playerController.canMove = true; // Allow movement
+        }
+    }
+
+    private void EndDialogue()
+    {
+        dialogueBox.SetActive(false); // Hide the dialogue box
+
+        // Destroy the trigger object after the dialogue ends
+        if (currentTrigger != null)
+        {
+            currentTrigger.DestroyTrigger(); // Call the destroy method on the trigger
         }
     }
 }
