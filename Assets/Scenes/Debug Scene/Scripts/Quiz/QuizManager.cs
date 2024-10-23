@@ -27,7 +27,7 @@ public class QuizManager : MonoBehaviour
 
     private string[] resultMessages;
 
-    private bool isCorrectAnswer;
+    private bool isCorrectAnswer = true;
 
     private void Awake()
     {
