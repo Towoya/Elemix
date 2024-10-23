@@ -21,13 +21,12 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnMouseEnter()
     {
-        TooltipSystem.Show(content, header);
+        TooltipSystem.Show(content, header); 
     }
 
     public void OnMouseExit()
     {
-        TooltipSystem.Hide();
+        TooltipSystem.Hide();  
     }
-
 }
     

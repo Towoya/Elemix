@@ -86,12 +86,13 @@ public class QuizManager : MonoBehaviour
 
     if (selectedAnswer.Equals(correctAnswer))
     {
-        isCorrectAnswer = true;
         ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for correct answer
-        GameEventsManager.instance.quizEvents.quizCorrect();
+        if (isCorrectAnswer) GameEventsManager.instance.quizEvents.quizCorrect();
+        isCorrectAnswer = true;
     }
     else
     {
+        if (!isCorrectAnswer) return;
         isCorrectAnswer = false;
         ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for incorrect answer
         GameEventsManager.instance.quizEvents.quizIncorrect();

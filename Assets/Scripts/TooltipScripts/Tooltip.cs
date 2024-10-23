@@ -49,8 +49,9 @@ public class Tooltip : MonoBehaviour
             int headerLength = headerField.text.Length;
             int contentLength = contentField.text.Length;
 
-        layoutElement.enabled = (headerLength > characterWrapLimit || contentLength>characterWrapLimit) ? true : false;
+        layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
         }
+
 
         Vector2 position = Input.mousePosition;
 
