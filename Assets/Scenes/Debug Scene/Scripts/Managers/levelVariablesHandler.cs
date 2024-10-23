@@ -9,6 +9,8 @@ public class levelVariablesHandler : MonoBehaviour
     int temporaryStarCount = 3;
     int temporaryLevelScore = 0;
 
+    bool reducedStarCountOnQuiz = false;
+
     public static levelVariablesHandler instance { get; private set; }
 
     private void Awake()
@@ -26,15 +28,15 @@ public class levelVariablesHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEventsManager.instance.quizEvents.onQuizIncorrect += reduceLevelStar;
-        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect += reduceLevelStar;
+        GameEventsManager.instance.quizEvents.onQuizIncorrect += reduceLevelStarOnQuiz;
+        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect += reduceLevelStarOnFormula;
         GameEventsManager.instance.quizEvents.onQuizCorrect += incrementLevelScore;
     }
 
     private void OnDisable()
     {
-        GameEventsManager.instance.quizEvents.onQuizIncorrect -= reduceLevelStar;
-        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect -= reduceLevelStar;
+        GameEventsManager.instance.quizEvents.onQuizIncorrect -= reduceLevelStarOnQuiz;
+        GameEventsManager.instance.compoundingEvents.onFormulaIncorrect -= reduceLevelStarOnFormula;
         GameEventsManager.instance.quizEvents.onQuizCorrect -= incrementLevelScore;
     }
 
@@ -47,8 +49,14 @@ public class levelVariablesHandler : MonoBehaviour
         }
     }
 
-    void reduceLevelStar()
+    void reduceLevelStarOnQuiz()
     {
+        if (reducedStarCountOnQuiz) return;
+        reducedStarCountOnQuiz = true;
+        temporaryStarCount--;
+    }
+
+    void reduceLevelStarOnFormula(){
         temporaryStarCount--;
     }
 

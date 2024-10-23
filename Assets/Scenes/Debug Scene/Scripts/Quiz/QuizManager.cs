@@ -92,7 +92,6 @@ public class QuizManager : MonoBehaviour
     }
     else
     {
-        if (!isCorrectAnswer) return;
         isCorrectAnswer = false;
         ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for incorrect answer
         GameEventsManager.instance.quizEvents.quizIncorrect();
