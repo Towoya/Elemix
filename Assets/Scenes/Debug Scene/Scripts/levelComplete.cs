@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class levelComplete : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class levelComplete : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.tag.Equals("Player"))
+        if (!other.tag.Equals("Player") || SceneManager.GetActiveScene().buildIndex == 5)
             return;
 
         levelCompleted();
@@ -39,7 +40,8 @@ public class levelComplete : MonoBehaviour
 
     void CalculateStageScore()
     {
-        if (!isLastLevelOfStage) return;
+        if (!isLastLevelOfStage)
+            return;
 
         float result = 0;
 
