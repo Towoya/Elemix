@@ -208,6 +208,11 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         }
     }
 
+    public int GetStageScore(int StageIndex)
+    {
+        return stageScore[StageIndex];
+    }
+
     public void loadData(levelData data)
     {
         this.levelAvailability = data.levelAvailability;
