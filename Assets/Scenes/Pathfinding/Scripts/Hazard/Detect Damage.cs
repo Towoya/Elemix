@@ -32,10 +32,20 @@ public class DetectDamage : MonoBehaviour
         {
             isTouchingBlock = true;
         }
+
+        if (collider.CompareTag("Player"))
+        {
+            isTouchingBlock = true;
+        }
     }
     void OnTriggerExit(Collider collider)
     {
         if (collider.tag == "Hazard Block")
+        {
+            isTouchingBlock = false;
+        }
+
+        if (collider.CompareTag("Player"))
         {
             isTouchingBlock = false;
         }

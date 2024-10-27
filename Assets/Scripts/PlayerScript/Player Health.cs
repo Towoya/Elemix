@@ -45,10 +45,20 @@ public class PlayerHealth : MonoBehaviour
         {
             isTouchingBlock = true;
         }
+
+        if (collider.tag == "Door")
+        {
+            isTouchingBlock = true;
+        }
     }
     void OnTriggerExit(Collider collider)
     {
         if (collider.tag == "Hazard Block")
+        {
+            isTouchingBlock = false;
+        }
+
+        if (collider.tag == "Door")
         {
             isTouchingBlock = false;
         }
