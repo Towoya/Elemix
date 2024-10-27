@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public CharacterController controller;
     [SerializeField] private Rigidbody rb;
     [SerializeField] static public float speed = 5.0f;
     [SerializeField] private float rotationSpeed = 360;
@@ -14,14 +13,23 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 input;
     private Animator animator;
     public InventoryObject inventory;
+    public bool canMove = true; // Flag to control movement
+   
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>(); // Assuming you are using a Rigidbody for movement
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) 
+        {
+            animator.SetBool("isMoving", false);
+            return;
+        } // Prevent movement if canMove is false
+        
         GatherInput();
         Look();
         animator.SetBool("isMoving", input != Vector3.zero);
@@ -30,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (canMove) // Only move if canMove is true
+        {
+            Move();
+        }
     }
 
     void GatherInput()
@@ -43,9 +54,7 @@ public class PlayerMovement : MonoBehaviour
         if (input == Vector3.zero) return;
 
         var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
-
         var skewedInput = matrix.MultiplyPoint3x4(input);
-
         var relative = (transform.position + skewedInput) - transform.position;
         var rotation = Quaternion.LookRotation(relative, Vector3.up);
 
@@ -73,5 +82,16 @@ public class PlayerMovement : MonoBehaviour
             inventory.AddItem(item.item, 1);
             Destroy(other.gameObject);
         }
+    }
+
+    // Optional: Add methods to enable and disable movement externally
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Levels : MonoBehaviour
 {
-    public void PlayLevel()
+    // Method to load a specific level menu based on scene name or index
+    public void PlayCategory(string categoryLevelMenu)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Load the category level menu using the scene name or index
+        SceneManager.LoadScene(categoryLevelMenu);
     }
 }

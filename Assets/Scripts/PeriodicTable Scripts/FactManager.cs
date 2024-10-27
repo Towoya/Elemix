@@ -66,6 +66,14 @@ public class FactManager : MonoBehaviour
                     "Lithium is used in mood-stabilizing drugs."
                 };
                 break;
+            case "Carbon":
+                facts = new string[]
+                {
+                    "Carbon is the basis for all known life on Earth.",
+                    "Carbon exists in multiple forms like diamond, graphite, and graphene.",
+                    "Combines with oxygen to form carbon dioxide (CO₂), which is crucial for photosynthesis and greenhouse effects."
+                };
+                break;
             default:
                 facts = new string[]
                 {

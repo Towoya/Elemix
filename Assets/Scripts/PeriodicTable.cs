@@ -7,6 +7,6 @@ public class PeriodicTable : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 }
