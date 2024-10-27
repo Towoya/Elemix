@@ -1085,7 +1085,7 @@ MonoBehaviour:
   typingSpeed: 0.05
   dialogues:
   - I have to find a way out of here
-  playerController: {fileID: 601099771}
+  playerController: {fileID: 0}
 --- !u!1001 &89551138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7340,6 +7340,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2141493445806136307, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141493445806136307, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141493445806136307, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738977250443775289, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738977250443775289, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.1
@@ -7380,22 +7400,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7800751938353765348, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 251.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800751938353765348, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800751938353765348, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -355
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800751938353765348, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800751938353765348, guid: 504701d48233b534bac2d05313c54b00, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504701d48233b534bac2d05313c54b00, type: 3}
---- !u!114 &601099771 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5097044551411172729, guid: 504701d48233b534bac2d05313c54b00, type: 3}
-  m_PrefabInstance: {fileID: 601099770}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22316a2468df3fd4f8592cba4f3d454b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &601099772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5027570912725224508, guid: 504701d48233b534bac2d05313c54b00, type: 3}
@@ -16885,6 +16914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 796245332}
+  blurOverlay: {fileID: 0}
 --- !u!1001 &1475512775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25279,9 +25309,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 778040221}
+  - {fileID: 597866074}
+  - {fileID: 601099770}
   - {fileID: 365112766}
   - {fileID: 1379093071}
-  - {fileID: 597866074}
   - {fileID: 1030377285}
   - {fileID: 1492941683}
   - {fileID: 1713648258}
@@ -25291,4 +25322,3 @@ SceneRoots:
   - {fileID: 318187290}
   - {fileID: 171113379}
   - {fileID: 2124158431}
-  - {fileID: 601099770}
