@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
     public GameObject pauseMenu;
+    public GameObject blurOverlay; // Reference to the UI Image for the blur
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,6 +28,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        blurOverlay.SetActive(false); // Hide blur effect
         GameIsPaused = false;
     }
 
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        blurOverlay.SetActive(true); // Show blur effect
         GameIsPaused = true;
     }
 
