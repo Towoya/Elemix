@@ -1293,7 +1293,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1546596596}
   m_SourcePrefab: {fileID: 100100000, guid: c209374735a734e48aa24cde289fb017, type: 3}
 --- !u!1 &80392758 stripped
 GameObject:
@@ -2158,66 +2161,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1847980504}
   m_SourcePrefab: {fileID: 100100000, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
---- !u!1001 &136487422
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 553411649}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 19.083822
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.29683766
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.736172
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.5879782
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.60421914
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.39682943
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.36294255
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 93.04498
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -31.884003
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 263.098
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      propertyPath: m_Name
-      value: shelf_001 (23)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1384797965}
-  m_SourcePrefab: {fileID: 100100000, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
 --- !u!1001 &151450719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2229,6 +2172,10 @@ PrefabInstance:
     - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_Name
       value: Element Container (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
@@ -2324,6 +2271,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8823556882264193128, guid: a113415effdb4ef468f18d928a919a94, type: 3}
   m_PrefabInstance: {fileID: 151450719}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &164800975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+  m_PrefabInstance: {fileID: 1178546047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &164800981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164800975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: Unpowered Door
 --- !u!1 &172997071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
@@ -2634,9 +2600,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7166426285959463364, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 208071722}
-    - targetCorrespondingSourceObject: {fileID: 7166426285959463364, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 208071726}
   m_SourcePrefab: {fileID: 100100000, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
 --- !u!4 &208071720 stripped
 Transform:
@@ -2698,20 +2661,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &208071726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208071721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: 
-  header: 
 --- !u!1001 &210591056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2892,6 +2841,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -3067,7 +3020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4
+      value: 18.33
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3075,7 +3028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 132.3
+      value: -4.6
       objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4512,6 +4465,20 @@ MonoBehaviour:
   isTouchingBlock: 0
   stopDealingDamage: 0
   playerHealth: {fileID: 232189263}
+--- !u!114 &387669168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387669161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: Toxic Gas
 --- !u!1 &392558062
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,6 +4661,10 @@ PrefabInstance:
     - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_Name
       value: Element Container (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
@@ -6109,7 +6080,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1608129538}
   m_SourcePrefab: {fileID: 100100000, guid: c209374735a734e48aa24cde289fb017, type: 3}
 --- !u!1001 &512346670
 PrefabInstance:
@@ -6672,7 +6646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorTarget: {fileID: 0}
   compoundingPanelTarget: {fileID: 0}
-  TargetFormula: HHO
+  TargetFormula: HOH
 --- !u!65 &546218847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6776,7 +6750,6 @@ Transform:
   - {fileID: 542006606}
   - {fileID: 852084628}
   - {fileID: 959643890}
-  - {fileID: 1384797964}
   - {fileID: 2036164895}
   - {fileID: 1538918758}
   - {fileID: 841695029}
@@ -8313,6 +8286,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9144,6 +9121,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9284,9 +9265,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7166426285959463364, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 798882319}
-    - targetCorrespondingSourceObject: {fileID: 7166426285959463364, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 798882323}
   m_SourcePrefab: {fileID: 100100000, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
 --- !u!4 &798882317 stripped
 Transform:
@@ -9348,20 +9326,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798882318}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &798882323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798882318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: 
-  header: 
 --- !u!1 &799161625
 GameObject:
   m_ObjectHideFlags: 0
@@ -9590,6 +9554,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
       insertIndex: -1
       addedObject: {fileID: 387669162}
+    - targetCorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 387669168}
   m_SourcePrefab: {fileID: 100100000, guid: c209374735a734e48aa24cde289fb017, type: 3}
 --- !u!1001 &819157851
 PrefabInstance:
@@ -10196,6 +10163,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -10572,6 +10543,10 @@ PrefabInstance:
     - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -11221,6 +11196,10 @@ PrefabInstance:
     - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -12237,9 +12216,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7166426285959463364, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1067772264}
-    - targetCorrespondingSourceObject: {fileID: 7166426285959463364, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1067772268}
   m_SourcePrefab: {fileID: 100100000, guid: 3f80f0b44f9a113479164ce2369b26a1, type: 3}
 --- !u!1 &1067772262 stripped
 GameObject:
@@ -12301,20 +12277,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067772262}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1067772268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067772262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: 
-  header: 
 --- !u!1 &1089150487
 GameObject:
   m_ObjectHideFlags: 0
@@ -12672,6 +12634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Element Container (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
       value: Which element is the most abundant in the universe?
@@ -12775,15 +12741,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.426003
+      value: 14.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11965955
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.855724
+      value: 19.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13274,6 +13240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Element Container (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
       value: How is hydrogen used in weather balloons?
@@ -13586,7 +13556,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 164800981}
   m_SourcePrefab: {fileID: 100100000, guid: c209374735a734e48aa24cde289fb017, type: 3}
 --- !u!1001 &1180981137
 PrefabInstance:
@@ -15834,37 +15807,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371939665}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1384797963 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-  m_PrefabInstance: {fileID: 136487422}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1384797964 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 448875bdbe73fd849935ddc9750a9ecb, type: 3}
-  m_PrefabInstance: {fileID: 136487422}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1384797965
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384797963}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 6.6135545, y: 2.5288143, z: 1.313008}
-  m_Center: {x: 0, y: -0.13682657, z: -0.0000019073486}
 --- !u!1 &1396183645
 GameObject:
   m_ObjectHideFlags: 0
@@ -16258,6 +16200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Element Container (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
       value: What is the main use of hydrogen in fuel cells?
@@ -16491,6 +16437,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -16559,6 +16509,10 @@ PrefabInstance:
     - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_Name
       value: Element Container (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
@@ -18117,6 +18071,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545376334}
   m_Mesh: {fileID: -5495902117074765545, guid: d6d7d9863985e2c47b481b380d4e5f70, type: 3}
+--- !u!1 &1546596590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+  m_PrefabInstance: {fileID: 80264404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1546596596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546596590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: Acidic Door
 --- !u!1 &1550320041
 GameObject:
   m_ObjectHideFlags: 0
@@ -18273,6 +18246,10 @@ PrefabInstance:
     - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -19022,6 +18999,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.006991934, y: 0.13586712, z: 0.040905114}
   m_Center: {x: 0.04650612, y: -0.0012345314, z: 0.039160613}
+--- !u!1 &1608129532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
+  m_PrefabInstance: {fileID: 495146199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1608129538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608129532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: Fire Door
 --- !u!1 &1634151680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cb7d4d4156e305f4c959cbbd049b24b9, type: 3}
@@ -19171,6 +19167,10 @@ PrefabInstance:
     - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -20053,6 +20053,10 @@ PrefabInstance:
     - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_Name
       value: Element Container (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
@@ -21032,6 +21036,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -21721,6 +21729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Element Container (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
       value: What is formed when hydrogen bonds with oxygen?
@@ -22301,6 +22313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Element Container (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
       value: What percentage of Earth's atmosphere is nitrogen?
@@ -22781,6 +22797,10 @@ PrefabInstance:
     - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: m_Name
       value: Element Container (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549962880552652308, guid: a113415effdb4ef468f18d928a919a94, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: question
