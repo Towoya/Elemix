@@ -70,6 +70,13 @@ public class Grid : MonoBehaviour {
 		int y = Mathf.RoundToInt((gridSizeY-1) * percentY);
 		return grid[x,y];
 	}
+	public void UpdateWalkableNode(Vector3 position) {
+        Node node = NodeFromWorldPoint(position);
+        if (node != null) {
+            node.walkable = true;  // Mark the node as walkable
+            Debug.Log("Node at " + position + " is now walkable.");
+        }
+    }
 	
 	void OnDrawGizmos() {
 		Gizmos.DrawWireCube(transform.position,new Vector3(gridWorldSize.x,1,gridWorldSize.y));

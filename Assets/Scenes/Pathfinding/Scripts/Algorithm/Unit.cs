@@ -31,7 +31,7 @@ public class Unit : MonoBehaviour {
             if (transform.position == currentWaypoint) {
                 targetIndex++;
                 if (targetIndex >= path.Length) {
-                    animator.SetBool("isMoving", false); // Stop walking animation
+                    animator.SetBool("isMoving", false);
                     yield break;
                 }
                 currentWaypoint = path[targetIndex];

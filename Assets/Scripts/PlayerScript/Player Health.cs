@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public bool isTouchingBlock;
     public bool stopDealingDamage;
+    public GameManagerScript gameManager;
+    private bool isDead;
     void Start()
     {
         currentHealth = maxHealth;
@@ -29,6 +31,12 @@ public class PlayerHealth : MonoBehaviour
                 stopDealingDamage = true;
                 StartCoroutine(DamageFromBlock());
             }
+        }
+
+        if (currentHealth == 0 && !isDead)
+        {
+            isDead = true;
+            gameManager.gameOver();
         }
     }
     void OnTriggerEnter(Collider collider)
