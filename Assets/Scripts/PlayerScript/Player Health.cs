@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
     }
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Hazard Block")
+        if (collider.tag == "Hazard Block" || collider.tag == "Door")
         {
             isTouchingBlock = true;
         }
@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
     }
     void OnTriggerExit(Collider collider)
     {
-        if (collider.tag == "Hazard Block")
+        if (collider.tag == "Hazard Block" || collider.tag == "Door")
         {
             isTouchingBlock = false;
         }
