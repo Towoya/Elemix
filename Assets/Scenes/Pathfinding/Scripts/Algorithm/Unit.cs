@@ -4,9 +4,11 @@ using System.Collections;
 public class Unit : MonoBehaviour {
 
 	public Transform target;
-	float speed = 20;
+	float speed = 10;
+	public float rotationSpeed = 5f;
 	Vector3[] path;
 	int targetIndex;
+	public Animator animator;
 
 	void Start() {
 		//PathRequestManager.RequestPath(transform.position,target.position, OnPathFound);
@@ -23,19 +25,27 @@ public class Unit : MonoBehaviour {
 
 	IEnumerator FollowPath() {
 		Vector3 currentWaypoint = path[0];
-		while (true) {
-			if (transform.position == currentWaypoint) {
-				targetIndex ++;
-				if (targetIndex >= path.Length) {
-					yield break;
-				}
-				currentWaypoint = path[targetIndex];
-			}
+		animator.SetBool("isMoving", true);
 
-			transform.position = Vector3.MoveTowards(transform.position,currentWaypoint,speed * Time.deltaTime);
-			yield return null;
+        while (true) {
+            if (transform.position == currentWaypoint) {
+                targetIndex++;
+                if (targetIndex >= path.Length) {
+                    animator.SetBool("isMoving", false); // Stop walking animation
+                    yield break;
+                }
+                currentWaypoint = path[targetIndex];
+            }
 
-		}
+            // Rotate towards the waypoint
+            Vector3 direction = (currentWaypoint - transform.position).normalized;
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            // Move towards the waypoint
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            yield return null;
+        }
 	}
 
 	public void OnDrawGizmos() {
