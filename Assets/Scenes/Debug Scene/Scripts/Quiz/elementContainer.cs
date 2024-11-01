@@ -10,9 +10,6 @@ public class elementContainer : MonoBehaviour
     [SerializeField] bool isContainerOpen;
 
     [Header("Quiz Variables")]
-    [SerializeField] string question;
-    [SerializeField] string[] choices = new string[4];
-    [SerializeField] string correctAnswer;
     [SerializeField] string[] resultMessages = new string[4]; // Add this field for customizable result messages
 
     private void OnEnable() {
@@ -51,7 +48,10 @@ public class elementContainer : MonoBehaviour
 
                 if (QuizManager.instance.quizCanvas.activeSelf) return;
 
-                QuizManager.instance.setQuizValues(question, correctAnswer, choices, selectedGameObject, resultMessages); // Pass resultMessages
+                System.Random random = new System.Random();
+                int quizIndex = random.Next(0, 50);
+
+                QuizManager.instance.setQuizValues(QuizQuestionsManager.instance.getQuestion(quizIndex), QuizQuestionsManager.instance.getCorrectAnswer(quizIndex), QuizQuestionsManager.instance.getChoices(quizIndex), selectedGameObject, resultMessages); // Pass resultMessages
 
                 Time.timeScale = 0f;
             }
