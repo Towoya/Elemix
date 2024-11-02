@@ -6,8 +6,18 @@ using UnityEngine;
 public class QuizQuestionsManager : MonoBehaviour
 {
     [Header("Question Variables")]
-    [SerializeField] string[] questions = new string[50];
-    [SerializeField] string[] answers = new string[50];
+    [SerializeField]
+    string[] questions = new string[50];
+
+    [SerializeField]
+    string[] answers = new string[50];
+
+    [Header("FeedBack Variables")]
+    [SerializeField]
+    string[] messageIfCorrect = new string[50];
+
+    [SerializeField]
+    string[] messageIfIncorrect = new string[50];
 
     public static QuizQuestionsManager instance { get; private set; }
 
@@ -15,7 +25,9 @@ public class QuizQuestionsManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("There are more than one instance of Quiz Question Manager in current scene");
+            Debug.LogError(
+                "There are more than one instance of Quiz Question Manager in current scene"
+            );
             Destroy(this);
         }
         else
@@ -42,10 +54,12 @@ public class QuizQuestionsManager : MonoBehaviour
         {
             string tempString = "";
 
-            while(true){
+            while (true)
+            {
                 tempString = answers[random.Next(0, answers.Length)];
 
-                if (!choices.Contains(tempString)) break;
+                if (!choices.Contains(tempString))
+                    break;
             }
 
             choices[i] = tempString;
@@ -54,8 +68,19 @@ public class QuizQuestionsManager : MonoBehaviour
         return KnuthShuffle(choices);
     }
 
-    public string getCorrectAnswer(int questionIndex){
+    public string getCorrectAnswer(int questionIndex)
+    {
         return answers[questionIndex];
+    }
+
+    public string getCorrectMessage(int questionIndex)
+    {
+        return messageIfCorrect[questionIndex];
+    }
+
+    public string getIncorrectMessage(int questionIndex)
+    {
+        return messageIfIncorrect[questionIndex];
     }
 
     T[] KnuthShuffle<T>(T[] array)
@@ -64,7 +89,9 @@ public class QuizQuestionsManager : MonoBehaviour
         for (int i = 0; i < array.Length; i++)
         {
             int j = random.Next(i, array.Length); // Don't select from the entire array on subsequent loops
-            T temp = array[i]; array[i] = array[j]; array[j] = temp;
+            T temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
 
         return array;
