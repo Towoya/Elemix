@@ -20,7 +20,7 @@ public class Grid : MonoBehaviour {
 		CreateGrid();
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		CreateGrid();
 	}
