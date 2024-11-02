@@ -4941,10 +4941,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2635080288197325843, guid: 504701d48233b534bac2d05313c54b00, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2738977250443775289, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5001,10 +4997,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 821098803}
-    - target: {fileID: 8493622595416690230, guid: 504701d48233b534bac2d05313c54b00, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5016,7 +5008,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 365111014}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa8cb808bd0a8654391b465fd58665e4, type: 3}
   m_Name: 
@@ -9867,7 +9859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 365111014}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22316a2468df3fd4f8592cba4f3d454b, type: 3}
   m_Name: 
@@ -15516,11 +15508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: choices.Array.data[0]
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: choices.Array.data[1]
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: choices.Array.data[2]
@@ -15536,8 +15528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: resultMessages.Array.data[1]
-      value: 'Incorrect! Hint: You probably encounter thiswhen going to a public
-        pool.'
+      value: 'Incorrect! Hint: It involves sunlight.'
       objectReference: {fileID: 0}
     - target: {fileID: 5845548911177723355, guid: a113415effdb4ef468f18d928a919a94, type: 3}
       propertyPath: resultMessages.Array.data[2]
@@ -18548,7 +18539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7260127784908850160, guid: c209374735a734e48aa24cde289fb017, type: 3}
       propertyPath: m_TagString
@@ -26354,7 +26345,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2044780820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1757252022}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2044780820
 MonoBehaviour:
   m_ObjectHideFlags: 0

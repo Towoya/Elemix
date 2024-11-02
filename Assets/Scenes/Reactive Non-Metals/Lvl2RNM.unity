@@ -10494,7 +10494,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1324639331}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22316a2468df3fd4f8592cba4f3d454b, type: 3}
   m_Name: 
@@ -11674,10 +11674,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1242474931}
-    - target: {fileID: 5388522319774096565, guid: 504701d48233b534bac2d05313c54b00, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 7679
-      objectReference: {fileID: 0}
     - target: {fileID: 6360033831091508204, guid: 504701d48233b534bac2d05313c54b00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.7
@@ -11733,7 +11729,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1324639331}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa8cb808bd0a8654391b465fd58665e4, type: 3}
   m_Name: 
@@ -16483,7 +16479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1980221883}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1222821229}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1980221883
 MonoBehaviour:
   m_ObjectHideFlags: 0
