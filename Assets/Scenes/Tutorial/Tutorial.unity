@@ -1983,6 +1983,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4396,7 +4400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2ad514b11441e449aa9f9e53a77899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: 
+  content: 'Hint: Its symbol is H'
   header: 
 --- !u!1 &679815641
 GameObject:
@@ -5113,6 +5117,10 @@ PrefabInstance:
     - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102578473533468035, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 7394142085822908278, guid: 2e99a94e441fe0d44b0c81243041a8f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -9707,7 +9715,7 @@ Transform:
   m_GameObject: {fileID: 1589485806}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -24.6898, y: -0.05, z: -2.3}
+  m_LocalPosition: {x: -24.6898, y: -0.64, z: -2.3}
   m_LocalScale: {x: 27.78117, y: 391.99548, z: 27.78117}
   m_ConstrainProportionsScale: 0
   m_Children: []
