@@ -24,6 +24,6 @@ public class StageSoreDisplay : MonoBehaviour
     {
         int stageScore = LevelManager.instance.GetStageScore(stageIndex);
 
-        scoreOutput.text = stageScore + "%";
+        scoreOutput.text = "Average Score: " + stageScore + "%";
     }
 }
