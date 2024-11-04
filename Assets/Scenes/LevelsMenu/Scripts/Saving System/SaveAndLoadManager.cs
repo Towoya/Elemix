@@ -30,11 +30,15 @@ public class SaveAndLoadManager : MonoBehaviour
 
     void onSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex != 2 && scene.buildIndex != 5)
+        if (scene.buildIndex != 2 && scene.buildIndex != 5 && scene.buildIndex != 1)
             return;
 
-        this.saveAndLoadObjects = findAllSaveAndLoadObjects();
+        SetSaveAndLoadObjects();
         loadGame();
+    }
+
+    public void SetSaveAndLoadObjects(){
+        this.saveAndLoadObjects = findAllSaveAndLoadObjects();
     }
 
     public void newGame()
@@ -63,6 +67,9 @@ public class SaveAndLoadManager : MonoBehaviour
 
         for (int i = 0; i < levelData.levelAvailability.Length; i++)
             PlayerPrefs.SetInt("levelAvailability" + i, levelData.levelAvailability[i] ? 1 : 0);
+
+        for (int i = 0; i < levelData.categoryAvailability.Length; i++)
+            PlayerPrefs.SetInt("categoryAvailability" + i, levelData.categoryAvailability[i] ? 1 : 0);
 
         for (int i = 0; i < levelData.levelStars.Length; i++)
             PlayerPrefs.SetInt("levelStars" + i, levelData.levelStars[i]);
