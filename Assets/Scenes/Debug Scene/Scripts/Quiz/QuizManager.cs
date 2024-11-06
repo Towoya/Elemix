@@ -1,36 +1,39 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class QuizManager : MonoBehaviour
 {
-    public static QuizManager instance { get; private set; }
+    static public QuizManager instance { get; private set; }
 
     [Header("Quiz Variables")]
-    [SerializeField] private string question;
-    [SerializeField] private string[] choices = new string[4];
-    [SerializeField] private string correctAnswer;
-    [SerializeField] private string correctMessage;
-    [SerializeField] private string incorrectMessage;
-    [SerializeField] private int quizindex;
-    private GameObject elementContainer;
+    string question;
+    string[] choices = new string[4];
+    string correctAnswer;
+    public GameObject elementContainer;
 
-    [Header("UI Elements")]
+    [Header("Panel Variables")]
     public GameObject quizCanvas;
-    [SerializeField] private Button[] choiceButtons;
-    [SerializeField] private TextMeshProUGUI questionText;
+    [SerializeField] Button[] choiceButtons;
+    [SerializeField] TextMeshProUGUI questionText;
 
-    [Header("Result Panel")]
+    [Header("Result Panel Variables")]
     public GameObject resultPanel;
     public TextMeshProUGUI resultText;
     public Button closeButton;
+
+    private string[] resultMessages;
+
+    private bool isCorrectAnswer = true;
 
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogError("Multiple instances of QuizManager detected!");
+            Debug.LogError("More than one instance of \"Quiz Manager\" exists in the current scene");
             Destroy(this);
         }
         else
@@ -43,70 +46,97 @@ public class QuizManager : MonoBehaviour
     {
         quizCanvas.SetActive(false);
         resultPanel.SetActive(false);
-        closeButton.onClick.AddListener(CloseResultPanel);
+
+        closeButton.onClick.AddListener(() => CloseResultPanel());
     }
 
-    public void SetQuizValues(string question, string correctAnswer, string[] choices, GameObject container, string correctMessage, string incorrectMessage, int quizIndex)
+    void startQuiz(GameObject container)
     {
-        this.question = question;
-        this.correctAnswer = correctAnswer;
-        this.choices = choices;
-        this.elementContainer = container;
-        this.incorrectMessage = incorrectMessage;
-        this.correctMessage = correctMessage;
-        this.quizindex = quizIndex;
-
-
-        StartQuiz();
-    }
-
-    private void StartQuiz()
-    {
+        elementContainer = container;
         quizCanvas.SetActive(true);
-        InitializeQuizValues();
+        initializeQuizValues();
     }
 
-    private void InitializeQuizValues()
+    public void setQuizValues(string question, string correctAnswer, string[] choices, GameObject container, string[] resultMessages) // Add resultMessages parameter
+{
+    this.question = question;
+    this.correctAnswer = correctAnswer;
+    this.choices = choices;
+
+    startQuiz(container);
+
+    // Store result messages for use in choice checks
+    this.resultMessages = resultMessages; 
+}
+
+    public void initializeQuizValues()
     {
         questionText.text = question;
 
-        for (int i = 0; i < choices.Length; i++)
+        for (int i = 0; i < 4; i++)
         {
             TextMeshProUGUI choiceText = choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             choiceText.text = choices[i];
-            int index = i; // Capture index for use in the lambda expression
-            choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(index));
         }
     }
 
-    private void OnChoiceSelected(int buttonIndex)
+    public void isChoiceCorrect(int buttonIndex)
+{
+    string selectedAnswer = choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text;
+
+    if (selectedAnswer.Equals(correctAnswer))
     {
-        string selectedAnswer = choiceButtons[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text;
+        ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for correct answer
+        if (isCorrectAnswer) GameEventsManager.instance.quizEvents.quizCorrect();
+        isCorrectAnswer = true;
+    }
+    else
+    {
+        isCorrectAnswer = false;
+        ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for incorrect answer
+        GameEventsManager.instance.quizEvents.quizIncorrect();
+    }
 
-        if (selectedAnswer == correctAnswer)
-        {
-            ShowResult("Correct!");
-            GameEventsManager.instance.quizEvents.quizCorrect();
-        }
-        else
-        {
-            ShowResult("Incorrect!");
-            GameEventsManager.instance.quizEvents.quizIncorrect();
-        }
+    // Don't close the quizCanvas yet
+    quizCanvas.SetActive(false);
+}
 
+// Note: You will also need to declare a field to hold the result messages in QuizManager
+// Add this field
+
+        void ShowResult(string message)
+    {
+        resultText.text = message;  // Update the result text
+        resultPanel.SetActive(true); // Show the result panel
+        closeButton.gameObject.SetActive(true);  // Ensure the close button is active
+        Time.timeScale = 0f;  // Pause the game (optional, depending on your design)
+    }
+
+    void CloseResultPanel()
+{
+    resultPanel.SetActive(false);  // Hide the result panel
+    closeButton.gameObject.SetActive(false);  // Ensure the close button is hidden too
+    Time.timeScale = 0f;
+
+    if (isCorrectAnswer)
+    {
+        // Correct answer: Unlock container and allow progress
+        GameEventsManager.instance.quizEvents.quizCompleted(elementContainer);
         quizCanvas.SetActive(false);
-    }
-
-    private void ShowResult(string message)
-    {
-        resultText.text = message;
-        resultPanel.SetActive(true);
-        Time.timeScale = 0f;
-    }
-
-    private void CloseResultPanel()
-    {
-        resultPanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+    else
+    {
+        // Incorrect answer: Reopen quiz for another attempt
+        quizCanvas.SetActive(true);
+    }
+}
+
+    void reactivateChoices()
+    {
+        foreach (Button choice in choiceButtons)
+        {
+            choice.interactable = true;
+        }
     }
 }
