@@ -19,13 +19,8 @@ public class elementContainer : MonoBehaviour
     [SerializeField]
     string[] resultMessages = new string[4]; // Add this field for customizable result messages
 
-<<<<<<< HEAD
 
     private void OnEnable() {
-=======
-    private void OnEnable()
-    {
->>>>>>> main
         GameEventsManager.instance.quizEvents.onQuizComplete += unlockContainer;
     }
 
@@ -34,17 +29,8 @@ public class elementContainer : MonoBehaviour
         GameEventsManager.instance.quizEvents.onQuizComplete -= unlockContainer;
     }
 
-<<<<<<< HEAD
     private void Update() {
         if (!isContainerOpen) {
-=======
-    private void Update()
-    {
-        startQuiz();
-
-        if (!isContainerOpen)
-        {
->>>>>>> main
             deactivateElementBlock();
             return;
         }
@@ -62,13 +48,8 @@ public class elementContainer : MonoBehaviour
         );
     }
 
-<<<<<<< HEAD
 
     void startQuiz(){
-=======
-    void startQuiz()
-    {
->>>>>>> main
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
@@ -100,30 +81,16 @@ public class elementContainer : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
 
     void removeChildFromContainer(){
         if (transform.childCount == 0) return;
-=======
-    void removeChildFromContainer()
-    {
-        if (transform.childCount == 0)
-            return;
->>>>>>> main
 
         Transform elementBlock = transform.GetChild(0);
 
         elementBlock.SetParent(null);
     }
 
-<<<<<<< HEAD
     void unlockContainer(){
-=======
-    void unlockContainer(GameObject container)
-    {
-        if (gameObject != container)
-            return;
->>>>>>> main
         isContainerOpen = true;
     }
 
