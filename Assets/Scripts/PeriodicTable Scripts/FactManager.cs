@@ -74,6 +74,14 @@ public class FactManager : MonoBehaviour
                     "Combines with oxygen to form carbon dioxide (CO₂), which is crucial for photosynthesis and greenhouse effects."
                 };
                 break;
+            case "Nitrogen":
+                facts = new string[]
+                {
+                    "Nitrogen makes up about 78% of Earth's atmosphere.",
+                    "Nitrogen is a critical component of amino acids, proteins, and DNA, making it essential for all living organisms.",
+                    "Nitrogen is widely used in various industries, especially in the production of fertilizers."
+                };
+                break;
             default:
                 facts = new string[]
                 {

@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Make sure to include this for UI elements
 
 public class PanelFade : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
     public float fadeDuration = 0.5f; // Duration of the fade effect
+    public Button seeMixtureButton; // Reference to the "See Mixture" button
 
     private bool isFadingIn = false;
     private bool isFadingOut = false;
@@ -16,6 +17,12 @@ public class PanelFade : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+
+        // Assign the button's onClick event
+        if (seeMixtureButton != null)
+        {
+            seeMixtureButton.onClick.AddListener(ToggleFade);
+        }
     }
 
     public void ToggleFade()
@@ -34,7 +41,7 @@ public class PanelFade : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator FadeIn()
+    private IEnumerator FadeIn()
     {
         isFadingIn = true;
         float elapsedTime = 0f;
@@ -52,7 +59,7 @@ public class PanelFade : MonoBehaviour
         isFadingIn = false;
     }
 
-    private System.Collections.IEnumerator FadeOut()
+    private IEnumerator FadeOut()
     {
         isFadingOut = true;
         float elapsedTime = 0f;
