@@ -8,8 +8,7 @@ public class elementContainer : MonoBehaviour
     [SerializeField] float containerHeight;
     [SerializeField] float unlockSpeed = 5;
     [SerializeField] bool isContainerOpen;
-<<<<<<< HEAD
-=======
+
 
     [Header("Quiz Variables")]
     [SerializeField] string question;
@@ -17,7 +16,7 @@ public class elementContainer : MonoBehaviour
     [SerializeField] string correctAnswer;
     [SerializeField] string[] resultMessages = new string[4]; // Add this field for customizable result messages
 
->>>>>>> main
+
     private void OnEnable() {
         GameEventsManager.instance.quizEvents.onQuizComplete += unlockContainer;
     }
@@ -41,8 +40,7 @@ public class elementContainer : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y - unlockSpeed * Time.deltaTime, transform.position.z);
     }
 
-<<<<<<< HEAD
-=======
+
     void startQuiz(){
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -60,7 +58,7 @@ public class elementContainer : MonoBehaviour
             }
     }
 
->>>>>>> main
+
     void removeChildFromContainer(){
         if (transform.childCount == 0) return;
 
