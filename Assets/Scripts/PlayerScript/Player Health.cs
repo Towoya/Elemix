@@ -19,10 +19,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            TakeDamage(20);
-        }
 
         if (isTouchingBlock == true)
         {
@@ -32,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(DamageFromBlock());
             }
         }
+
+        //healthBar.SetHealth(currentHealth);
 
         if (currentHealth == 0 && !isDead)
         {
