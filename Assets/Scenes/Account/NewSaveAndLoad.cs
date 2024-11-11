@@ -35,6 +35,8 @@ public class NewSaveAndLoad : MonoBehaviour
 
     public TMP_Text TeacherNameTxt, StudentNameTxt;
 
+    public GameObject TeacherErr, StudentErr;
+
     void Start()
     {
         /*PlayerPrefs.DeleteAll();
@@ -114,6 +116,8 @@ public class NewSaveAndLoad : MonoBehaviour
 
         if (_teacherValid)
         {
+            TeacherErr.SetActive(false);
+            TeacherErr.GetComponent<TMP_Text>().text = "";
             TeacherAccount _nsd = new TeacherAccount();
 
             _nsd.FullName = TeacherName.text;
@@ -130,6 +134,11 @@ public class NewSaveAndLoad : MonoBehaviour
             {
                 WaitCo = StartCoroutine(WaitTeacherIE());
             }
+        }
+        else
+        {
+            TeacherErr.GetComponent<TMP_Text>().text = "Existing Account";
+            TeacherErr.SetActive(true);
         }
     }
 
@@ -183,10 +192,16 @@ public class NewSaveAndLoad : MonoBehaviour
             ListUI.SetActive(true);
             AccountUI.SetActive(false);
 
+            TeacherErr.SetActive(false);
+            TeacherErr.GetComponent<TMP_Text>().text = "";
+
             SectionList();
         }
         else
         {
+            TeacherErr.GetComponent<TMP_Text>().text = "Invalid Account";
+            TeacherErr.SetActive(true);
+
             Debug.Log("Invalid Teacher");
         }
     }
@@ -292,6 +307,8 @@ public class NewSaveAndLoad : MonoBehaviour
 
             NSD.students.Add(_nsd);
 
+            StudentErr.GetComponent<TMP_Text>().text = "";
+            StudentErr.SetActive(false);
 
             Debug.Log(NSD.students.Count - 1);
 
@@ -305,12 +322,18 @@ public class NewSaveAndLoad : MonoBehaviour
                 WaitCo = StartCoroutine(WaitIE());
             }
         }
+        else
+        {
+            StudentErr.GetComponent<TMP_Text>().text = "Existing Account";
+            StudentErr.SetActive(true);
+        }
     }
 
     IEnumerator WaitIE()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
 
+        Debug.Log("waiting");
         System.Random random = new System.Random();
 
         List<int> ql = new List<int>();
@@ -373,12 +396,17 @@ public class NewSaveAndLoad : MonoBehaviour
 
             StudentNameTxt.text = NSD.FullName;
 
+            StudentErr.GetComponent<TMP_Text>().text = "";
+            StudentErr.SetActive(false);
+
             MenuUI.SetActive(true);
             AccountUI.SetActive(false);
         }
         else
         {
 
+            StudentErr.GetComponent<TMP_Text>().text = "Invalid Account";
+            StudentErr.SetActive(true);
             Debug.Log("Invalid Student");
         }
     }
