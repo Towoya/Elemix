@@ -68,12 +68,12 @@ public class NewSaveAndLoad : MonoBehaviour
             if (NSD.AccountType == "Student")
             {
 
-                StudentNameTxt.text = NSD.FullName;
+                StudentNameTxt.text = NSD.FullName.ToUpper();
                 MenuUI.SetActive(true);
             }
             else if (NSD.AccountType == "Teacher")
             {
-                TeacherNameTxt.text = NSD.FullName;
+                TeacherNameTxt.text = NSD.FullName.ToUpper();
                 ListUI.SetActive(true);
                 SectionList();
             }
@@ -108,7 +108,7 @@ public class NewSaveAndLoad : MonoBehaviour
 
         foreach (TeacherAccount _tacc in NSD.teachers)
         {
-            if (_tacc.FullName == TeacherName.text)
+            if (_tacc.FullName == TeacherName.text.ToUpper())
             {
                 _teacherValid = false;
             }
@@ -120,8 +120,8 @@ public class NewSaveAndLoad : MonoBehaviour
             TeacherErr.GetComponent<TMP_Text>().text = "";
             TeacherAccount _nsd = new TeacherAccount();
 
-            _nsd.FullName = TeacherName.text;
-            _nsd.Section = TeacherSection.text;
+            _nsd.FullName = TeacherName.text.ToUpper();
+            _nsd.Section = TeacherSection.text.ToUpper();
 
             NSD.teachers.Add(_nsd);
 
@@ -146,13 +146,13 @@ public class NewSaveAndLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        NSD.FullName = TeacherName.text;
+        NSD.FullName = TeacherName.text.ToUpper();
         NSD.AccountType = "Teacher";
         NSD.AccountNumber = NSD.teachers.Count - 1;
 
         SaveToJson();
 
-        TeacherNameTxt.text = NSD.FullName;
+        TeacherNameTxt.text = NSD.FullName.ToUpper();
         ListUI.SetActive(true);
         AccountUI.SetActive(false);
 
@@ -164,7 +164,7 @@ public class NewSaveAndLoad : MonoBehaviour
 
     public void TeacherLoginFunc()
     {
-        if (TeacherName.text == "delete" && TeacherSection.text == "delete")
+        if (TeacherName.text.ToUpper() == "DELETE" && TeacherSection.text.ToUpper() == "DELETE")
         {
 
             NSD.AccountType = "";
@@ -186,7 +186,7 @@ public class NewSaveAndLoad : MonoBehaviour
             for (int i = 0; i < NSD.teachers.Count; i++)
             {
                 int j = i;
-                if (NSD.teachers[i].FullName == TeacherName.text)
+                if (NSD.teachers[i].FullName == TeacherName.text.ToUpper())
                 {
                     _accAvail = true;
                     _accNum = j;
@@ -195,11 +195,11 @@ public class NewSaveAndLoad : MonoBehaviour
 
             if (_accAvail)
             {
-                NSD.FullName = TeacherName.text;
+                NSD.FullName = TeacherName.text.ToUpper();
                 NSD.AccountType = "Teacher";
                 NSD.AccountNumber = _accNum;
 
-                NSD.teachers[_accNum].Section = TeacherSection.text;
+                NSD.teachers[_accNum].Section = TeacherSection.text.ToUpper();
 
                 Debug.Log("Valid Teacher");
 
@@ -307,11 +307,11 @@ public class NewSaveAndLoad : MonoBehaviour
 
         foreach (StudentAccount _sacc in NSD.students)
         {
-            if (_sacc.StudentNumber == StudentNumber.text)
+            if (_sacc.StudentNumber == StudentNumber.text.ToUpper())
             {
                 _studentValid = false;
             }
-            if (_sacc.FullName == StudentName.text)
+            if (_sacc.FullName == StudentName.text.ToUpper())
             {
                 _studentValid = false;
             }
@@ -320,9 +320,9 @@ public class NewSaveAndLoad : MonoBehaviour
         if (_studentValid)
         {
             StudentAccount _nsd = new StudentAccount();
-            _nsd.StudentNumber = StudentNumber.text;
-            _nsd.FullName = StudentName.text;
-            _nsd.Section = StudentSection.text;
+            _nsd.StudentNumber = StudentNumber.text.ToUpper();
+            _nsd.FullName = StudentName.text.ToUpper();
+            _nsd.Section = StudentSection.text.ToUpper();
 
             NSD.students.Add(_nsd);
 
@@ -364,7 +364,7 @@ public class NewSaveAndLoad : MonoBehaviour
 
         NSD.students[NSD.students.Count - 1].LevelData.questionList = ql.OrderBy(x => Guid.NewGuid()).ToList().ToArray();
 
-        NSD.FullName = StudentName.text;
+        NSD.FullName = StudentName.text.ToUpper();
         NSD.AccountType = "Student";
         NSD.AccountNumber = NSD.students.Count - 1;
 
@@ -374,7 +374,7 @@ public class NewSaveAndLoad : MonoBehaviour
 
         SaveToJson();
 
-        StudentNameTxt.text = NSD.FullName;
+        StudentNameTxt.text = NSD.FullName.ToUpper();
 
         MenuUI.SetActive(true);
         AccountUI.SetActive(false);
