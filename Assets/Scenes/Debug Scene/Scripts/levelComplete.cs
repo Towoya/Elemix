@@ -27,7 +27,7 @@ public class levelComplete : MonoBehaviour
             return;
 
         testSaving = false;
-        levelCompleted();
+        //levelCompleted();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,7 +58,7 @@ public class levelComplete : MonoBehaviour
         LevelManager.instance.setStageScore(levelVariablesHandler.instance.levelIndex, (int)result);
     }
 
-    void levelCompleted()
+    public void levelCompleted()
     {
         levelVariablesHandler.instance.updateLevelStats();
         CalculateStageScore();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,12 @@ public class QuizQuestionsManager : MonoBehaviour
     [SerializeField]
     string[] messageIfIncorrect = new string[50];
 
-    public static QuizQuestionsManager instance { get; private set; }
+    public static QuizQuestionsManager instance
+    {
+        get; private set;
+    }
+
+    public List<int> QuestionList;
 
     private void Awake()
     {
@@ -39,6 +45,7 @@ public class QuizQuestionsManager : MonoBehaviour
 
     public string getQuestion(int questionIndex)
     {
+
         return questions[questionIndex];
     }
 

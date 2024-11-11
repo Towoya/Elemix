@@ -6,12 +6,19 @@ public class levelVariablesHandler : MonoBehaviour
 
     // example: current level is 3. levelIndex should be 2.
 
+    public NewSaveData NSD;
+
+    [SerializeField]
     int temporaryStarCount = 3;
+    [SerializeField]
     int temporaryLevelScore = 0;
 
     bool reducedStarCountOnQuiz = false;
 
-    public static levelVariablesHandler instance { get; private set; }
+    public static levelVariablesHandler instance
+    {
+        get; private set;
+    }
 
     private void Awake()
     {
@@ -22,8 +29,11 @@ public class levelVariablesHandler : MonoBehaviour
             );
             Destroy(this);
         }
-        else
-            instance = this;
+
+        instance = this;
+
+
+        NSD.students[NSD.AccountNumber].LevelData.questionNumber = 0 + (levelIndex * 10);
     }
 
     private void OnEnable()
@@ -31,6 +41,8 @@ public class levelVariablesHandler : MonoBehaviour
         GameEventsManager.instance.quizEvents.onQuizIncorrect += reduceLevelStarOnQuiz;
         GameEventsManager.instance.compoundingEvents.onFormulaIncorrect += reduceLevelStarOnFormula;
         GameEventsManager.instance.quizEvents.onQuizCorrect += incrementLevelScore;
+
+        Debug.Log("Levelvariablehandler");
     }
 
     private void OnDisable()
@@ -56,7 +68,8 @@ public class levelVariablesHandler : MonoBehaviour
         temporaryStarCount--;
     }
 
-    void reduceLevelStarOnFormula(){
+    void reduceLevelStarOnFormula()
+    {
         temporaryStarCount--;
     }
 
@@ -64,6 +77,8 @@ public class levelVariablesHandler : MonoBehaviour
     {
         Debug.Log("Score Incremented");
         temporaryLevelScore++;
+
+        NSD.students[NSD.AccountNumber].LevelData.questionNumber = temporaryLevelScore + (levelIndex * 10);
     }
 
     public void updateLevelStats()

@@ -68,7 +68,7 @@ public class elementContainer : MonoBehaviour
                 return;
 
             System.Random random = new System.Random();
-            int quizIndex = random.Next(0, 50);
+            int quizIndex = LevelManager.instance.NSD.students[LevelManager.instance.NSD.AccountNumber].LevelData.questionNumber;
 
             QuizManager.instance.setQuizValues(
                 QuizQuestionsManager.instance.getQuestion(quizIndex),

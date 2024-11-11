@@ -6,7 +6,6 @@ public class TutorialExitTrigger : MonoBehaviour
 {
     public GameObject tutorialCompletePanel; // Reference to the panel in the UI
     public Button continueButton;            // Reference to the continue button
-
     private void Start()
     {
         // Ensure the panel is hidden at the start
@@ -23,7 +22,7 @@ public class TutorialExitTrigger : MonoBehaviour
         {
             // Show the completion panel
             tutorialCompletePanel.SetActive(true);
-             Time.timeScale = 0f;
+            Time.timeScale = 0f;
         }
     }
 

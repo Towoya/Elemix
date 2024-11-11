@@ -5,12 +5,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour, ISaveAndLoad
+public class LevelManager : MonoBehaviour
 {
+    public NewSaveData NSD;
+
     int numberOfLevels = 50;
+    [SerializeField]
     bool[] levelAvailability;
+    [SerializeField]
     int[] levelStars;
+    [SerializeField]
     int[] levelScore;
+    [SerializeField]
     int[] stageScore;
 
     [SerializeField]
@@ -23,7 +29,10 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
 
     // 1 - with star
 
-    public static LevelManager instance { get; private set; }
+    public static LevelManager instance
+    {
+        get; private set;
+    }
 
     private void Awake()
     {
@@ -213,44 +222,64 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         return stageScore[StageIndex];
     }
 
-    public void loadData(levelData data)
+    public void loadData()
     {
-        this.levelAvailability = data.levelAvailability;
+        //this.levelAvailability = NSD.students[NSD.AccountNumber].LevelData.levelAvailability;
 
-        for (int i = 1; i < levelButtons.Length; i++)
+        for (int i = 0; i < NSD.students[NSD.AccountNumber].LevelData.levelAvailability.Length; i++)
+        {
+            this.levelAvailability[i] = NSD.students[NSD.AccountNumber].LevelData.levelAvailability[i];
+        }
+
+        /*for (int i = 1; i < levelButtons.Length; i++)
         {
             if (!PlayerPrefs.HasKey("levelAvailability" + i))
                 break;
             this.levelAvailability[i] =
                 PlayerPrefs.GetInt("levelAvailability" + i) == 1 ? true : false;
+        }*/
+
+        //this.levelStars = NSD.students[NSD.AccountNumber].LevelData.levelStars;
+
+        for (int i = 0; i < NSD.students[NSD.AccountNumber].LevelData.levelStars.Length; i++)
+        {
+            this.levelStars[i] = NSD.students[NSD.AccountNumber].LevelData.levelStars[i];
         }
 
-        this.levelStars = data.levelStars;
-
-        for (int i = 0; i < levelStarContainers.Length; i++)
+        /*for (int i = 0; i < levelStarContainers.Length; i++)
         {
             if (!PlayerPrefs.HasKey("levelStars" + i))
                 break;
             this.levelStars[i] = PlayerPrefs.GetInt("levelStars" + i);
+        }*/
+
+        //this.levelScore = NSD.students[NSD.AccountNumber].LevelData.levelScore;
+
+        for (int i = 0; i < NSD.students[NSD.AccountNumber].LevelData.levelScore.Length; i++)
+        {
+            this.levelScore[i] = NSD.students[NSD.AccountNumber].LevelData.levelScore[i];
         }
 
-        this.levelScore = data.levelScore;
-
-        for (int i = 0; i < levelScore.Length; i++)
+        /*for (int i = 0; i < levelScore.Length; i++)
         {
             if (!PlayerPrefs.HasKey("levelScore" + i))
                 break;
             this.levelScore[i] = PlayerPrefs.GetInt("levelScore" + i);
+        }*/
+
+        //this.stageScore = NSD.students[NSD.AccountNumber].LevelData.stageScores;
+
+        for (int i = 0; i < NSD.students[NSD.AccountNumber].LevelData.stageScores.Length; i++)
+        {
+            this.stageScore[i] = NSD.students[NSD.AccountNumber].LevelData.stageScores[i];
         }
 
-        this.stageScore = data.stageScores;
-
-        for (int i = 0; i < stageScore.Length; i++)
+        /*for (int i = 0; i < stageScore.Length; i++)
         {
             if (!PlayerPrefs.HasKey("stageScore" + i))
                 break;
             this.stageScore[i] = PlayerPrefs.GetInt("stageScore" + i);
-        }
+        }*/
 
         if (SceneManager.GetActiveScene().buildIndex != 2)
             return;
@@ -260,7 +289,7 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
         //NOTE: No Implementation of stage score display
     }
 
-    public void saveData(ref levelData data)
+    public void saveData()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -271,12 +300,22 @@ public class LevelManager : MonoBehaviour, ISaveAndLoad
             }
         }
 
-        data.levelAvailability = this.levelAvailability;
+        NSD.students[NSD.AccountNumber].LevelData.levelAvailability = this.levelAvailability;
 
-        data.levelStars = this.levelStars;
+        NSD.students[NSD.AccountNumber].LevelData.levelStars = this.levelStars;
 
-        data.levelScore = this.levelScore;
+        NSD.students[NSD.AccountNumber].LevelData.levelScore = this.levelScore;
 
-        data.stageScores = this.stageScore;
+        NSD.students[NSD.AccountNumber].LevelData.stageScores = this.stageScore;
+
+        SaveToJson();
+    }
+
+    public void SaveToJson()
+    {
+        string saveData = JsonUtility.ToJson(NSD);
+        Debug.Log(saveData);
+        string _filePath = Application.persistentDataPath + "/Elemix.json";
+        System.IO.File.WriteAllText(_filePath, saveData);
     }
 }

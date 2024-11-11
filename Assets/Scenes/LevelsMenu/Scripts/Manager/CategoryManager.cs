@@ -6,19 +6,21 @@ using UnityEngine.UI;
 public class CategoryManager : MonoBehaviour, ISaveAndLoad
 {
     bool[] categoryAvailability;
-    int numberOfCategories = 2;
-
+    int numberOfCategories = 1;
     [Header("Category Variables")]
     [SerializeField] GameObject[] categoryButtons;
 
     [Header("Debugging Variables")]
     [SerializeField] bool testCategoryUnlocking = false;
 
-    public static CategoryManager instance { get; private set; }
+    public static CategoryManager instance
+    {
+        get; private set;
+    }
 
     private void Awake()
     {
-        if (instance != null)
+        /*if (instance != null)
         {
             Debug.LogError("There are more than one instance of Catergory Manager in current scene");
             Destroy(gameObject);
@@ -27,22 +29,25 @@ public class CategoryManager : MonoBehaviour, ISaveAndLoad
         {
             instance = this;
             DontDestroyOnLoad(instance);
-        }
+        }*/
 
         categoryButtons = new GameObject[numberOfCategories];
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (!testCategoryUnlocking) return;
 
         testCategoryUnlocking = false;
         UnlockNextCategory(0);
     }
 
-    public void UnlockNextCategory(int currentCategoryIndex){
+    public void UnlockNextCategory(int currentCategoryIndex)
+    {
         int nextCategoryIndex = currentCategoryIndex + 1;
 
-        if (nextCategoryIndex > categoryAvailability.Length){
+        if (nextCategoryIndex > categoryAvailability.Length)
+        {
             Debug.Log("The last category available has already been unlocked");
             return;
         }
@@ -51,7 +56,8 @@ public class CategoryManager : MonoBehaviour, ISaveAndLoad
         SaveAndLoadManager.instance.saveGame();
     }
 
-    void InitiateCategoryButtons(){
+    void InitiateCategoryButtons()
+    {
         if (categoryButtons[0] == null)
             GetCategoryButtons();
 
@@ -62,10 +68,13 @@ public class CategoryManager : MonoBehaviour, ISaveAndLoad
         }
     }
 
-    void GetCategoryButtons(){
+    void GetCategoryButtons()
+    {
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("CategoryButton");
 
         buttons = buttons.OrderBy(obj => obj.name, new AlphanumComparatorFast()).ToArray();
+
+        Debug.Log(buttons.Length);
 
         for (int i = 0; i < categoryButtons.Length; i++)
         {

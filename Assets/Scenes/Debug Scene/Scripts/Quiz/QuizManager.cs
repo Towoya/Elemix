@@ -7,7 +7,10 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
-    public static QuizManager instance { get; private set; }
+    public static QuizManager instance
+    {
+        get; private set;
+    }
 
     [Header("Quiz Variables")]
     int currentQuizIndex;

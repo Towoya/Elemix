@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public NewSaveData NSD;
     public void Play()
     {
         // Check if the player has completed the tutorial
-        if (PlayerPrefs.GetInt("TutorialCompleted", 0) == 1)
+        if (NSD.students[NSD.AccountNumber].LevelData.TutorialCompleted)
         {
             // Load the next scene if the tutorial was completed
             UnityEngine.SceneManagement.SceneManager.LoadScene("Category menu");

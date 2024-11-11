@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class GameEventsManager : MonoBehaviour
 {
-    public static GameEventsManager instance { get; private set; }
+    public levelVariablesHandler lVH;
+
+    public static GameEventsManager instance
+    {
+        get; private set;
+    }
 
     public CompoundingEvents compoundingEvents;
     public QuizEvents quizEvents;
@@ -19,10 +24,16 @@ public class GameEventsManager : MonoBehaviour
             );
             Destroy(gameObject);
         }
+
         instance = this;
+        Debug.Log(
+                 "New instance of " + this.name + " created"
+             );
 
         compoundingEvents = new CompoundingEvents();
         quizEvents = new QuizEvents();
         levelEvents = new LevelEvents();
+
+        lVH.enabled = true;
     }
 }
