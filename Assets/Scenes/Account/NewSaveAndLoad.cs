@@ -164,46 +164,65 @@ public class NewSaveAndLoad : MonoBehaviour
 
     public void TeacherLoginFunc()
     {
-        bool _accAvail = false;
-        int _accNum = -1;
-        for (int i = 0; i < NSD.teachers.Count; i++)
+        if (TeacherName.text == "delete" && TeacherSection.text == "delete")
         {
-            int j = i;
-            if (NSD.teachers[i].FullName == TeacherName.text)
-            {
-                _accAvail = true;
-                _accNum = j;
-            }
-        }
 
-        if (_accAvail)
-        {
-            NSD.FullName = TeacherName.text;
-            NSD.AccountType = "Teacher";
-            NSD.AccountNumber = _accNum;
+            NSD.AccountType = "";
+            NSD.FullName = "";
+            NSD.AccountNumber = -1;
 
-            NSD.teachers[_accNum].Section = TeacherSection.text;
-
-            Debug.Log("Valid Teacher");
+            NSD.students.Clear();
+            NSD.teachers.Clear();
 
             SaveToJson();
 
-            TeacherNameTxt.text = NSD.FullName;
-            ListUI.SetActive(true);
-            AccountUI.SetActive(false);
-
-            TeacherErr.SetActive(false);
-            TeacherErr.GetComponent<TMP_Text>().text = "";
-
-            SectionList();
+            TeacherName.text = "";
+            TeacherSection.text = "";
         }
         else
         {
-            TeacherErr.GetComponent<TMP_Text>().text = "Invalid Account";
-            TeacherErr.SetActive(true);
+            bool _accAvail = false;
+            int _accNum = -1;
+            for (int i = 0; i < NSD.teachers.Count; i++)
+            {
+                int j = i;
+                if (NSD.teachers[i].FullName == TeacherName.text)
+                {
+                    _accAvail = true;
+                    _accNum = j;
+                }
+            }
 
-            Debug.Log("Invalid Teacher");
+            if (_accAvail)
+            {
+                NSD.FullName = TeacherName.text;
+                NSD.AccountType = "Teacher";
+                NSD.AccountNumber = _accNum;
+
+                NSD.teachers[_accNum].Section = TeacherSection.text;
+
+                Debug.Log("Valid Teacher");
+
+                SaveToJson();
+
+                TeacherNameTxt.text = NSD.FullName;
+                ListUI.SetActive(true);
+                AccountUI.SetActive(false);
+
+                TeacherErr.SetActive(false);
+                TeacherErr.GetComponent<TMP_Text>().text = "";
+
+                SectionList();
+            }
+            else
+            {
+                TeacherErr.GetComponent<TMP_Text>().text = "Invalid Account";
+                TeacherErr.SetActive(true);
+
+                Debug.Log("Invalid Teacher");
+            }
         }
+
     }
 
     public void SectionList()
