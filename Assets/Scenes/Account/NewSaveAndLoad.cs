@@ -14,14 +14,26 @@ using System.IO;
 
 public class NewSaveAndLoad : MonoBehaviour
 {
-    public GameObject AccountUI, MenuUI;
+    public GameObject AccountUI, MenuUI, ListUI;
 
     public NewSaveData NSD;
 
     public TMP_InputField StudentNumber, StudentName, StudentSection;
     public Button StudentLogin, StudentRegister;
 
+
+    public TMP_InputField TeacherName, TeacherSection;
+    public Button TeacherLogin, TeacherRegister;
+
     Coroutine WaitCo;
+
+    public List<int> StudentListInt;
+    public List<GameObject> StudentListTransform;
+
+    public Transform ListParent;
+    public GameObject ItemPrefab;
+
+    public TMP_Text TeacherNameTxt, StudentNameTxt;
 
     void Start()
     {
@@ -30,28 +42,39 @@ public class NewSaveAndLoad : MonoBehaviour
         NSD.FullName = "";
         NSD.AccountNumber = -1;*/
 
-        string saveData = JsonUtility.ToJson(NSD);
+        /*string saveData = JsonUtility.ToJson(NSD);
         Debug.Log(saveData);
         string _filePath = Application.persistentDataPath + "/Elemix.json";
-        System.IO.File.WriteAllText(_filePath, saveData);
+        System.IO.File.WriteAllText(_filePath, saveData);*/
 
-        Debug.Log(_filePath);
-
-        /*string _filePath = Application.persistentDataPath + "/Elemix.json";
+        string _filePath = Application.persistentDataPath + "/Elemix.json";
         if (File.Exists(_filePath))
         {
             string _fileContents = File.ReadAllText(_filePath);
 
             JsonUtility.FromJsonOverwrite(_fileContents, NSD);
-        }*/
+        }
+
+        Debug.Log(_filePath);
 
         if (NSD.FullName != "" && NSD.AccountType != "" && NSD.AccountNumber > -1)
         {
             //SaveAndLoadManager.instance.LoadStudentData();
 
-
-            MenuUI.SetActive(true);
             AccountUI.SetActive(false);
+
+            if (NSD.AccountType == "Student")
+            {
+
+                StudentNameTxt.text = NSD.FullName;
+                MenuUI.SetActive(true);
+            }
+            else if (NSD.AccountType == "Teacher")
+            {
+                TeacherNameTxt.text = NSD.FullName;
+                ListUI.SetActive(true);
+                SectionList();
+            }
         }
         else
         {
@@ -61,9 +84,174 @@ public class NewSaveAndLoad : MonoBehaviour
 
             AccountUI.SetActive(true);
         }
-
     }
 
+    public void TeacherCheckInputField()
+    {
+        if (TeacherName.text != null && TeacherName.text != "" && TeacherSection.text != null && TeacherSection.text != "")
+        {
+            TeacherLogin.interactable = true;
+            TeacherRegister.interactable = true;
+        }
+        else
+        {
+            TeacherLogin.interactable = false;
+            TeacherRegister.interactable = false;
+        }
+    }
+
+    public void TeacherRegisterFunc()
+    {
+        bool _teacherValid = true;
+
+        foreach (TeacherAccount _tacc in NSD.teachers)
+        {
+            if (_tacc.FullName == TeacherName.text)
+            {
+                _teacherValid = false;
+            }
+        }
+
+        if (_teacherValid)
+        {
+            TeacherAccount _nsd = new TeacherAccount();
+
+            _nsd.FullName = TeacherName.text;
+            _nsd.Section = TeacherSection.text;
+
+            NSD.teachers.Add(_nsd);
+
+            if (WaitCo != null)
+            {
+                StopCoroutine(WaitCo);
+                WaitCo = null;
+            }
+            else
+            {
+                WaitCo = StartCoroutine(WaitTeacherIE());
+            }
+        }
+    }
+
+    IEnumerator WaitTeacherIE()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        NSD.FullName = TeacherName.text;
+        NSD.AccountType = "Teacher";
+        NSD.AccountNumber = NSD.teachers.Count - 1;
+
+        SaveToJson();
+
+        TeacherNameTxt.text = NSD.FullName;
+        ListUI.SetActive(true);
+        AccountUI.SetActive(false);
+
+        SectionList();
+
+        StopCoroutine(WaitCo);
+        WaitCo = null;
+    }
+
+    public void TeacherLoginFunc()
+    {
+        bool _accAvail = false;
+        int _accNum = -1;
+        for (int i = 0; i < NSD.teachers.Count; i++)
+        {
+            int j = i;
+            if (NSD.teachers[i].FullName == TeacherName.text)
+            {
+                _accAvail = true;
+                _accNum = j;
+            }
+        }
+
+        if (_accAvail)
+        {
+            NSD.FullName = TeacherName.text;
+            NSD.AccountType = "Teacher";
+            NSD.AccountNumber = _accNum;
+
+            NSD.teachers[_accNum].Section = TeacherSection.text;
+
+            Debug.Log("Valid Teacher");
+
+            SaveToJson();
+
+            TeacherNameTxt.text = NSD.FullName;
+            ListUI.SetActive(true);
+            AccountUI.SetActive(false);
+
+            SectionList();
+        }
+        else
+        {
+            Debug.Log("Invalid Teacher");
+        }
+    }
+
+    public void SectionList()
+    {
+        Debug.Log("SectionInit");
+
+        for (int i = 0; i < NSD.students.Count; i++)
+        {
+            int j = i;
+
+            if (NSD.students[j].Section == NSD.teachers[NSD.AccountNumber].Section)
+            {
+                StudentListInt.Add(j);
+            }
+        }
+
+        for (int i = 0; i < StudentListInt.Count; i++)
+        {
+
+            int j = i;
+
+            GameObject _go = Instantiate(ItemPrefab, ListParent);
+
+            _go.transform.Find("StudentNumber").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].StudentNumber;
+            _go.transform.Find("StudentName").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].FullName;
+            _go.transform.Find("Level1").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].LevelData.levelScore[0].ToString();
+            _go.transform.Find("Level2").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].LevelData.levelScore[1].ToString();
+            _go.transform.Find("Level3").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].LevelData.levelScore[2].ToString();
+            _go.transform.Find("Level4").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].LevelData.levelScore[3].ToString();
+            _go.transform.Find("Level5").GetComponent<TMP_Text>().text = NSD.students[StudentListInt[j]].LevelData.levelScore[4].ToString();
+
+            _go.transform.Find("Total").GetComponent<TMP_Text>().text = (NSD.students[StudentListInt[j]].LevelData.levelScore[0]
+             + NSD.students[StudentListInt[j]].LevelData.levelScore[1]
+             + NSD.students[StudentListInt[j]].LevelData.levelScore[2]
+             + NSD.students[StudentListInt[j]].LevelData.levelScore[3]
+             + NSD.students[StudentListInt[j]].LevelData.levelScore[4]).ToString();
+
+
+            StudentListTransform.Add(_go);
+        }
+    }
+
+    public void TeacherLogout()
+    {
+        foreach (GameObject _go in StudentListTransform)
+        {
+            Destroy(_go);
+        }
+
+        StudentListTransform.Clear();
+
+        StudentListInt.Clear();
+
+
+        NSD.AccountType = "";
+        NSD.FullName = "";
+        NSD.AccountNumber = -1;
+
+        SaveToJson();
+
+        ListUI.SetActive(false);
+        AccountUI.SetActive(true);
+    }
 
     public void CheckInputField()
     {
@@ -138,9 +326,13 @@ public class NewSaveAndLoad : MonoBehaviour
         NSD.AccountType = "Student";
         NSD.AccountNumber = NSD.students.Count - 1;
 
-        PlayerPrefs.SetString("FullName", StudentName.text);
+        /*PlayerPrefs.SetString("FullName", StudentName.text);
         PlayerPrefs.SetString("AccountType", "Student");
-        PlayerPrefs.SetInt("AccountNumber", NSD.students.Count - 1);
+        PlayerPrefs.SetInt("AccountNumber", NSD.students.Count - 1);*/
+
+        SaveToJson();
+
+        StudentNameTxt.text = NSD.FullName;
 
         MenuUI.SetActive(true);
         AccountUI.SetActive(false);
@@ -169,13 +361,17 @@ public class NewSaveAndLoad : MonoBehaviour
             NSD.AccountType = "Student";
             NSD.AccountNumber = _accNum;
 
-            PlayerPrefs.SetString("FullName", StudentName.text);
+            /*PlayerPrefs.SetString("FullName", StudentName.text);
             PlayerPrefs.SetString("AccountType", "Student");
-            PlayerPrefs.SetInt("AccountNumber", _accNum);
+            PlayerPrefs.SetInt("AccountNumber", _accNum);*/
 
             //SaveAndLoadManager.instance.LoadStudentData();
 
             Debug.Log("Valid Student");
+
+            SaveToJson();
+
+            StudentNameTxt.text = NSD.FullName;
 
             MenuUI.SetActive(true);
             AccountUI.SetActive(false);
@@ -185,5 +381,26 @@ public class NewSaveAndLoad : MonoBehaviour
 
             Debug.Log("Invalid Student");
         }
+    }
+    public void Logout()
+    {
+        NSD.AccountType = "";
+        NSD.FullName = "";
+        NSD.AccountNumber = -1;
+
+        SaveToJson();
+
+
+        StudentNameTxt.text = "";
+
+        MenuUI.SetActive(false);
+        AccountUI.SetActive(true);
+    }
+    public void SaveToJson()
+    {
+        string saveData = JsonUtility.ToJson(NSD);
+        Debug.Log(saveData);
+        string _filePath = Application.persistentDataPath + "/Elemix.json";
+        System.IO.File.WriteAllText(_filePath, saveData);
     }
 }
