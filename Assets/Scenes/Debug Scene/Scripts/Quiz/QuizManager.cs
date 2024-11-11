@@ -7,13 +7,9 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
-    public static QuizManager instance
-    {
-        get; private set;
-    }
+    public static QuizManager instance { get; private set; }
 
     [Header("Quiz Variables")]
-    int currentQuizIndex;
     string question;
     string[] choices = new string[4];
     string correctAnswer;
@@ -33,8 +29,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button closeButton;
 
-    private string correctMessage;
-    private string incorrectMessage;
+    private string[] resultMessages;
 
     private bool isCorrectAnswer = true;
 
@@ -73,21 +68,16 @@ public class QuizManager : MonoBehaviour
         string correctAnswer,
         string[] choices,
         GameObject container,
-        string correctMessage,
-        string incorrectMessage,
-        int quizIndex
+        string[] resultMessages
     ) // Add resultMessages parameter
     {
-        this.currentQuizIndex = quizIndex;
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.choices = choices;
 
         startQuiz(container);
 
-        // Store result messages for use in choice checks
-        this.correctMessage = correctMessage;
-        this.incorrectMessage = incorrectMessage;
+        this.resultMessages = resultMessages;
     }
 
     public void initializeQuizValues()
@@ -110,7 +100,7 @@ public class QuizManager : MonoBehaviour
         if (selectedAnswer.Equals(correctAnswer))
         {
             reactivateChoices();
-            ShowResult(correctMessage); // Use the corresponding result message for correct answer
+            ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for correct answer
             if (isCorrectAnswer)
                 GameEventsManager.instance.quizEvents.quizCorrect();
             isCorrectAnswer = true;
@@ -118,7 +108,7 @@ public class QuizManager : MonoBehaviour
         else
         {
             choiceButtons[buttonIndex].interactable = false;
-            ShowResult(incorrectMessage); // Use the corresponding result message for incorrect answer
+            ShowResult(resultMessages[buttonIndex]); // Use the corresponding result message for incorrect answer
             GameEventsManager.instance.quizEvents.quizIncorrect();
             isCorrectAnswer = false;
         }

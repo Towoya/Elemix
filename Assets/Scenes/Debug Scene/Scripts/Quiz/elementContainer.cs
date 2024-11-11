@@ -16,6 +16,15 @@ public class elementContainer : MonoBehaviour
 
     [Header("Quiz Variables")]
     [SerializeField]
+    string question;
+
+    [SerializeField]
+    string[] choices = new string[4];
+
+    [SerializeField]
+    string correctAnswer;
+
+    [SerializeField]
     string[] resultMessages = new string[4]; // Add this field for customizable result messages
 
     private void OnEnable()
@@ -68,16 +77,19 @@ public class elementContainer : MonoBehaviour
                 return;
 
             System.Random random = new System.Random();
-            int quizIndex = LevelManager.instance.NSD.students[LevelManager.instance.NSD.AccountNumber].LevelData.questionNumber;
+            int quizIndex = LevelManager
+                .instance
+                .NSD
+                .students[LevelManager.instance.NSD.AccountNumber]
+                .LevelData
+                .questionNumber;
 
             QuizManager.instance.setQuizValues(
-                QuizQuestionsManager.instance.getQuestion(quizIndex),
-                QuizQuestionsManager.instance.getCorrectAnswer(quizIndex),
-                QuizQuestionsManager.instance.getChoices(quizIndex),
+                question,
+                correctAnswer,
+                choices,
                 selectedGameObject,
-                QuizQuestionsManager.instance.getCorrectMessage(quizIndex),
-                QuizQuestionsManager.instance.getIncorrectMessage(quizIndex),
-                quizIndex
+                resultMessages
             ); // Pass resultMessages
 
             Time.timeScale = 0f;
