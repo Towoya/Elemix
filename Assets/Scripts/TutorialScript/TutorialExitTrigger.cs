@@ -37,11 +37,18 @@ public class TutorialExitTrigger : MonoBehaviour
 
         NSD.students[NSD.AccountNumber].LevelData.TutorialCompleted = true;
 
-        LevelManager.instance.SaveToJson();
+        SaveToJson();
 
         // Load the stage selection scene (replace with actual scene name)
         SceneManager.LoadScene("Category menu");
     }
 
+    public void SaveToJson()
+    {
+        string saveData = JsonUtility.ToJson(NSD);
+        Debug.Log(saveData);
+        string _filePath = Application.persistentDataPath + "/Elemix.json";
+        System.IO.File.WriteAllText(_filePath, saveData);
+    }
 
 }

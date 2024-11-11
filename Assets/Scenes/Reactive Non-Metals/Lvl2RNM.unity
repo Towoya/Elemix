@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19101,6 +19101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 4956145313397690640, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
+      propertyPath: lVH
+      value: 
+      objectReference: {fileID: 2338054330395679895}
     - target: {fileID: 5541282882550783930, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
       propertyPath: dialogueBox
       value: 
@@ -19153,6 +19157,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6269494205400541053, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
+      propertyPath: NSD
+      value: 
+      objectReference: {fileID: 11400000, guid: 76b7065fe1c04034ea0ca8bf991410d9, type: 2}
     - target: {fileID: 7424579520053565403, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
       propertyPath: playerTransform
       value: 
@@ -19170,6 +19178,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6200480018029809121, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
   m_PrefabInstance: {fileID: 2338054330395679893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2338054330395679895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6269494205400541053, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
+  m_PrefabInstance: {fileID: 2338054330395679893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebf110930f0d6a41b575879b097c197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

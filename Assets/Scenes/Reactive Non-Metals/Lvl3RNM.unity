@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24243,6 +24243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 4956145313397690640, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
+      propertyPath: lVH
+      value: 
+      objectReference: {fileID: 1727256678}
     - target: {fileID: 5541282882550783930, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
       propertyPath: dialogueBox
       value: 
@@ -24296,6 +24300,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269494205400541053, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
+      propertyPath: NSD
+      value: 
+      objectReference: {fileID: 11400000, guid: 76b7065fe1c04034ea0ca8bf991410d9, type: 2}
+    - target: {fileID: 6269494205400541053, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
       propertyPath: levelIndex
       value: 2
       objectReference: {fileID: 0}
@@ -24316,6 +24324,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6200480018029809121, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
   m_PrefabInstance: {fileID: 1727256676}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1727256678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6269494205400541053, guid: d4e6a334e041cb04d94b60f5856a7f5c, type: 3}
+  m_PrefabInstance: {fileID: 1727256676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebf110930f0d6a41b575879b097c197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1733276014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8823556882264193128, guid: a113415effdb4ef468f18d928a919a94, type: 3}
