@@ -6,6 +6,8 @@ public class TutorialExitTrigger : MonoBehaviour
 {
     public GameObject tutorialCompletePanel; // Reference to the panel in the UI
     public Button continueButton;            // Reference to the continue button
+
+    public NewSaveData NSD;
     private void Start()
     {
         // Ensure the panel is hidden at the start
@@ -30,10 +32,16 @@ public class TutorialExitTrigger : MonoBehaviour
     private void OnContinueButtonClicked()
     {
         // Set the flag to indicate the tutorial is completed
-        PlayerPrefs.SetInt("TutorialCompleted", 1);
-        PlayerPrefs.Save();
+        /*PlayerPrefs.SetInt("TutorialCompleted", 1);
+        PlayerPrefs.Save();*/
+
+        NSD.students[NSD.AccountNumber].LevelData.TutorialCompleted = true;
+
+        LevelManager.instance.SaveToJson();
 
         // Load the stage selection scene (replace with actual scene name)
         SceneManager.LoadScene("Category menu");
     }
+
+
 }
