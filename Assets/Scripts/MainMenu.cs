@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     public GameObject VideoPanel;
     public VideoPlayer VPlayer;
 
+    bool CanSkip = false;
+
     Coroutine WaitCo;
     public void Play()
     {
@@ -40,7 +42,9 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator WaitIe()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
+
+        CanSkip = true;
 
         while (VPlayer.isPlaying)
         {
@@ -54,7 +58,11 @@ public class MainMenu : MonoBehaviour
 
     public void OpenTutorialScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
+
+        if (CanSkip)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
+        }
     }
 
     public void Quit()
