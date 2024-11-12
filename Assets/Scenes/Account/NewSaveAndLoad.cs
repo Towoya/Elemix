@@ -323,15 +323,29 @@ public class NewSaveAndLoad : MonoBehaviour
 
         if (_studentValid)
         {
+
+            StudentErr.GetComponent<TMP_Text>().text = "";
+            StudentErr.SetActive(false);
+
             StudentAccount _nsd = new StudentAccount();
             _nsd.StudentNumber = StudentNumber.text.ToUpper();
             _nsd.FullName = StudentName.text.ToUpper();
             _nsd.Section = StudentSection.text.ToUpper();
 
-            NSD.students.Add(_nsd);
+            _nsd.LevelData = new levelData();
 
-            StudentErr.GetComponent<TMP_Text>().text = "";
-            StudentErr.SetActive(false);
+            System.Random random = new System.Random();
+
+            List<int> ql = new List<int>();
+
+            for (int i = 0; i < _nsd.LevelData.numberOfLevels; i++)
+            {
+                ql.Add(i);
+            }
+
+            _nsd.LevelData.questionList = ql.OrderBy(x => Guid.NewGuid()).ToList().ToArray();
+
+            NSD.students.Add(_nsd);
 
             Debug.Log(NSD.students.Count - 1);
 
@@ -357,7 +371,7 @@ public class NewSaveAndLoad : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         Debug.Log("waiting");
-        System.Random random = new System.Random();
+        /*System.Random random = new System.Random();
 
         List<int> ql = new List<int>();
 
@@ -366,7 +380,7 @@ public class NewSaveAndLoad : MonoBehaviour
             ql.Add(i);
         }
 
-        NSD.students[NSD.students.Count - 1].LevelData.questionList = ql.OrderBy(x => Guid.NewGuid()).ToList().ToArray();
+        NSD.students[NSD.students.Count - 1].LevelData.questionList = ql.OrderBy(x => Guid.NewGuid()).ToList().ToArray();*/
 
         NSD.FullName = StudentName.text.ToUpper();
         NSD.AccountType = "Student";
