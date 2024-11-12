@@ -33,7 +33,7 @@ public class NewSaveAndLoad : MonoBehaviour
     public Transform ListParent;
     public GameObject ItemPrefab;
 
-    public TMP_Text TeacherNameTxt, StudentNameTxt;
+    public TMP_Text TeacherNameTxt, TeacherSectionTxt, StudentNameTxt;
 
     public GameObject TeacherErr, StudentErr;
 
@@ -186,7 +186,7 @@ public class NewSaveAndLoad : MonoBehaviour
             for (int i = 0; i < NSD.teachers.Count; i++)
             {
                 int j = i;
-                if (NSD.teachers[i].FullName == TeacherName.text.ToUpper())
+                if (NSD.teachers[i].FullName.ToUpper() == TeacherName.text.ToUpper())
                 {
                     _accAvail = true;
                     _accNum = j;
@@ -205,7 +205,7 @@ public class NewSaveAndLoad : MonoBehaviour
 
                 SaveToJson();
 
-                TeacherNameTxt.text = NSD.FullName;
+                TeacherNameTxt.text = NSD.FullName.ToUpper();
                 ListUI.SetActive(true);
                 AccountUI.SetActive(false);
 
@@ -228,6 +228,10 @@ public class NewSaveAndLoad : MonoBehaviour
     public void SectionList()
     {
         Debug.Log("SectionInit");
+
+        TeacherSectionTxt.text = NSD.teachers[NSD.AccountNumber].Section;
+
+        ClearInputs();
 
         for (int i = 0; i < NSD.students.Count; i++)
         {
@@ -307,11 +311,11 @@ public class NewSaveAndLoad : MonoBehaviour
 
         foreach (StudentAccount _sacc in NSD.students)
         {
-            if (_sacc.StudentNumber == StudentNumber.text.ToUpper())
+            if (_sacc.StudentNumber.ToUpper() == StudentNumber.text.ToUpper())
             {
                 _studentValid = false;
             }
-            if (_sacc.FullName == StudentName.text.ToUpper())
+            if (_sacc.FullName.ToUpper() == StudentName.text.ToUpper())
             {
                 _studentValid = false;
             }
@@ -376,6 +380,8 @@ public class NewSaveAndLoad : MonoBehaviour
 
         StudentNameTxt.text = NSD.FullName.ToUpper();
 
+        ClearInputs();
+
         MenuUI.SetActive(true);
         AccountUI.SetActive(false);
 
@@ -390,7 +396,7 @@ public class NewSaveAndLoad : MonoBehaviour
         for (int i = 0; i < NSD.students.Count; i++)
         {
             int j = i;
-            if (NSD.students[i].FullName == StudentName.text && NSD.students[i].StudentNumber == StudentNumber.text && NSD.students[i].Section == StudentSection.text)
+            if (NSD.students[i].FullName.ToUpper() == StudentName.text.ToUpper() && NSD.students[i].StudentNumber.ToUpper() == StudentNumber.text.ToUpper() && NSD.students[i].Section.ToUpper() == StudentSection.text.ToUpper())
             {
                 _accAvail = true;
                 _accNum = j;
@@ -399,7 +405,7 @@ public class NewSaveAndLoad : MonoBehaviour
 
         if (_accAvail)
         {
-            NSD.FullName = StudentName.text;
+            NSD.FullName = StudentName.text.ToUpper();
             NSD.AccountType = "Student";
             NSD.AccountNumber = _accNum;
 
@@ -413,10 +419,12 @@ public class NewSaveAndLoad : MonoBehaviour
 
             SaveToJson();
 
-            StudentNameTxt.text = NSD.FullName;
+            StudentNameTxt.text = NSD.FullName.ToUpper();
 
             StudentErr.GetComponent<TMP_Text>().text = "";
             StudentErr.SetActive(false);
+
+            ClearInputs();
 
             MenuUI.SetActive(true);
             AccountUI.SetActive(false);
@@ -429,6 +437,16 @@ public class NewSaveAndLoad : MonoBehaviour
             Debug.Log("Invalid Student");
         }
     }
+
+    public void ClearInputs()
+    {
+        StudentNumber.text = string.Empty;
+        StudentName.text = string.Empty;
+        StudentSection.text = string.Empty;
+        TeacherName.text = string.Empty;
+        TeacherSection.text = string.Empty;
+    }
+
     public void Logout()
     {
         NSD.AccountType = "";
