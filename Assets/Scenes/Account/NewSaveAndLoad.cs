@@ -334,7 +334,8 @@ public class NewSaveAndLoad : MonoBehaviour
 
             _nsd.LevelData = new levelData();
 
-            System.Random random = new System.Random();
+            System.Random random = new System.Random(); 
+
 
             List<int> ql = new List<int>();
 
