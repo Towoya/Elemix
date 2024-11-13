@@ -14142,6 +14142,248 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a288d6f0877781d449d7eb073e43af75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuestObj:
+  - question: What is the chemical symbol for chlorine?
+    answer: Cl
+    messageIfCorrect: Correct! Chlorine is used in the production of safe drinking
+      water and swimming pool sanitation.
+    messageIfIncorrect: 'Incorrect! Hint: The symbol consists of two letters.'
+  - question: What is chlorine commonly used for in households?
+    answer: Cleaning
+    messageIfCorrect: Correct! Chlorine is a powerful disinfectant and is often used
+      in bleach and disinfectant products.
+    messageIfIncorrect: 'Incorrect! Hint: Think of what you might use in a bathroom.'
+  - question: Which state of matter is chlorine at room temperature?
+    answer: Gas
+    messageIfCorrect: Correct! Chlorine gas is toxic and was used in World War I
+      as a chemical weapon.
+    messageIfIncorrect: 'Incorrect! Hint: It''s not the same state as water at room
+      temperature.'
+  - question: What is the most common isotope of hydrogen?
+    answer: Protium
+    messageIfCorrect: Correct! Protium makes up more than 99.98% of hydrogen found
+      naturally.
+    messageIfIncorrect: 'Incorrect! Hint: Its name sounds like "proto" indicating
+      first or primary.'
+  - question: What is the chemical formula for water?
+    answer: H2O
+    messageIfCorrect: Correct! Water is essential for all known forms of life.
+    messageIfIncorrect: 'Incorrect! Hint: It consists of two hydrogen atoms.'
+  - question: Which element has the lowest atomic number?
+    answer: Hydrogen
+    messageIfCorrect: Correct! Hydrogen is the most abundant chemical substance in
+      the universe, making up about 75% of all baryonic mass.
+    messageIfIncorrect: 'Incorrect! Hint: It''s the first element on the periodic
+      table.'
+  - question: Hydrogen is most commonly found in which compound on Earth?
+    answer: Water
+    messageIfCorrect: Correct! Water is composed of two hydrogen atoms and one oxygen
+      atom.
+    messageIfIncorrect: 'Incorrect! Hint: This compound is vital for all known forms
+      of life.'
+  - question: What is the main use of hydrogen in the chemical industry?
+    answer: Fertilizer production
+    messageIfCorrect: Correct! Hydrogen is primarily used in the production of ammonia
+      for fertilizers, which supports global agriculture.
+    messageIfIncorrect: 'Incorrect! Hint: It''s crucial for agriculture.'
+  - question: What is the chemical symbol for oxygen?
+    answer: O
+    messageIfCorrect: Correct! Oxygen is essential for respiration in most living
+      organisms.
+    messageIfIncorrect: 'Incorrect! Hint: It''s a single letter.'
+  - question: In what form does oxygen most commonly exist in the Earth's atmosphere?
+    answer: Oxygen gas (O2)
+    messageIfCorrect: Correct! Oxygen gas (O2) is vital for the survival of aerobic
+      organisms.
+    messageIfIncorrect: 'Incorrect! Hint: It''s what we breathe in.'
+  - question: What color is chlorine gas?
+    answer: Greenish-yellow
+    messageIfCorrect: Correct! Chlorine gas has a distinctive greenish-yellow color
+      and a pungent odor.
+    messageIfIncorrect: 'Incorrect! Hint: It''s a mix of two common colors.'
+  - question: What is the role of oxygen in combustion?
+    answer: Fuel
+    messageIfCorrect: Correct! Oxygen is a key reactant in combustion, allowing substances
+      to burn.
+    messageIfIncorrect: 'Incorrect! Hint: Without it, fire cannot burn.'
+  - question: Which form of oxygen protects us from ultraviolet radiation?
+    answer: Ozone (O3)
+    messageIfCorrect: "Correct! The ozone layer absorbs most of the Sun\u2019s harmful
+      ultraviolet radiation."
+    messageIfIncorrect: 'Incorrect! Hint: It forms a protective layer around Earth.'
+  - question: What percentage of the Earth's atmosphere is oxygen?
+    answer: 21%
+    messageIfCorrect: Correct! Oxygen makes up about 21% of the Earth's atmosphere,
+      essential for life.
+    messageIfIncorrect: 'Incorrect! Hint: It''s more than 20% but less than 25%.'
+  - question: What is the lightest element on the periodic table?
+    answer: Hydrogen
+    messageIfCorrect: Correct! Hydrogen is the lightest and most abundant element
+      in the universe.
+    messageIfIncorrect: 'Incorrect! Hint: It''s the first element on the periodic
+      table.'
+  - question: What is the main component of the Sun?
+    answer: Hydrogen
+    messageIfCorrect: Correct! The Sun is primarily composed of hydrogen, which fuels
+      its nuclear fusion reactions.
+    messageIfIncorrect: 'Incorrect! Hint: It''s the simplest and most abundant element.'
+  - question: Which compound is known as the simplest hydrocarbon?
+    answer: Methane
+    messageIfCorrect: Correct! Methane is the simplest hydrocarbon, consisting of
+      one carbon atom and four hydrogen atoms.
+    messageIfIncorrect: 'Incorrect! Hint: Its formula is CH4.'
+  - question: What is produced when hydrogen burns in air?
+    answer: Water
+    messageIfCorrect: Correct! When hydrogen burns, it reacts with oxygen to form
+      water.
+    messageIfIncorrect: 'Incorrect! Hint: It''s a liquid at room temperature.'
+  - question: How many hydrogen atoms are in a molecule of ammonia (NH3)?
+    answer: 3
+    messageIfCorrect: Correct! Ammonia has three hydrogen atoms bonded to one nitrogen
+      atom.
+    messageIfIncorrect: 'Incorrect! Hint: The formula is NH3.'
+  - question: What is the most common form of carbon found in nature?
+    answer: Carbon dioxide
+    messageIfCorrect: Correct! Carbon dioxide is a key component of Earth's atmosphere
+      and plays a vital role in the carbon cycle.
+    messageIfIncorrect: 'Incorrect! Hint: It''s a product of respiration and combustion.'
+  - question: How many electrons does a hydrogen atom have?
+    answer: 1
+    messageIfCorrect: Correct! Hydrogen has one electron, making it the simplest
+      and most abundant element.
+    messageIfIncorrect: 'Incorrect! Hint: It has the same number as its protons.'
+  - question: What is the common state of hydrogen at room temperature?
+    answer: Gas
+    messageIfCorrect: Correct! Hydrogen is a gas at room temperature and forms H2
+      molecules.
+    messageIfIncorrect: 'Incorrect! Hint: It''s colorless and odorless in this state.'
+  - question: In which type of bond does hydrogen participate in water molecules?
+    answer: Covalent bond
+    messageIfCorrect: Correct! In water, hydrogen forms covalent bonds with oxygen,
+      sharing electrons.
+    messageIfIncorrect: 'Incorrect! Hint: This bond holds the H2O molecule together.'
+  - question: What is the chemical formula for methane?
+    answer: CH4
+    messageIfCorrect: Correct! Methane (CH4) is the simplest alkane and a significant
+      greenhouse gas.
+    messageIfIncorrect: 'Incorrect! Hint: It''s a major component of natural gas.'
+  - question: What form of carbon is used in pencils?
+    answer: Graphite
+    messageIfCorrect: Correct! Graphite is used in pencils due to its ability to
+      leave marks on paper.
+    messageIfIncorrect: 'Incorrect! Hint: It conducts electricity.'
+  - question: What is the color of sulfur in its most common form?
+    answer: Yellow
+    messageIfCorrect: Correct! Sulfur is yellow in its most common elemental form.
+    messageIfIncorrect: 'Incorrect! Hint: It''s a bright, non-metallic color.'
+  - question: Which gas is produced when sulfur burns?
+    answer: Sulfur dioxide
+    messageIfCorrect: Correct! Sulfur dioxide is a significant pollutant and contributor
+      to acid rain.
+    messageIfIncorrect: 'Incorrect! Hint: It has a pungent smell.'
+  - question: What is a primary use of sulfur in industry?
+    answer: Fertilizer production
+    messageIfCorrect: Correct! Sulfur is key in producing sulfuric acid, essential
+      for fertilizers and many industrial processes.
+    messageIfIncorrect: 'Incorrect! Hint: Important for agriculture.'
+  - question: What is the process by which plants produce oxygen?
+    answer: Photosynthesis
+    messageIfCorrect: Correct! Photosynthesis converts carbon dioxide and water into
+      glucose and oxygen using sunlight.
+    messageIfIncorrect: 'Incorrect! Hint: It involves sunlight.'
+  - question: What is the oxidation state of oxygen in most compounds?
+    answer: -2
+    messageIfCorrect: Correct! Oxygen typically has an oxidation state of -2 in most
+      compounds
+    messageIfIncorrect: 'Incorrect! Hint: It''s less than zero.'
+  - question: What is the fourth state of matter?
+    answer: Plasma
+    messageIfCorrect: Correct! Plasma conducts electricity and responds to magnetic
+      fields.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s not a solid, liquid, or gas."
+  - question: Which property of matter does not depend on the amount of substance?
+    answer: Intensive property
+    messageIfCorrect: Correct! Intensive properties remain constant regardless of
+      quantity.
+    messageIfIncorrect: 'Incorrect! Hint: Think of properties like density or boiling
+      point.'
+  - question: What is the physical state of water at room temperature?
+    answer: Liquid
+    messageIfCorrect: Correct! Water takes the shape of its container as a liquid.
+    messageIfIncorrect: Incorrect! Hint:Consider its state when you drink it.
+  - question: Which element is liquid at room temperature?
+    answer: Mercury
+    messageIfCorrect: Correct! Mercury is the only metal that is liquid at room temperature.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s used in thermometers."
+  - question: What do you call a mixture with uniform composition throughout?
+    answer: Homogeneous mixture
+    messageIfCorrect: Correct! Homogeneous mixtures are also known as solutions.
+    messageIfIncorrect: 'Incorrect! Hint: Think of a well-mixed cup of coffee.'
+  - question: Which method separates mixtures based on boiling points?
+    answer: Distillation
+    messageIfCorrect: Correct! Distillation involves vaporization and condensation.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s used to purify liquids."
+  - question: What is the basic unit of matter?
+    answer: Atom
+    messageIfCorrect: Correct! Atoms make up all substances.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s smaller than a molecule."
+  - question: What is the measure of the amount of matter in an object?
+    answer: Mass
+    messageIfCorrect: Correct! Mass is measured in kilograms or grams.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s not affected by gravity."
+  - question: Which property refers to a substance's ability to burn?
+    answer: Flammability
+    messageIfCorrect: Correct! Flammable substances react with oxygen when ignited.
+    messageIfIncorrect: 'Incorrect! Hint: Think of materials that catch fire easily.'
+  - question: What type of property is density?
+    answer: Intensive property
+    messageIfCorrect: Correct! Density is the ratio of mass to volume.
+    messageIfIncorrect: "Incorrect! Hint: It doesn\u2019t change with the amount
+      of substance."
+  - question: Which separation technique involves passing a mixture through a filter?
+    answer: Filtration
+    messageIfCorrect: Correct! Filtration removes solid particles from liquids.
+    messageIfIncorrect: "Incorrect! Hint:  It\u2019s used for separating sand from
+      water."
+  - question: What is a group of atoms bonded together called?
+    answer: Molecule
+    messageIfCorrect: Correct! Molecules can be elements or compounds.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s smaller than a cell but larger
+      than an atom."
+  - question: What is the term for a pure substance made of only one kind of atom?
+    answer: Element
+    messageIfCorrect: Correct! Elements are found on the periodic table.
+    messageIfIncorrect: 'Incorrect! Hint: They cannot be broken down by chemical
+      means.'
+  - question: What is the name for a mixture with visibly different components?
+    answer: Heterogeneous mixture
+    messageIfCorrect: Correct! Heterogeneous mixtures have distinct phases.
+    messageIfIncorrect: 'Incorrect! Hint: Think of a salad.'
+  - question: What property involves a substance's reaction with acids?
+    answer: Acidity
+    messageIfCorrect: Correct! Acidity involves forming compounds with acids.
+    messageIfIncorrect: 'Incorrect! Hint: It determines how sour a substance is.'
+  - question: Which property measures a substance's resistance to deformation?
+    answer: Hardness
+    messageIfCorrect: Correct! Hardness is an indicator of how a substance resists
+      scratching.
+    messageIfIncorrect: 'Incorrect! Hint: Diamonds are known for this property.'
+  - question: What is the process of separating substances based on particle size?
+    answer: Sieving
+    messageIfCorrect: Correct! Sieving allows smaller particles to pass through.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s like using a strainer."
+  - question: What is the smallest unit of a compound that retains its chemical properties?
+    answer: Molecule
+    messageIfCorrect: Correct! Molecules are made of two or more atoms bonded together.
+    messageIfIncorrect: 'Incorrect! Hint: Water (H2O) is an example.'
+  - question: What is the term for the energy change in a chemical reaction?
+    answer: "Enthalpy (\u0394H)"
+    messageIfCorrect: Correct! Enthalpy change indicates heat absorbed or released.
+    messageIfIncorrect: "Incorrect! Hint: It\u2019s often measured in joules or calories."
+  - question: Which state of matter has a definite shape and volume?
+    answer: Solid
+    messageIfCorrect: Correct! Solids have closely packed particles.
+    messageIfIncorrect: 'Incorrect! Hint: Think of a rock or a brick.'
   questions:
   - What is the chemical symbol for chlorine?
   - What is chlorine commonly used for in households?
@@ -14357,6 +14599,7 @@ MonoBehaviour:
   - 'Incorrect! Hint: Water (H2O) is an example.'
   - "Incorrect! Hint: It\u2019s often measured in joules or calories."
   - 'Incorrect! Hint: Think of a rock or a brick.'
+  NSD: {fileID: 11400000, guid: 76b7065fe1c04034ea0ca8bf991410d9, type: 2}
   QuestionList: 
 --- !u!4 &2127359786
 Transform:

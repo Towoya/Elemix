@@ -334,17 +334,33 @@ public class NewSaveAndLoad : MonoBehaviour
 
             _nsd.LevelData = new levelData();
 
-            System.Random random = new System.Random(); 
+            System.Random random = new System.Random();
 
 
             List<int> ql = new List<int>();
 
-            for (int i = 0; i < _nsd.LevelData.numberOfLevels; i++)
+            for (int i = 0; i < 10; i++)
             {
                 ql.Add(i);
             }
 
-            _nsd.LevelData.questionList = ql.OrderBy(x => Guid.NewGuid()).ToList().ToArray();
+            //_nsd.LevelData.questionList = ql.OrderBy(x => Guid.NewGuid()).ToList().ToArray();
+
+            List<int> ql2 = new List<int>();
+
+            ql2 = ql.OrderBy(x => Guid.NewGuid()).ToList();
+
+            for (int i = 1; i < 5; i++)
+            {
+                int _tempQl = 10 * i;
+
+                for (int j = 0; j < 10; j++)
+                {
+                    ql2.Add(_tempQl + ql2[j]);
+                }
+            }
+
+            _nsd.LevelData.questionList = ql2.ToArray();
 
             NSD.students.Add(_nsd);
 

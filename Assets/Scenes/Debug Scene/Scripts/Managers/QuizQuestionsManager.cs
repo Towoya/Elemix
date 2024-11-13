@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class QuizQuestionsManager : MonoBehaviour
 {
+    public QuestionObject[] QuestObj;
+
     [Header("Question Variables")]
     [SerializeField]
     string[] questions = new string[50];
@@ -20,6 +22,8 @@ public class QuizQuestionsManager : MonoBehaviour
     [SerializeField]
     string[] messageIfIncorrect = new string[50];
 
+    public NewSaveData NSD;
+
     public static QuizQuestionsManager instance
     {
         get; private set;
@@ -29,6 +33,19 @@ public class QuizQuestionsManager : MonoBehaviour
 
     private void Awake()
     {
+        /*for (int i = 0; i < questions.Length; i++)
+        {
+            QuestionObject _qo = new QuestionObject();
+
+            _qo.question = questions[i];
+            _qo.answer = answers[i];
+            _qo.messageIfCorrect = messageIfCorrect[i];
+            _qo.messageIfIncorrect = messageIfIncorrect[i];
+
+            QuestObj[i] = _qo;
+        }*/
+
+
         if (instance != null)
         {
             Debug.LogError(
@@ -46,14 +63,14 @@ public class QuizQuestionsManager : MonoBehaviour
     public string getQuestion(int questionIndex)
     {
 
-        return questions[questionIndex];
+        return QuestObj[NSD.students[NSD.AccountNumber].LevelData.questionList[questionIndex]].question;
     }
 
     public string[] getChoices(int questionIndex)
     {
         string[] choices = new string[4];
 
-        choices[0] = answers[questionIndex];
+        choices[0] = QuestObj[NSD.students[NSD.AccountNumber].LevelData.questionList[questionIndex]].answer;
 
         System.Random random = new System.Random();
 
@@ -63,7 +80,7 @@ public class QuizQuestionsManager : MonoBehaviour
 
             while (true)
             {
-                tempString = answers[random.Next(0, answers.Length)];
+                tempString = QuestObj[random.Next(0, answers.Length)].answer;
 
                 if (!choices.Contains(tempString))
                     break;
@@ -77,17 +94,17 @@ public class QuizQuestionsManager : MonoBehaviour
 
     public string getCorrectAnswer(int questionIndex)
     {
-        return answers[questionIndex];
+        return QuestObj[NSD.students[NSD.AccountNumber].LevelData.questionList[questionIndex]].answer;
     }
 
     public string getCorrectMessage(int questionIndex)
     {
-        return messageIfCorrect[questionIndex];
+        return QuestObj[NSD.students[NSD.AccountNumber].LevelData.questionList[questionIndex]].messageIfCorrect;
     }
 
     public string getIncorrectMessage(int questionIndex)
     {
-        return messageIfIncorrect[questionIndex];
+        return QuestObj[NSD.students[NSD.AccountNumber].LevelData.questionList[questionIndex]].messageIfIncorrect;
     }
 
     T[] KnuthShuffle<T>(T[] array)
@@ -103,4 +120,14 @@ public class QuizQuestionsManager : MonoBehaviour
 
         return array;
     }
+}
+
+[System.Serializable]
+public class QuestionObject
+{
+    public string question;
+    public string answer;
+    public string messageIfCorrect;
+    public string messageIfIncorrect;
+
 }
