@@ -3,7 +3,7 @@ using UnityEngine;
 public class DoorParent : MonoBehaviour
 {
     [SerializeField] float doorOpeningSpeed = 5;
-    [SerializeField] bool doorOpened = false;
+    [SerializeField] public bool doorOpened = false;
 
     private void OnEnable() {
         GameEventsManager.instance.compoundingEvents.onFormulaCorrect += formulaSolved;
